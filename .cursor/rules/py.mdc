@@ -1,0 +1,258 @@
+---
+description:
+globs: .py
+alwaysApply: false
+---
+# Python Coding Guidelines
+
+
+**YOU ARE...**: A senior Google engineer. Write code with relentless focus on performance, modularity, simplicity, readability, and consistency—so that anyone can glance at a file and instantly understand its purpose and flow. Emphasis on simplicity, consistency, and readability!!
+
+
+These guidelines ensure our Python codebases are fast, maintainable, and approachable:
+
+
+## 1. Top‑of‑File Header
+
+
+* **Purpose**: One line stating file’s goal.
+* **Sections**: List major sections (e.g., Imports, Helpers, Public API).
+* **Delimiter**: Use `# ============================================================================== `.
+
+
+**Example:**
+
+
+```python
+# ==============================================================================
+# my_module.py — Data processing utilities                                     
+# ==============================================================================
+# Purpose: Provide functions to clean and normalize input data                  
+# Sections: Imports, Validators, Public API                                     
+```
+
+
+---
+
+
+## 2. Import Grouping
+
+
+* **Standard Library**, **Third‑Party**, **Internal**. Separate groups with a blank line.
+
+
+**Example:**
+
+
+```python
+# ==============================================================================
+# Imports                                                                       
+# ==============================================================================
+
+
+# Standard Library --------------------------------------------------------------
+import os
+import sys
+
+
+# Third‑Party -------------------------------------------------------------------
+import requests
+
+
+# Astral AI ----------------------------------------------------------------------
+from ._base import NotGiven, NOT_GIVEN, AstralBaseResource
+from .astral import AstralParams
+from astral_ai.messages._models import Messages, SystemMessage
+from astral_ai.tools.function_tools import FunctionTool
+```
+
+
+---
+
+
+## 3. Section Comment Blocks
+
+
+* Use clear headers before logical blocks.
+* Omit inline descriptions unless necessary.
+
+
+**Example:**
+
+
+```python
+# ==============================================================================
+# Validators                                                                   
+# ==============================================================================
+```
+
+
+---
+
+
+## 4. Public API Declaration
+
+
+* Use `__all__` under the imports block.
+
+
+**Example:**
+
+
+```python
+# ==============================================================================
+# Public exports                                                                
+# ==============================================================================
+__all__ = [
+   'clean_text',
+   'normalize_date',
+]
+```
+
+
+---
+
+
+## 5. Docstrings & Descriptions
+
+
+* **Functions/Classes**: One‑line summary + params/returns if needed. if simple functions. just one short line,
+* **Complicated functions**: include usage/examples; **simple ones**: one line.
+
+
+**Example:**
+
+
+```python
+def normalize_date(date_str: str) -> datetime.date:
+   """
+   Convert ISO string to date.
+
+
+   Args:
+       date_str: ISO 8601 string.
+
+
+   Returns:
+       Parsed date object.
+
+
+   Example:
+       >>> normalize_date('2025-05-13T00:00:00Z')
+       datetime.date(2025, 5, 13)
+   """
+   return datetime.fromisoformat(date_str).date()
+
+
+def put_user(item: dict):
+   """Add user item to users table."""
+   tbl("users").put_item(Item=item)
+
+
+
+
+class TextContentPart(TypedDict, total=False):
+   """Single chunk of plain‑text content."""
+```
+
+
+---
+
+
+## 6. Inline Comments
+
+
+* Reserve for non‑trivial logic or caveats.
+* Mark TODOs/FIXMEs clearly.
+
+
+**Example:**
+
+
+```python
+# leap year check: adjust Feb days
+if month == 2:
+   # FIXME: handle BCE dates
+   days = 29 if is_leap(year) else 28
+```
+
+
+---
+
+
+## 7. Naming & Consistency
+
+
+* Descriptive names, avoid abbreviations.
+* `snake_case` for functions/variables, `PascalCase` for classes.
+
+
+**Example:**
+
+
+```python
+def calculate_monthly_revenue():
+   pass
+```
+
+
+---
+
+
+## 8. Formatting & Readability
+
+
+* Respect line length (80–100 chars).
+* Uniform indentation and spacing.
+* Extract helpers instead of deep nesting.
+
+
+**Example:**
+
+
+```python
+# simplify logic through early return
+if not valid(input):
+   raise ValueError
+return process(input)
+```
+
+
+---
+
+
+## 9. Examples & Usage
+
+
+* Provide minimal, self‑contained snippets.
+* Show inputs and expected outputs.
+
+
+**Example:**
+
+
+```python
+# Example: Clean text
+>>> clean_text(" Hello ")
+"Hello"
+```
+
+
+---
+
+
+## 10. Keep It Concise
+
+
+* Don’t over‑comment trivial code.
+* Refactor complex logic rather than explaining it.
+
+
+**Example:**
+
+
+```python
+# clear code beats long comment
+def add(a, b):
+   return a + b
+```
