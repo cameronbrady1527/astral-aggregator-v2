@@ -1,0 +1,1 @@
+# Simplified version of [astral-aggregator](github.com/cameronbrady1527/astral-aggregator)
