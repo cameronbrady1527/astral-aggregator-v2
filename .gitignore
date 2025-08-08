@@ -13,4 +13,4 @@ wheels/
 .env
 
 # Config (domain lists)
-sites.yaml
+config/sites.yaml

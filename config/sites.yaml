@@ -10,9 +10,19 @@ sites:
     url: 'https://www.judiciary.uk/'
     sitemap_url: 'https://www.judiciary.uk/sitemap_index.xml'
     is_sitemap_index: true
+    onboarded: false
+    top_urls: []
+    onboarding_datetime: null
+    status: not_onboarded
+    last_processed: null
 
   waverley_gov:
     name: 'Waverley Borough Council'
     url: 'https://www.waverley.gov.uk/'
     sitemap_url: 'https://www.waverley.gov.uk/sitemap.xml'
     is_sitemap_index: false
+    onboarded: false
+    top_urls: []
+    onboarding_datetime: null
+    status: not_onboarded
+    last_processed: null    
