@@ -72,3 +72,18 @@ class UrlJudgeResponse(BaseModel):
     """Response from AI LLM judge"""
     selected_urls: List[str]
     rejected_urls: List[str] = Field(default_factory=list)
+
+class ProcessingSummary(BaseModel):
+    """Summary of URL processing results"""
+    status: str  # "completed", "failed", "partial"
+    urls_found: int
+    urls_processed: int
+    processing_time_seconds: float
+    errors: List[str] = Field(default_factory=list)
+    warnings: List[str] = Field(default_factory=list)
+    detection_methods_uised: List[str] = Field(default_factory=list)
+
+    class Config:
+        json_encoders = {
+            datetime: lambda v: v.isoformat() if v else None
+        }
