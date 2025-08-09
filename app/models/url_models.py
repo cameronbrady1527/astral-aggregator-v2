@@ -84,16 +84,7 @@ class UrlProcessingResult(BaseModel):
             datetime: lambda v: v.isoformat() if v else None
         }
 
-class OutputURLsWithoutInfo(BaseModel):
-    """URLS without metadata - DEPRECATED: Use UrlProcessingResult instead"""
-    urls: List[str]
-    total_count: int
-    timestamp: datetime = Field(default_factory=datetime.now)
 
-    class Config:
-        json_encoders = {
-            datetime: lambda v: v.isoformat() if v else None
-        }
 
 class OnboardingResult(BaseModel):
     """Result set from onboarding"""
