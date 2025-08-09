@@ -1,13 +1,14 @@
 # ==============================================================================
-# clients/__init__.py — External API Clients
+# __init__.py — Client layer exports
 # ==============================================================================
-# Purpose: Client classes for external API interactions
+# Purpose: Export client classes for easy importing
+# Sections: Imports, Public exports
 # ==============================================================================
 
 from .firecrawl_client import FirecrawlClient
 from .openai_client import OpenAIClient
 
-__all__ = [
-    'FirecrawlClient',
-    'OpenAIClient',
-]
+# ==============================================================================
+# Public exports
+# ==============================================================================
+__all__ = ["FirecrawlClient", "OpenAIClient"]

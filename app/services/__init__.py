@@ -1,4 +1,18 @@
-from .url_service import UrlService, OnboardingUrlService
-from .config_service import ConfigService
+# ==============================================================================
+# __init__.py — Service layer exports
+# ==============================================================================
+# Purpose: Export service classes for easy importing
+# Sections: Imports, Public exports
+# ==============================================================================
 
-__all__ = ["UrlService", "OnboardingUrlService", "ConfigService"]
+# ==============================================================================
+# Imports
+# ==============================================================================
+
+from .url_service import UrlService, OnboardingUrlService
+from .config_service import config_service
+
+# ==============================================================================
+# Public exports
+# ==============================================================================
+__all__ = ["UrlService", "OnboardingUrlService", "config_service"]

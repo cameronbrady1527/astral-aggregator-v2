@@ -16,12 +16,11 @@ class ConfigService:
     
     def _load_environment(self):
         """Load environment variables from .env file"""
-        if self._env_loaded:
+        if not self._env_loaded:
             env_path = Path(__file__).parent.parent.parent / ".env"
 
             if env_path.exists():
                 load_dotenv(env_path)
-
             else:
                 load_dotenv()
 
@@ -87,10 +86,9 @@ class ConfigService:
 
         return config.sites
     
-    @property
     def site(self, site_id: str) -> Optional[SiteConfig]:
         """Get a specific site by ID"""
-        return self.all_sites().get(site_id)
+        return self.all_sites.get(site_id)
 
     def update_site_config(self, site_id: str, updates: SiteUpdate) -> None:
         """update site configuration and save to sites.yaml"""

@@ -1,11 +1,13 @@
 # ==============================================================================
-# crawler/__init__.py — Web Crawling Components
+# __init__.py — Crawler layer exports
 # ==============================================================================
-# Purpose: Components for crawling sitemaps and extracting URLs
+# Purpose: Export crawler classes for easy importing
+# Sections: Imports, Public exports
 # ==============================================================================
 
 from .sitemap_crawler import SitemapCrawler
 
-__all__ = [
-    'SitemapCrawler',
-]
+# ==============================================================================
+# Public exports
+# ==============================================================================
+__all__ = ["SitemapCrawler"]

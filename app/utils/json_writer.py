@@ -79,7 +79,7 @@ class JsonWriter:
     def __init__(self, output_base_dir: Path = None):
         """Initialize JsonWriter with optional custom output directory."""
         if output_base_dir is None:
-            self.output_base_dir = _get_project_root()
+            self.output_base_dir = _get_project_root() / "output"
         else:
             self.output_base_dir = output_base_dir
 

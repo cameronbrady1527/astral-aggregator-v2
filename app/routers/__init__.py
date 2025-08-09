@@ -1,11 +1,13 @@
 # ==============================================================================
-# routers/__init__.py — API Route Handlers
+# __init__.py — Router layer exports
 # ==============================================================================
-# Purpose: FastAPI route handlers for the application
+# Purpose: Export router modules for easy importing
+# Sections: Imports, Public exports
 # ==============================================================================
 
 from .url_router import router as url_router
 
-__all__ = [
-    'url_router',
-]
+# ==============================================================================
+# Public exports
+# ==============================================================================
+__all__ = ["url_router"]

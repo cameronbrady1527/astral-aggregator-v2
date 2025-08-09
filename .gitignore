@@ -14,3 +14,6 @@ wheels/
 
 # Config (domain lists)
 config/sites.yaml
+
+# Output
+output/

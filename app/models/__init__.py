@@ -1,53 +1,57 @@
 # ==============================================================================
-# models/__init__.py — Models Package
+# __init__.py — Model layer exports
 # ==============================================================================
-# Purpose: Pydantic models for URL processing and configuration
+# Purpose: Export Pydantic models for easy importing
+# Sections: Imports, Public exports
 # ==============================================================================
 
 from .url_models import (
-    DetectionMethod,
     UrlInfo,
-    UrlResolutionResult,
-    UrlResolutionMapping,
-    UrlDeduplicationResult,
-    OutputURLsWithInfo,
-    UrlProcessingResult,
-    OnboardingResult,
-    UrlSet,
+    DetectionMethod,
     UrlAnalysisRequest,
     UrlAnalysisResponse,
     UrlJudgeRequest,
     UrlJudgeResponse,
+    OutputURLsWithInfo,
+    OnboardingResult,
+    UrlSet,
     ProcessingSummary,
+    UrlResolutionResult,
+    UrlResolutionMapping,
+    UrlDeduplicationResult,
+    UrlProcessingResult
 )
 
 from .config_models import (
     SiteStatus,
     SiteConfig,
     SitesConfig,
-    SiteUpdate,
+    SiteUpdate
 )
 
+# ==============================================================================
+# Public exports
+# ==============================================================================
 __all__ = [
     # URL Models
-    'DetectionMethod',
-    'UrlInfo',
-    'UrlResolutionResult',
-    'UrlResolutionMapping',
-    'UrlDeduplicationResult',
-    'OutputURLsWithInfo',
-    'UrlProcessingResult',
-    'OnboardingResult',
-    'UrlSet',
-    'UrlAnalysisRequest',
-    'UrlAnalysisResponse',
-    'UrlJudgeRequest',
-    'UrlJudgeResponse',
-    'ProcessingSummary',
+    "UrlInfo",
+    "DetectionMethod", 
+    "UrlAnalysisRequest",
+    "UrlAnalysisResponse",
+    "UrlJudgeRequest",
+    "UrlJudgeResponse",
+    "OutputURLsWithInfo",
+    "OnboardingResult",
+    "UrlSet",
+    "ProcessingSummary",
+    "UrlResolutionResult",
+    "UrlResolutionMapping",
+    "UrlDeduplicationResult",
+    "UrlProcessingResult",
     
     # Config Models
-    'SiteStatus',
-    'SiteConfig',
-    'SitesConfig',
-    'SiteUpdate',
+    "SiteStatus",
+    "SiteConfig",
+    "SitesConfig",
+    "SiteUpdate"
 ]

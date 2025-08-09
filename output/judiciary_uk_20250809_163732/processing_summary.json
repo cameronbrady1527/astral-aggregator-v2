@@ -1,0 +1,14 @@
+{
+  "site_id": "judiciary_uk",
+  "generated_at": "2025-08-09T16:37:32.784372",
+  "status": "completed",
+  "urls_found": 24271,
+  "urls_processed": 24271,
+  "processing_time_seconds": 18.579405,
+  "errors": [],
+  "warnings": [],
+  "detection_methods_used": [
+    "firecrawl_map",
+    "sitemap"
+  ]
+}

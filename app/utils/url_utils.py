@@ -264,6 +264,7 @@ def is_same_page(url1: str, url2: str) -> bool:
 def merge_url_lists(url_lists: List[List[UrlInfo]]) -> List[UrlInfo]:
     """
     Merge multiple lists of UrlInfo objects, combining detection methods.
+    Uses normalized URLs to properly identify duplicates.
     
     Args:
         url_lists: List of UrlInfo lists to merge
@@ -275,17 +276,18 @@ def merge_url_lists(url_lists: List[List[UrlInfo]]) -> List[UrlInfo]:
 
     for url_list in url_lists:
         for url_info in url_list:
-            url = url_info.url
+            # Use normalized URL as the key for proper deduplication
+            normalized_url = normalize_url(url_info.url)
 
-            if url in url_dict:
+            if normalized_url in url_dict:
                 # URL already exists - merge detection methods
-                existing_info = url_dict[url]
+                existing_info = url_dict[normalized_url]
 
                 # only update time if methods are identical
                 if existing_info.detection_methods == url_info.detection_methods:
                     if url_info.detected_at > existing_info.detected_at:
-                        url_dict[url] = UrlInfo(
-                            url=url,
+                        url_dict[normalized_url] = UrlInfo(
+                            url=normalized_url,  # Use normalized URL
                             detection_methods=existing_info.detection_methods,
                             detected_at=url_info.detected_at
                         )
@@ -296,14 +298,18 @@ def merge_url_lists(url_lists: List[List[UrlInfo]]) -> List[UrlInfo]:
                     )
                     latest_time = max(existing_info.detected_at, url_info.detected_at)
 
-                    url_dict[url] = UrlInfo(
-                        url=url,
+                    url_dict[normalized_url] = UrlInfo(
+                        url=normalized_url,  # Use normalized URL
                         detection_methods=combined_methods,
                         detected_at=latest_time
                     )
             else:
-                # new URL - add to dictionary
-                url_dict[url] = url_info
+                # new URL - add to dictionary with normalized URL
+                url_dict[normalized_url] = UrlInfo(
+                    url=normalized_url,  # Use normalized URL
+                    detection_methods=url_info.detection_methods,
+                    detected_at=url_info.detected_at
+                )
 
     return list(url_dict.values())
 

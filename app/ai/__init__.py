@@ -1,13 +1,13 @@
 # ==============================================================================
-# ai/__init__.py — AI Components
+# __init__.py — AI layer exports
 # ==============================================================================
-# Purpose: AI-powered URL analysis and judging components
+# Purpose: Export AI configuration and utilities for easy importing
+# Sections: Imports, Public exports
 # ==============================================================================
 
 from .config import AIConfig
-from .url_judge import UrlJudge
 
-__all__ = [
-    'AIConfig',
-    'UrlJudge',
-]
+# ==============================================================================
+# Public exports
+# ==============================================================================
+__all__ = ["AIConfig"]

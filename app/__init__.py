@@ -13,7 +13,7 @@ from .main import app
 from .routers.url_router import router as url_router
 
 # Service layer
-from .services import UrlService, OnboardingUrlService, ConfigService
+from .services import UrlService, OnboardingUrlService, config_service
 
 # Models
 from .models import (
@@ -35,7 +35,7 @@ __all__ = [
     # Services
     'UrlService',
     'OnboardingUrlService', 
-    'ConfigService',
+    'config_service',
     
     # Models
     'UrlInfo',
