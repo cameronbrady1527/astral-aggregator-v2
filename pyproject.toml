@@ -8,6 +8,7 @@ dependencies = [
     "aiohttp>=3.12.15",
     "fastapi>=0.116.1",
     "firecrawl>=2.16.5",
+    "httpx>=0.28.1",
     "openai>=1.99.2",
     "openpyxl>=3.1.5",
     "pydantic>=2.11.7",

@@ -10,7 +10,7 @@ class ConfigService:
     """Service for loading and managing application configuration"""
     
     def __init__(self):
-        self._sites_config = Optional[SitesConfig] = None
+        self._sites_config: Optional[SitesConfig] = None
         self._env_loaded = False
         self._load_environment()
     
