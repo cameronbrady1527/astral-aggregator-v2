@@ -1,4 +1,4 @@
-from typing import List, Optional, Dict
+from typing import List, Optional, Dict, Union
 from pydantic import BaseModel, Field
 from enum import Enum
 from datetime import datetime
@@ -70,8 +70,22 @@ class OutputURLsWithInfo(BaseModel):
             datetime: lambda v: v.isoformat() if v else None
         }
 
+class UrlProcessingResult(BaseModel):
+    """Result of URL processing operations with preserved metadata"""
+    urls: List[UrlInfo]
+    total_count: int
+    processing_time_seconds: float
+    timestamp: datetime = Field(default_factory=datetime.now)
+    operation_type: str  # "deduplication", "normalization", "filtering", etc.
+    metadata: Dict[str, Union[str, int, float, bool, List[str]]] = Field(default_factory=dict)  # Operation-specific data
+
+    class Config:
+        json_encoders = {
+            datetime: lambda v: v.isoformat() if v else None
+        }
+
 class OutputURLsWithoutInfo(BaseModel):
-    """URLS without metadata"""
+    """URLS without metadata - DEPRECATED: Use UrlProcessingResult instead"""
     urls: List[str]
     total_count: int
     timestamp: datetime = Field(default_factory=datetime.now)
