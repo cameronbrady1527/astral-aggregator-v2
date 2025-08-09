@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Optional, Dict
 from pydantic import BaseModel, Field
 from enum import Enum
 from datetime import datetime
@@ -20,13 +20,66 @@ class UrlInfo(BaseModel):
             datetime: lambda v: v.isoformat() if v else None
         }
 
+class UrlResolutionResult(BaseModel):
+    """Result of URL resolution operation"""
+    original_url: str
+    resolved_url: str
+    resolution_success: bool
+    error_message: Optional[str] = None
+    resolution_time: Optional[float] = None  # Time taken to resolve in seconds
+
+class UrlResolutionMapping(BaseModel):
+    """Mapping of original URLs to resolved URLs with metadata"""
+    mappings: Dict[str, UrlResolutionResult]
+    total_urls: int
+    successful_resolutions: int
+    failed_resolutions: int
+    processing_time_seconds: float
+    timestamp: datetime = Field(default_factory=datetime.now)
+
+    class Config:
+        json_encoders = {
+            datetime: lambda v: v.isoformat() if v else None
+        }
+
+class UrlDeduplicationResult(BaseModel):
+    """Result of URL deduplication operation"""
+    original_urls: List[str]
+    unique_urls: List[str]
+    duplicates_removed: List[str]
+    duplicate_groups: List[List[str]]  # Groups of URLs that resolve to same page
+    total_original: int
+    total_unique: int
+    total_duplicates: int
+    processing_time_seconds: float
+    timestamp: datetime = Field(default_factory=datetime.now)
+
+    class Config:
+        json_encoders = {
+            datetime: lambda v: v.isoformat() if v else None
+        }
+
 class OutputURLsWithInfo(BaseModel):
     """URLs with metadata for traceability"""
     urls: List[UrlInfo]
+    total_count: int
+    timestamp: datetime = Field(default_factory=datetime.now)
+
+    class Config:
+        json_encoders = {
+            datetime: lambda v: v.isoformat() if v else None
+        }
 
 class OutputURLsWithoutInfo(BaseModel):
     """URLS without metadata"""
     urls: List[str]
+    total_count: int
+    timestamp: datetime = Field(default_factory=datetime.now)
+
+    class Config:
+        json_encoders = {
+            datetime: lambda v: v.isoformat() if v else None
+        }
 
 class OnboardingResult(BaseModel):
     """Result set from onboarding"""
@@ -81,7 +134,7 @@ class ProcessingSummary(BaseModel):
     processing_time_seconds: float
     errors: List[str] = Field(default_factory=list)
     warnings: List[str] = Field(default_factory=list)
-    detection_methods_uised: List[str] = Field(default_factory=list)
+    detection_methods_used: List[str] = Field(default_factory=list)
 
     class Config:
         json_encoders = {
