@@ -17,3 +17,7 @@ config/sites.yaml
 
 # Output
 output/
+
+# IDE-files
+.cursor/
+.vscode
