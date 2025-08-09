@@ -13,8 +13,7 @@
 from pathlib import Path
 from datetime import datetime
 import json
-from pydoc import Helper
-from typing import Any, Dict, List
+from typing import Dict, List
 
 # Astral AI ----
 from app.models.url_models import ProcessingSummary, UrlInfo, UrlSet, OnboardingResult
@@ -140,12 +139,10 @@ class JsonWriter:
 
         return file_path
     
-    @Helper
     def _ensure_directory_exists(self, directory: Path) -> None:
         """Ensure output directory exists, create if necessary."""
         directory.mkdir(parents=True, exist_ok=True)
     
-    @Helper
     def _format_timestamp(self, dt: datetime) -> str:
         """Format datetime for directory naming."""
         return dt.strftime("%Y%m%d_%H%M%S")
