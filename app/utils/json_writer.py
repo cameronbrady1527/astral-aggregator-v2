@@ -96,7 +96,7 @@ class JsonWriter:
 
         return full_directory_path
     
-    def write_url_set(self, site_id: str, url_set: List[UrlInfo], filename: str = "full_url_set.json") -> Path:
+    def write_url_set(self, site_id: str, url_list: List[UrlInfo], filename: str = "full_url_set.json") -> Path:
         """Write complete URL set with metadata to JSON file."""
         directory = self.create_site_directory(site_id)
         file_path = directory / filename
@@ -104,8 +104,8 @@ class JsonWriter:
         url_set_data = UrlSet(
             site_id=site_id,
             timestamp=datetime.now(),
-            urls=url_set,
-            total_count=len(url_set)
+            urls=url_list,
+            total_count=len(url_list)
         )
 
         with open(file_path, "w", encoding="utf-8") as file:
@@ -134,7 +134,7 @@ class JsonWriter:
             **summary.model_dump()
         }
 
-        with open(file_path, "w", encoding="utf=8") as file:
+        with open(file_path, "w", encoding="utf-8") as file:
             json.dump(summary_data, file, indent=2, ensure_ascii=False)
 
         return file_path

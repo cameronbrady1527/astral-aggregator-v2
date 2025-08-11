@@ -26,3 +26,40 @@ sites:
     onboarding_datetime: null
     status: not_onboarded
     last_processed: null    
+
+
+
+
+
+
+sites:
+  judiciary_uk:
+    is_sitemap_index: true
+    last_processed: null
+    name: Judiciary UK
+    onboarded: true
+    onboarding_datetime: '2025-08-09T16:19:28.508037'
+    sitemap_url: https://www.judiciary.uk/sitemap_index.xml
+    status: onboarded
+    top_urls:
+    - https://www.judiciary.uk/news/
+    - https://www.judiciary.uk/judgments/
+    - https://www.judiciary.uk/press-releases/
+    - https://www.judiciary.uk/consultations/
+    - https://www.judiciary.uk/about-the-judiciary/
+    url: https://www.judiciary.uk/
+  waverley_gov:
+    is_sitemap_index: false
+    last_processed: null
+    name: Waverley Borough Council
+    onboarded: true
+    onboarding_datetime: '2025-08-10T21:30:22.250584'
+    sitemap_url: https://www.waverley.gov.uk/sitemap.xml
+    status: onboarded
+    top_urls:
+    - https://www.waverley.gov.uk/council-updates
+    - https://www.waverley.gov.uk/Council-updates
+    - https://www.waverley.gov.uk/Council-updates/Read-our-latest-news
+    - https://www.waverley.gov.uk/services/greenspaces-leisure-and-things-to-do
+    - https://www.waverley.gov.uk/services/business-and-licensing
+    url: https://www.waverley.gov.uk/

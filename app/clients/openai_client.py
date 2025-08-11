@@ -57,7 +57,7 @@ class OpenAIClient:
             response = await self.client.chat.completions.create(
                 model=model,
                 messages=[
-                    {"role": "system", "content": "You are an expert at analyzing website URLs to identify which pages are most likely to change frequently with new article-worthy content."},
+                    {"role": "system", "content": "You are an expert at analyzing website URLs to identify which pages serve as content discovery hubs - pages that contain links to multiple articles and get updated when new content is published. You should NOT select individual article pages."},
                     {"role": "user", "content": prompt}
                 ],
                 response_format={"type": "json_object"},
@@ -92,7 +92,7 @@ class OpenAIClient:
             response = await self.client.chat.completions.create(
                 model=model,
                 messages=[
-                    {"role": "system", "content": "You are an expert judge that reviews multiple AI suggestions and selects the best URLs for monitoring."},
+                    {"role": "system", "content": "You are an expert judge that reviews multiple AI suggestions and selects the best URLs for monitoring. You should prioritize content discovery hubs - pages that serve as entry points to discover new articles and content, NOT individual article pages."},
                     {"role": "user", "content": prompt}
                 ],
                 response_format={"type": "json_object"},

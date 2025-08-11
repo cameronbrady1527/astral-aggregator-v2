@@ -15,6 +15,7 @@ from typing import List, Optional
 
 # Third Party -----
 from firecrawl import AsyncFirecrawlApp
+from firecrawl import ScrapeOptions
 
 # Astral AI ----
 from app.services.config_service import config_service
@@ -61,23 +62,34 @@ class FirecrawlClient:
             raise RuntimeError("Client must be used as async context manager")
             
         try:
+            print(f"🔍 Mapping site: {url}")
             response = await self._app.map_url(
                 url=url,
                 limit=30000,
                 include_subdomains=include_subdomains
             )
             
+            print(f"🔍 Map response type: {type(response)}")
+            print(f"🔍 Map response: {response}")
+            
             # extract URLs from response
-            # assuming response has a structure with URLs
             if hasattr(response, 'links'):
-                return response.links
+                urls = response.links
+                print(f"🔍 Found {len(urls)} URLs in response.links")
+                return urls
             elif hasattr(response, 'urls'):
-                return response.urls
+                urls = response.urls
+                print(f"🔍 Found {len(urls)} URLs in response.urls")
+                return urls
             elif isinstance(response, dict):
-                return response.get('links', []) or response.get('urls', [])
+                urls = response.get('links', []) or response.get('urls', [])
+                print(f"🔍 Found {len(urls)} URLs in response dict")
+                return urls
             else:
                 # fallback - try to extract URLs from response
-                return self._extract_urls_from_response(response)
+                urls = self._extract_urls_from_response(response)
+                print(f"🔍 Found {len(urls)} URLs using fallback extraction")
+                return urls
             
         except Exception as e:
             raise Exception(f"Firecrawl map SDK call failed: {str(e)}")
@@ -105,7 +117,7 @@ class FirecrawlClient:
             batch = urls[i:i + batch_size]
             
             tasks = [
-                self._crawl_single_url(url, max_depth, limit)
+                self.crawl_single_url(url, max_depth, limit)
                 for url in batch
             ]
             
@@ -117,7 +129,7 @@ class FirecrawlClient:
         
         return list(set(all_discovered_urls))  # remove duplicates
 
-    async def _crawl_single_url(self, url: str, max_depth: int, limit: int) -> List[str]:
+    async def crawl_single_url(self, url: str, max_depth: int, limit: int) -> List[str]:
         """
         Raw SDK call to crawl a single URL.
         
@@ -129,26 +141,75 @@ class FirecrawlClient:
         Returns:
             List of discovered URLs
         """
-        try:
-            response = await self._app.crawl_url(
-                url=url,
-                max_depth=max_depth,
-                limit=limit
-            )
-            
-            # extract URLs from response
-            if hasattr(response, 'links'):
-                return response.links
-            elif hasattr(response, 'urls'):
-                return response.urls
-            elif isinstance(response, dict):
-                return response.get('links', []) or response.get('urls', [])
-            else:
-                return self._extract_urls_from_response(response)
-            
-        except Exception as e:
-            print(f"Error crawling {url}: {str(e)}")
-            return []
+        max_retries = 3
+        base_delay = 10  # Base delay for rate limit errors
+        
+        for attempt in range(max_retries):
+            try:
+                # Use synchronous crawl_url which waits for completion and returns full response
+                print(f"🔍 Starting crawl for {url}...")
+                crawl_response = await self._app.crawl_url(
+                    url=url,
+                    max_depth=max_depth,
+                    limit=limit,
+                    allow_backward_links = True,
+                    scrape_options = ScrapeOptions(
+                        formats = [ 'links' ],
+                        onlyMainContent = True,
+                        parsePDF = False,
+                        maxAge = 14400000
+                    )
+                )
+                
+                print(f"🔍 Crawl response type: {type(crawl_response)}")
+                print(f"🔍 Crawl response: {crawl_response}")
+                
+                # According to docs, synchronous crawl_url should return completed results directly
+                # Check if we have data with URLs
+                if hasattr(crawl_response, 'data') and crawl_response.data:
+                    print(f"🔍 Found data with {len(crawl_response.data)} items")
+                    # Extract URLs from the crawled documents
+                    urls = []
+                    for i, doc in enumerate(crawl_response.data):
+                        print(f"🔍 Processing document {i}: {doc}")
+                        
+                        # Extract URLs from the links field (this is what we actually want)
+                        if hasattr(doc, 'links') and doc.links:
+                            # Add all valid links from the document
+                            for link in doc.links:
+                                if isinstance(link, str) and link.strip() and link.startswith('http'):
+                                    urls.append(link)
+                                    print(f"🔍 Added link: {link}")
+                        else:
+                            print(f"🔍 Document has no links field: {type(doc)}")
+                            if hasattr(doc, '__dict__'):
+                                print(f"🔍 Document attributes: {dir(doc)}")
+                    
+                    print(f"🔍 Total URLs extracted: {len(urls)}")
+                    return urls
+                else:
+                    print(f"🔍 No data found in crawl response")
+                    return []
+                    
+            except Exception as e:
+                error_str = str(e)
+                
+                # Check if it's a rate limit error
+                if "429" in error_str or "rate limit" in error_str.lower():
+                    if attempt < max_retries - 1:
+                        delay = base_delay * (2 ** attempt)  # Exponential backoff
+                        print(f"🔍 Rate limit hit for {url}, retrying in {delay} seconds (attempt {attempt + 1}/{max_retries})")
+                        await asyncio.sleep(delay)
+                        continue
+                    else:
+                        print(f"🔍 Rate limit error for {url} after {max_retries} attempts, skipping")
+                        return []
+                else:
+                    # Non-rate-limit error, don't retry
+                    print(f"Error crawling {url}: {str(e)}")
+                    return []
+        
+        return []
     
     def _extract_urls_from_response(self, response) -> List[str]:
         """

@@ -34,23 +34,50 @@ class AIConfig:
     def build_analysis_prompt(cls, request: UrlAnalysisRequest) -> str:
         """Build the analysis prompt for URL evaluation."""
         return f"""
-        Analyze the following URLs from {request.site_name} and identify the 5 URLs that are most likely to change frequently with new article-worthy content.
+        Analyze the following URLs from {request.site_name} and identify the 5 URLs that are most likely to serve as content discovery hubs for new articles and pages.
         
-        Consider factors like:
-        - News sections or blog areas
-        - Content that gets updated regularly
-        - Areas where new articles are published
-        - Avoid static pages like "About Us", "Contact", etc.
+        You want URLs that are:
+        - Content section pages (like /news/, /blog/, /press-releases/, /judgments/, /articles/)
+        - Archive or index pages where new content gets added
+        - Dynamic content aggregators (pages with terms like "latest", "recent", "updates", "announcements")
+        - Pages that serve as entry points to discover new content, even if they're subsections
+        - NOT individual article pages or static content pages
+        - NOT pages like "About Us", "Contact", "Privacy Policy", "Terms of Service"
+        
+        Good examples:
+        - /news/ (news section homepage)
+        - /blog/ (blog index page)
+        - /press-releases/ (press release archive)
+        - /judgments/ (judgment archive)
+        - /publications/ (publications index)
+        - /reports/ (reports archive)
+        - /latest-news/ (recent news aggregator)
+        - /council-updates/latest-news/ (subsection news aggregator)
+        - /announcements/ (announcement hub)
+        - /whats-new/ (new content showcase)
+        
+        Bad examples:
+        - /news/specific-article-title (individual article)
+        - /blog/2024/01/specific-post (individual blog post)
+        - /about-us (static page)
+        - /contact (static page)
+        - /privacy-policy (static page)
+        
+        Look for:
+        - Pages that aggregate multiple pieces of content
+        - URLs with dynamic content indicators (latest, recent, updates, news)
+        - Both main sections AND valuable subsections that serve as content discovery points
+        - Pages that would be bookmarked by users wanting to check for new content
         
         URLs to analyze: {request.urls}
         
         Return a JSON object with this exact structure:
         {{
             "urls": ["url1", "url2", "url3", "url4", "url5"],
-            "reasoning": "Explanation of why these URLs were selected"
+            "reasoning": "Explanation of why these URLs were selected as content discovery hubs"
         }}
         
-        Return exactly 5 URLs that are most likely to change with new content.
+        Return exactly 5 URLs that are content discovery hubs, not individual articles.
         """
     
     @classmethod
@@ -63,7 +90,24 @@ class AIConfig:
         
         return f"""
         Review the following URL suggestions from multiple AI analyses for {request.site_name}.
-        Select the {request.selection_count} URLs that are MOST likely to change frequently with new article-worthy content.
+        Select the {request.selection_count} URLs that are BEST content discovery hubs for finding new articles and pages.
+        
+        A good content discovery hub:
+        - Is a section/archive page (like /news/, /blog/, /press-releases/)
+        - Contains links to multiple articles or content pieces
+        - Gets updated when new content is published
+        - Serves as an entry point to discover new content
+        - May be a subsection that aggregates content (like /council-updates/latest-news/)
+        - Has dynamic content indicators in the URL or purpose
+        - Is NOT an individual article page
+        - Would be useful for users wanting to check for new content regularly
+        
+        When evaluating URLs, prioritize:
+        1. **Content density**: Pages that link to many articles
+        2. **Update frequency**: Pages that are likely updated regularly
+        3. **User discoverability**: How easily users can find new content
+        4. **Content aggregation**: Pages that serve as content showcases
+        5. **Hierarchical value**: Both main sections and valuable subsections
         
         Suggestions:
         {suggestions_text}
@@ -72,8 +116,8 @@ class AIConfig:
         {{
             "urls": ["url1", "url2", "url3", "url4", "url5"],
             "rejected_urls": ["rejected1", "rejected2"],
-            "reasoning": "Explanation of why these URLs were selected as the best"
+            "reasoning": "Explanation of why these URLs are the best content discovery hubs"
         }}
         
-        Return exactly {request.selection_count} URLs that are the best candidates for monitoring.
+        Return exactly {request.selection_count} URLs that are content discovery hubs, not individual articles.
         """

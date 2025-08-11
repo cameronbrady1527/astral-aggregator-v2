@@ -55,6 +55,36 @@ class ConfigService:
         """Current environment (development, production, etc.)"""
         return self.env_var("ENVIRONMENT", default="development")
 
+    @property
+    def firecrawl_rate_limit_delay(self) -> int:
+        """Delay between Firecrawl requests to respect rate limits (in seconds)"""
+        return int(self.env_var("FIRECRAWL_RATE_LIMIT_DELAY", default="6"))
+
+    @property
+    def firecrawl_adaptive_rate_limit(self) -> bool:
+        """Whether to use adaptive rate limiting (recommended: True)"""
+        return self.env_var("FIRECRAWL_ADAPTIVE_RATE_LIMIT", default="True").lower() == "true"
+
+    @property
+    def firecrawl_min_delay(self) -> float:
+        """Minimum delay between requests in seconds (for adaptive rate limiting)"""
+        return float(self.env_var("FIRECRAWL_MIN_DELAY", default="1.0"))
+
+    @property
+    def firecrawl_max_delay(self) -> float:
+        """Maximum delay between requests in seconds (for adaptive rate limiting)"""
+        return float(self.env_var("FIRECRAWL_MAX_DELAY", default="10.0"))
+
+    @property
+    def firecrawl_batch_size(self) -> int:
+        """Number of URLs to process in each batch (for adaptive rate limiting)"""
+        return int(self.env_var("FIRECRAWL_BATCH_SIZE", default="3"))
+
+    @property
+    def firecrawl_rate_limit_window(self) -> int:
+        """Time window in seconds to track rate limit responses (for adaptive rate limiting)"""
+        return int(self.env_var("FIRECRAWL_RATE_LIMIT_WINDOW", default="60"))
+
     def load_sites_config(self) -> SitesConfig:
         """Loads the sites configuration from sites.yaml"""
         if self._sites_config is not None:
@@ -96,7 +126,7 @@ class ConfigService:
 
         if site_id not in config.sites:
             # create a new site if it doesn't exist
-            config.sites[site_id] = SitesConfig(
+            config.sites[site_id] = SiteConfig(
                 name=updates.name or f"Site {site_id}",
                 url=updates.url or "https://waverley.gov.uk",
                 sitemap_url=updates.sitemap_url or "https://waverley.gov.uk/sitemap.xml"
@@ -107,25 +137,37 @@ class ConfigService:
 
         # update only the fields that are provided
         update_data = updates.model_dump(exclude_unset=True)
+
+        
         for field, value in update_data.items():
-            setattr(current_site, field, value)
+            if hasattr(current_site, field):
+                setattr(current_site, field, value)
 
         # save back to file
         config_path = Path(__file__).parent.parent.parent / "config" / "sites.yaml"
+        
+        # Convert to basic Python types for safe YAML serialization
+        safe_config = config.model_dump(mode='json')
+
+        
         with open(config_path, "w", encoding="utf-8") as file:
-            yaml.dump(config.dict(), file, default_flow_style=False, indent=2)
+            yaml.dump(safe_config, file, default_flow_style=False, indent=2)
 
         # clear cache to force reload
         self._sites_config = None
 
     def mark_site_onboarded(self, site_id: str, onboarding_result: OnboardingResult) -> None:
         """Mark a site as onboarded with the onboarding results"""
+
+        
         update = SiteUpdate(
             onboarded=True,
             top_urls=onboarding_result.top_urls,
             onboarding_datetime=onboarding_result.onboarding_time,
             status="onboarded"
         )
+        
+
         self.update_site_config(site_id, update)
 
     def is_site_onboarded(self, site_id: str) -> bool:

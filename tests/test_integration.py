@@ -104,7 +104,7 @@ async def test_ai_models():
             urls=["https://example.com/news", "https://example.com/blog"],
             site_name="Example Site"
         )
-        print(f"✅ Analysis request: {analysis_request.dict()}")
+        print(f"✅ Analysis request: {analysis_request.model_dump()}")
         
         # Test UrlJudgeRequest
         judge_request = UrlJudgeRequest(
@@ -115,7 +115,7 @@ async def test_ai_models():
             site_name="Example Site",
             selection_count=5
         )
-        print(f"✅ Judge request: {judge_request.dict()}")
+        print(f"✅ Judge request: {judge_request.model_dump()}")
         
         return True
     except Exception as e:
