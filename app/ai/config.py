@@ -52,7 +52,6 @@ class AIConfig:
         - /publications/ (publications index)
         - /reports/ (reports archive)
         - /latest-news/ (recent news aggregator)
-        - /council-updates/latest-news/ (subsection news aggregator)
         - /announcements/ (announcement hub)
         - /whats-new/ (new content showcase)
         
@@ -97,7 +96,7 @@ class AIConfig:
         - Contains links to multiple articles or content pieces
         - Gets updated when new content is published
         - Serves as an entry point to discover new content
-        - May be a subsection that aggregates content (like /council-updates/latest-news/)
+        - May be a subsection that aggregates content
         - Has dynamic content indicators in the URL or purpose
         - Is NOT an individual article page
         - Would be useful for users wanting to check for new content regularly
