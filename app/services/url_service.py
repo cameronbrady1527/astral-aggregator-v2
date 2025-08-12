@@ -22,13 +22,11 @@ from app.models.url_models import (
     UrlProcessingResult, 
     UrlSet,
     ProcessingSummary,
-    UrlResolutionMapping,
-    UrlDeduplicationResult,
     OutputURLsWithInfo,
     UrlAnalysisRequest,
     UrlJudgeRequest
 )
-from app.models.config_models import SiteConfig, SiteStatus
+from app.models.config_models import SiteConfig
 from app.clients.firecrawl_client import FirecrawlClient
 from app.clients.openai_client import OpenAIClient
 from app.crawler.sitemap_crawler import SitemapCrawler
@@ -37,7 +35,6 @@ from app.utils.url_utils import (
     create_url_info, 
     merge_url_lists, 
     resolve_urls, 
-    filter_resolved_duplicates
 )
 from app.utils.json_writer import JsonWriter
 from app.ai.config import AIConfig
@@ -88,20 +85,14 @@ class UrlService:
             print(f"🔍 Merging {len(discovery_result.urls)} existing URLs with {len(additional_urls)} additional URLs...")
             all_url_infos = discovery_result.urls + additional_urls
         
-        # Step 4: Create URL set with proper structure
+        # Step 4: Reporting on final URL set size
         print(f"🔍 Final URL set contains {len(all_url_infos)} total URLs")
         
-        # Debug: Check the structure of all_url_infos
-        print(f"🔍 Debug: Type of all_url_infos: {type(all_url_infos)}")
-        if all_url_infos:
-            print(f"🔍 Debug: First item type: {type(all_url_infos[0])}")
-            print(f"🔍 Debug: First item: {all_url_infos[0]}")
-        
-        # Safety check: ensure all items are UrlInfo objects
+        # Step 5: Safety check - ensure all items are UrlInfo objects
         all_url_infos = [url for url in all_url_infos if isinstance(url, UrlInfo)]
         print(f"🔍 After safety check: {len(all_url_infos)} valid UrlInfo objects")
         
-        # Show breakdown by detection method
+        # Step 6: Show breakdown by detection method
         method_counts = {}
         for url_info in all_url_infos:
             if hasattr(url_info, 'detection_methods'):
@@ -116,6 +107,7 @@ class UrlService:
         for method, count in method_counts.items():
             print(f"  - {method}: {count} URLs")
         
+        # Step 7: Create URL set with proper structure
         url_set = UrlSet(
             site_id=site_id,
             timestamp=datetime.now(),
@@ -123,19 +115,20 @@ class UrlService:
             total_count=len(all_url_infos)
         )
         
-        # Step 5: Save results using JsonWriter
+        # Step 8: Save results using JsonWriter
         output_path = await self._save_url_set(url_set)
         
-        # Step 6: Create processing summary
+        # Step 9: Create processing summary
         processing_time = (datetime.now() - start_time).total_seconds()
         
-        # Collect all detection methods safely
+        # Step 10: Collect all detection methods safely
         detection_methods_used = []
         for url_info in all_url_infos:
             if hasattr(url_info, 'detection_methods'):
                 for method in url_info.detection_methods:
                     detection_methods_used.append(method.value)
         
+        # Step 11: Build processing summary
         summary = ProcessingSummary(
             status="completed",
             urls_found=len(all_url_infos),
@@ -144,7 +137,7 @@ class UrlService:
             detection_methods_used=list(set(detection_methods_used))
         )
         
-        # Save the final processing summary with correct timing
+        # Step 12: Save the final processing summary with correct timing
         self.json_writer.write_processing_summary(site_id, summary)
         
         return {
@@ -162,16 +155,16 @@ class UrlService:
         """Orchestrates concurrent URL discovery from sitemap and Firecrawl."""
         start_time = datetime.now()
         
-        # Create tasks for concurrent execution
+        # Step 1.1: Create tasks for concurrent execution
         tasks = [
             self._get_urls_from_sitemap(site_config),
             self._get_urls_from_firecrawl_map(site_config)
         ]
         
-        # Execute concurrently
+        # Step 1.2: Execute concurrently
         results = await asyncio.gather(*tasks, return_exceptions=True)
         
-        # Handle exceptions and merge results
+        # Step 1.3: Handle exceptions and merge results
         url_lists = []
         successful_sources = 0
         for i, result in enumerate(results):
@@ -182,10 +175,11 @@ class UrlService:
                 url_lists.append(result)
                 successful_sources += 1
         
-        # Merge all URL lists using the proper merging function
+        # Step 1.4: Merge all URL lists using the proper merging function
         merged_urls = merge_url_lists(url_lists)
         processing_time = (datetime.now() - start_time).total_seconds()
         
+        # Step 1.5: Build and return UrlProcessingResult response object
         return UrlProcessingResult(
             urls=merged_urls,
             total_count=len(merged_urls),
@@ -222,26 +216,26 @@ class UrlService:
         print(f"🔍 Starting to crawl {len(top_urls)} top URLs for additional URL discovery...")
         all_discovered_urls = []
         
-        # Import rate limiter
+        # Step 3.1: Import rate limiter
         from app.utils.rate_limiter import create_rate_limiter_from_config, process_with_rate_limiting
         
-        # Create adaptive rate limiter
+        # Step 3.2: Create adaptive rate limiter
         rate_limiter = create_rate_limiter_from_config(config_service)
         
         async with FirecrawlClient() as client:
-            # Define the processor function for each URL
+            # Step 3.3: Define the processor function for each URL
             async def process_single_url(url: str):
                 try:
                     print(f"🔍 Crawling URL: {url}")
                     
-                    # Crawl single URL with Firecrawl
+                    # Step 3.4.1a: Crawl single URL with Firecrawl
                     discovered_urls = await client.crawl_single_url(url, max_depth=2, limit=2)
                     
                     if discovered_urls:
-                        # Filter out any None or invalid URLs before creating UrlInfo objects
+                        # Step 3.4.1b: Filter out any None or invalid URLs before creating UrlInfo objects
                         valid_urls = [url for url in discovered_urls if url and isinstance(url, str) and url.strip()]
                         if valid_urls:
-                            # Convert to UrlInfo objects
+                            # Step 3.4.1c: Convert to UrlInfo objects
                             url_infos = [create_url_info(valid_url, DetectionMethod.FIRECRAWL_CRAWL) for valid_url in valid_urls]
                             print(f"🔍 Discovered {len(valid_urls)} valid URLs from {url}")
                             return url_infos
@@ -259,7 +253,7 @@ class UrlService:
                     rate_limiter.record_event(success=False, is_rate_limit=is_rate_limit)
                     raise e
             
-            # Process URLs with adaptive rate limiting
+            # Step 3.4: Process URLs with adaptive rate limiting
             batch_size = config_service.firecrawl_batch_size
             results = await process_with_rate_limiting(
                 top_urls, 
@@ -268,7 +262,7 @@ class UrlService:
                 batch_size
             )
             
-            # Collect all discovered URLs
+            # Step 3.5: Collect all discovered URLs
             for i, result in enumerate(results):
                 print(f"🔍 Debug: Processing result {i}: {type(result)} - {result}")
                 if result and isinstance(result, list):
@@ -281,28 +275,26 @@ class UrlService:
                 else:
                     print(f"🔍 Debug: Skipping None result")
             
-            # Safety check: filter out any None values that might have slipped through
+            # Step 3.6: Safety check - filter out any None values that might have slipped through
             all_discovered_urls = [url for url in all_discovered_urls if url is not None]
             
-            # Safety check: ensure all items are UrlInfo objects
+            # Step 3.7: Safety check - ensure all items are UrlInfo objects
             all_discovered_urls = [url for url in all_discovered_urls if isinstance(url, UrlInfo)]
             
-            # Print rate limiter stats
+            # Step 3.8: Print rate limiter stats
             stats = rate_limiter.get_stats()
             print(f"🔍 Rate limiter stats: {stats}")
         
-        # Remove duplicates and return unique URLs
+        # Step 3.9: Remove duplicates and return unique URLs
         if all_discovered_urls:
             print(f"🔍 Total discovered URLs before deduplication: {len(all_discovered_urls)}")
-            # Debug: Check the structure of all_discovered_urls
-            print(f"🔍 Debug: Type of all_discovered_urls: {type(all_discovered_urls)}")
-            if all_discovered_urls:
-                print(f"🔍 Debug: First item type: {type(all_discovered_urls[0])}")
-                print(f"🔍 Debug: First item: {all_discovered_urls[0]}")
-            # Since all_discovered_urls is already a list of UrlInfo objects, just return it
-            # The merge_url_lists function expects a list of lists, but we have a single list
-            print(f"🔍 Total unique discovered URLs after deduplication: {len(all_discovered_urls)}")
-            return all_discovered_urls
+            
+            # Deduplicate URLs using merge_url_lists
+            # Since merge_url_lists expects a list of lists, we wrap our single list
+            deduplicated_urls = merge_url_lists([all_discovered_urls])
+            
+            print(f"🔍 Total unique discovered URLs after deduplication: {len(deduplicated_urls)}")
+            return deduplicated_urls
         
         print("🔍 No additional URLs discovered from top URLs")
         return []
@@ -340,9 +332,9 @@ class OnboardingUrlService:
         top_urls = await self._run_ai_judge(ai_suggestions, site_name)
         print(f"👨‍⚖️ AI judge selected {len(top_urls)} URLs: {top_urls}")
         
-        # Step 3: Validate unique resolutions and filter content hubs
-        print(f"🔍 Validating and filtering URLs...")
-        validated_urls = await self._validate_and_filter_urls(top_urls, urls)
+        # Step 3: Validate unique resolutions
+        print(f"🔍 Validating URLs...")
+        validated_urls = await self._validate_unique_resolutions(top_urls, urls)
         print(f"🔍 Validation complete. Final URLs: {validated_urls}")
         
         # Step 4: Save onboarding results using existing config_service
@@ -408,115 +400,6 @@ class OnboardingUrlService:
             result = await client.judge_selection(request, prompt)
             return result.selected_urls
     
-    async def _validate_and_filter_urls(self, top_urls: List[str], all_urls: List[str]) -> List[str]:
-        """Ensure URLs don't resolve to the same page and are content discovery hubs."""
-        
-        print(f"🔍 Validating and filtering {len(top_urls)} top URLs...")
-        
-        # Filter out URLs that look like individual articles
-        filtered_urls = []
-        for url in top_urls:
-            if self._looks_like_content_hub(url):
-                filtered_urls.append(url)
-                print(f"✅ {url} - passed content hub validation")
-            else:
-                print(f"❌ {url} - failed content hub validation")
-        
-        print(f"🔍 After content hub filtering: {len(filtered_urls)} URLs")
-        
-        # If we don't have enough, try to find more from remaining URLs
-        while len(filtered_urls) < 5 and all_urls:
-            remaining = [url for url in all_urls if url not in filtered_urls]
-            if not remaining:
-                break
-                
-            for url in remaining:
-                if self._looks_like_content_hub(url):
-                    filtered_urls.append(url)
-                    print(f"➕ Added replacement URL: {url}")
-                    break
-            else:
-                break
-        
-        # Ensure we don't exceed 5 URLs
-        filtered_urls = filtered_urls[:5]
-        print(f"🔍 Final filtered URLs before resolution validation: {len(filtered_urls)}")
-        
-        # Validate unique resolutions
-        if len(filtered_urls) > 1:
-            print(f"🔍 Running resolution validation on {len(filtered_urls)} URLs...")
-            validated_urls = await self._validate_unique_resolutions(filtered_urls, all_urls)
-            print(f"🔍 After resolution validation: {len(validated_urls)} URLs")
-            return validated_urls
-        
-        print(f"🔍 Skipping resolution validation (only {len(filtered_urls)} URLs)")
-        return filtered_urls
-    
-    def _looks_like_content_hub(self, url: str) -> bool:
-        """Check if URL looks like a content discovery hub rather than individual article."""
-
-        
-        # Look for patterns that suggest content hubs
-        hub_patterns = [
-            '/news/', '/blog/', '/press-releases/', '/judgments/',
-            '/articles/', '/publications/', '/reports/', '/updates/',
-            '/announcements/', '/media/', '/resources/', '/services/',
-            '/council-', '/council_', '/government-', '/government_'
-        ]
-        
-        # Look for patterns that suggest individual articles
-        article_patterns = [
-            '/news/20', '/blog/20', '/press-releases/20',  # Date patterns
-            '.html', '.htm', '.php', '.aspx'  # File extensions
-        ]
-        
-        # Check if it's likely a hub
-        is_hub = any(pattern in url.lower() for pattern in hub_patterns)
-        
-        # Check if it's likely an individual article
-        is_article = any(pattern in url.lower() for pattern in article_patterns)
-        
-        # Check URL depth - shallow URLs are more likely to be hubs
-        url_depth = len([part for part in url.split('/') if part])
-        
-        # Additional checks for individual articles
-        # URLs with dates in them are likely articles
-        import re
-        has_date = re.search(r'/\d{4}(?:/\d{2})?', url)
-        
-        # URLs with long path segments (likely titles) are probably articles
-        path_parts = [part for part in url.split('/') if part]
-        has_long_segments = any(len(part) > 30 for part in path_parts)  # Increased threshold
-        
-        # URLs ending with specific words that suggest articles
-        article_endings = ['article', 'post', 'story', 'news', 'press-release']
-        ends_with_article = any(url.lower().endswith(ending) for ending in article_endings)
-        
-        # URLs with file extensions are likely articles
-        has_file_extension = re.search(r'\.(html?|php|aspx?|jsp|asp)$', url.lower())
-        
-        # Check for excessive hyphens/underscores that suggest article titles
-        # But be more lenient - government URLs often use hyphens for readability
-        path_parts = [part for part in url.split('/') if part]
-        excessive_separators = any(
-            len(part.split('-')) > 4 or len(part.split('_')) > 4 
-            for part in path_parts
-        )
-        
-        # If it has multiple article indicators, it's definitely an article
-        article_indicators = sum([
-            is_article,
-            bool(has_date),
-            has_long_segments,
-            ends_with_article,
-            bool(has_file_extension),
-            excessive_separators
-        ])
-        # A good hub should have few article indicators and reasonable depth
-        # Be more lenient with government URLs
-        result = (is_hub or url_depth <= 3) and article_indicators <= 2 and 1 <= url_depth <= 5
-        return result
-    
     async def _validate_unique_resolutions(self, top_urls: List[str], all_urls: List[str]) -> List[str]:
         """Ensure URLs don't resolve to the same page."""
         # Resolve the top URLs
@@ -544,10 +427,6 @@ class OnboardingUrlService:
         while len(unique_urls) < 5 and remaining_urls:
             # Take next URL from remaining
             replacement_url = remaining_urls.pop(0)
-            
-            # Check if it looks like a content hub
-            if not self._looks_like_content_hub(replacement_url):
-                continue
             
             # Resolve it
             replacement_resolution = await resolve_urls([replacement_url])

@@ -259,7 +259,7 @@ async def process_with_rate_limiting(
         batch = items[i:i + batch_size]
         print(f"🔍 Processing batch {i//batch_size + 1}/{(len(items) + batch_size - 1)//batch_size} ({len(batch)} items)")
         
-        # Process batch concurrently
+        # Step 1: Process batch concurrently
         batch_tasks = []
         for item in batch:
             # Wait for rate limiter before starting each task
@@ -267,10 +267,10 @@ async def process_with_rate_limiting(
             task = asyncio.create_task(processor(item))
             batch_tasks.append(task)
         
-        # Wait for batch to complete
+        # Step 2: Wait for batch to complete
         batch_results = await asyncio.gather(*batch_tasks, return_exceptions=True)
         
-        # Process results and record events
+        # Step 3: Process results and record events
         for result in batch_results:
             if isinstance(result, Exception):
                 # Check if it's a rate limit error
