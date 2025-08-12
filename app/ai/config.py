@@ -26,8 +26,8 @@ class AIConfig:
     
     # Model configurations
     MODELS = {
-        "url_analysis": "gpt-4o-mini",
-        "url_judge": "gpt-4o-mini"
+        "url_analysis": "gpt-5",
+        "url_judge": "gpt-5"
     }
     
     @classmethod

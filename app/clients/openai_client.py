@@ -51,7 +51,7 @@ class OpenAIClient:
         """Async context manager exit."""
         pass
     
-    async def analyze_urls(self, request: UrlAnalysisRequest, prompt: str, model: str = "gpt-4o-mini") -> OutputURLsWithInfo:
+    async def analyze_urls(self, request: UrlAnalysisRequest, prompt: str, model: str = "gpt-5") -> OutputURLsWithInfo:
         """Raw API call to OpenAI for URL analysis."""
         try:
             response = await self.client.chat.completions.create(
@@ -86,7 +86,7 @@ class OpenAIClient:
         except Exception as e:
             raise Exception(f"OpenAI analysis API call failed: {str(e)}")
     
-    async def judge_selection(self, request: UrlJudgeRequest, prompt: str, model: str = "gpt-4o-mini") -> UrlJudgeResponse:
+    async def judge_selection(self, request: UrlJudgeRequest, prompt: str, model: str = "gpt-5") -> UrlJudgeResponse:
         """Raw API call to OpenAI for URL selection judging."""
         try:
             response = await self.client.chat.completions.create(
