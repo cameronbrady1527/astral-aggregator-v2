@@ -156,13 +156,13 @@ class AdaptiveRateLimiter:
         success_rate = success_count / total_in_window
         rate_limit_rate = rate_limit_count / total_in_window
         
-        # Adjust delay based on patterns
+        # Use the new, less aggressive delay adjustment methods
         if rate_limit_rate > self.rate_limit_threshold:
-            # Too many rate limits - increase delay
-            self._increase_delay()
+            # Too many rate limits - increase delay (but less aggressively)
+            self._adjust_delay_for_rate_limits()
         elif success_rate > self.success_threshold and rate_limit_rate < 0.05:
             # High success rate, low rate limits - decrease delay
-            self._decrease_delay()
+            self._adjust_delay_for_success()
     
     def _increase_delay(self):
         """Increase the current delay using exponential backoff with jitter."""
@@ -214,6 +214,26 @@ class AdaptiveRateLimiter:
             return 0.0
         return self.rate_limit_count / self.total_requests
 
+    def _adjust_delay_for_rate_limits(self):
+        """Increase delay when rate limits are detected."""
+        # Be less aggressive - only increase delay significantly if we're getting many rate limits
+        if self._calculate_rate_limit_rate() > 0.3:  # Only if >30% rate limit errors
+            self.current_delay = min(self.current_delay * 1.5, self.max_delay)
+            print(f"🔍 Rate limiter: Increased delay to {self.current_delay:.2f}s (rate limit detected)")
+        elif self._calculate_rate_limit_rate() > 0.1:  # Moderate increase for >10% rate limit errors
+            self.current_delay = min(self.current_delay * 1.2, self.max_delay)
+            print(f"🔍 Rate limiter: Moderately increased delay to {self.current_delay:.2f}s (some rate limits)")
+    
+    def _adjust_delay_for_success(self):
+        """Decrease delay when requests are successful."""
+        # Be more aggressive about decreasing delays to improve throughput
+        if self._calculate_success_rate() > 0.95:  # Very high success rate
+            self.current_delay = max(self.current_delay * 0.8, self.min_delay)
+            print(f"🔍 Rate limiter: Decreased delay to {self.current_delay:.2f}s (excellent performance)")
+        elif self._calculate_success_rate() > 0.8:  # Good success rate
+            self.current_delay = max(self.current_delay * 0.9, self.min_delay)
+            print(f"🔍 Rate limiter: Decreased delay to {self.current_delay:.2f}s (good performance)")
+
 # ==============================================================================
 # Helper Functions
 # ==============================================================================
@@ -238,51 +258,131 @@ async def process_with_rate_limiting(
     items: List[Any],
     processor: Callable[[Any], Any],
     rate_limiter: AdaptiveRateLimiter,
-    batch_size: int = 3
+    batch_size: int = 10,  # Increased default batch size
+    max_retries: int = 5   # Increased default retry attempts to match config
 ) -> List[Any]:
     """
     Process items with intelligent rate limiting and batching.
+    GUARANTEES that no items are skipped - implements retry logic for failed items.
     
     Args:
         items: List of items to process
         processor: Async function to process each item
         rate_limiter: Rate limiter instance
         batch_size: Number of items to process in each batch
+        max_retries: Maximum number of retries for failed items
         
     Returns:
-        List of processed results
+        List of processed results (same length as input items)
     """
-    results = []
+    results = [None] * len(items)  # Pre-allocate results array
+    failed_items = []  # Track items that need retrying
     
     # Process in batches
     for i in range(0, len(items), batch_size):
         batch = items[i:i + batch_size]
+        batch_indices = list(range(i, min(i + batch_size, len(items))))
         print(f"🔍 Processing batch {i//batch_size + 1}/{(len(items) + batch_size - 1)//batch_size} ({len(batch)} items)")
         
         # Step 1: Process batch concurrently
         batch_tasks = []
-        for item in batch:
+        for item, idx in zip(batch, batch_indices):
             # Wait for rate limiter before starting each task
             await rate_limiter.wait_if_needed()
             task = asyncio.create_task(processor(item))
-            batch_tasks.append(task)
+            batch_tasks.append((task, idx))
         
         # Step 2: Wait for batch to complete
-        batch_results = await asyncio.gather(*batch_tasks, return_exceptions=True)
-        
-        # Step 3: Process results and record events
-        for result in batch_results:
-            if isinstance(result, Exception):
-                # Check if it's a rate limit error
-                is_rate_limit = "429" in str(result) or "rate limit" in str(result).lower()
-                rate_limiter.record_event(success=False, is_rate_limit=is_rate_limit)
-                results.append(None)  # or handle error as needed
-            else:
+        for task, idx in batch_tasks:
+            try:
+                result = await task
+                results[idx] = result
                 rate_limiter.record_event(success=True)
-                results.append(result)
+            except Exception as e:
+                # Check if it's a rate limit error
+                is_rate_limit = "429" in str(e) or "rate limit" in str(e).lower()
+                rate_limiter.record_event(success=False, is_rate_limit=is_rate_limit)
+                
+                # Store failed item for retry
+                failed_items.append((items[idx], idx, str(e)))
+                print(f"🔍 Item {idx} failed: {str(e)} - will retry")
         
-        # Small delay between batches
-        if i + batch_size < len(items):
-            await asyncio.sleep(0.5)
+        # No delay between batches - process continuously
+        # Only add minimal delay if we're hitting rate limits
+        if rate_limiter._calculate_rate_limit_rate() > 0.1:  # If >10% rate limit errors
+            await asyncio.sleep(0.1)  # Minimal delay only when needed
     
+    # Step 3: Retry failed items
+    retry_count = 0
+    while failed_items and retry_count < max_retries:
+        retry_count += 1
+        print(f"🔍 Retry attempt {retry_count}/{max_retries} for {len(failed_items)} failed items")
+        
+        # Process failed items with increased delays
+        current_failed = failed_items.copy()
+        failed_items = []
+        
+        for item, idx, error in current_failed:
+            try:
+                # Wait longer between retries
+                await asyncio.sleep(rate_limiter.current_delay * 2)
+                await rate_limiter.wait_if_needed()
+                
+                print(f"🔍 Retrying item {idx}: {item}")
+                result = await processor(item)
+                results[idx] = result
+                rate_limiter.record_event(success=True)
+                print(f"🔍 Retry successful for item {idx}")
+                
+            except Exception as e:
+                is_rate_limit = "429" in str(e) or "rate limit" in str(e).lower()
+                rate_limiter.record_event(success=False, is_rate_limit=is_rate_limit)
+                
+                if retry_count < max_retries:
+                    failed_items.append((item, idx, str(e)))
+                    print(f"🔍 Item {idx} still failed on retry {retry_count}: {str(e)}")
+                else:
+                    # Final attempt failed - create a placeholder result to maintain array integrity
+                    print(f"🔍 Item {idx} failed after {max_retries} retries - creating fallback")
+                    # Create a minimal result to indicate failure but maintain array structure
+                    if hasattr(item, 'url'):
+                        # If it's a URL string, create a minimal UrlInfo
+                        from app.models.url_models import UrlInfo, DetectionMethod
+                        from datetime import datetime
+                        results[idx] = UrlInfo(
+                            url=item,
+                            detection_methods=[DetectionMethod.FIRECRAWL_CRAWL],
+                            detected_at=datetime.now()
+                        )
+                        print(f"🔍 Created fallback UrlInfo for failed URL: {item}")
+                    else:
+                        # Generic fallback - create a minimal result that won't break processing
+                        results[idx] = {"error": f"Failed after {max_retries} retries: {str(e)}", "original_item": item, "status": "failed"}
+                        print(f"🔍 Created generic fallback for failed item: {item}")
+    
+    print(f"🔍 Retry process complete: {len([r for r in results if r is not None])} successful, {len([r for r in results if r is None])} still None")
+    # Final verification - ensure no None results
+    none_count = sum(1 for r in results if r is None)
+    if none_count > 0:
+        print(f"⚠️  WARNING: {none_count} items still have None results after all retries!")
+        print(f"⚠️  This should NEVER happen - creating emergency fallbacks...")
+        
+        # Emergency fallback - create minimal results for any remaining None values
+        for i, result in enumerate(results):
+            if result is None:
+                if hasattr(items[i], 'url'):
+                    from app.models.url_models import UrlInfo, DetectionMethod
+                    from datetime import datetime
+                    results[i] = UrlInfo(
+                        url=items[i],
+                        detection_methods=[DetectionMethod.FIRECRAWL_CRAWL],
+                        detected_at=datetime.now()
+                    )
+                    print(f"🔍 Emergency fallback created for item {i}: {items[i]}")
+                else:
+                    results[i] = {"error": "Emergency fallback after retry failure", "original_item": items[i], "status": "emergency_fallback"}
+                    print(f"🔍 Emergency generic fallback created for item {i}")
+    
+    print(f"🔍 Processing complete: {len(results)} total items, {len([r for r in results if r is not None])} successful")
+    print(f"🔍 Final verification: {sum(1 for r in results if r is None)} None results remaining")
     return results

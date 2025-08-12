@@ -52,8 +52,13 @@ class OpenAIClient:
         pass
     
     async def analyze_urls(self, request: UrlAnalysisRequest, prompt: str, model: str = "gpt-5") -> OutputURLsWithInfo:
-        """Raw API call to OpenAI for URL analysis."""
+        """Raw API call to OpenAI for URL analysis with enhanced error handling."""
         try:
+            # Estimate token count to prevent rate limit issues
+            estimated_tokens = self._estimate_token_count(prompt)
+            if estimated_tokens > 400000:  # Conservative limit
+                raise Exception(f"Estimated tokens ({estimated_tokens}) exceed safe limit (400000)")
+            
             response = await self.client.chat.completions.create(
                 model=model,
                 messages=[
@@ -61,7 +66,7 @@ class OpenAIClient:
                     {"role": "user", "content": prompt}
                 ],
                 response_format={"type": "json_object"},
-                temperature=0.3
+                temperature=1
             )
             
             content = response.choices[0].message.content
@@ -84,11 +89,27 @@ class OpenAIClient:
             )
             
         except Exception as e:
-            raise Exception(f"OpenAI analysis API call failed: {str(e)}")
+            # Check if it's a rate limit error
+            error_str = str(e).lower()
+            if "429" in str(e) or "rate limit" in error_str or "too large" in error_str:
+                raise Exception(f"OpenAI rate limit exceeded: {str(e)}. Consider reducing batch size.")
+            else:
+                raise Exception(f"OpenAI analysis API call failed: {str(e)}")
+    
+    def _estimate_token_count(self, text: str) -> int:
+        """Rough estimation of token count (4 characters ≈ 1 token for English text)."""
+        # This is a rough approximation - OpenAI's actual tokenization may differ
+        # But it's good enough for preventing obvious rate limit issues
+        return len(text) // 4
     
     async def judge_selection(self, request: UrlJudgeRequest, prompt: str, model: str = "gpt-5") -> UrlJudgeResponse:
-        """Raw API call to OpenAI for URL selection judging."""
+        """Raw API call to OpenAI for URL selection judging with enhanced error handling."""
         try:
+            # Estimate token count to prevent rate limit issues
+            estimated_tokens = self._estimate_token_count(prompt)
+            if estimated_tokens > 400000:  # Conservative limit
+                raise Exception(f"Estimated tokens ({estimated_tokens}) exceed safe limit (400000)")
+            
             response = await self.client.chat.completions.create(
                 model=model,
                 messages=[
@@ -96,7 +117,7 @@ class OpenAIClient:
                     {"role": "user", "content": prompt}
                 ],
                 response_format={"type": "json_object"},
-                temperature=0.2
+                temperature=1
             )
             
             content = response.choices[0].message.content
@@ -108,4 +129,9 @@ class OpenAIClient:
             )
             
         except Exception as e:
-            raise Exception(f"OpenAI judge API call failed: {str(e)}")
+            # Check if it's a rate limit error
+            error_str = str(e).lower()
+            if "429" in str(e) or "rate limit" in error_str or "too large" in error_str:
+                raise Exception(f"OpenAI rate limit exceeded: {str(e)}. Consider reducing batch size.")
+            else:
+                raise Exception(f"OpenAI judge API call failed: {str(e)}")

@@ -48,16 +48,7 @@ class FirecrawlClient:
             pass
     
     async def map_site(self, url: str, include_subdomains: bool = True) -> List[str]:
-        """
-        Raw SDK call to Firecrawl map_url endpoint.
-        
-        Args:
-            url: Base URL of the site to map
-            include_subdomains: Whether to include subdomains
-            
-        Returns:
-            List of discovered URLs from SDK response
-        """
+        """Get all URLs from a site using Firecrawl map endpoint."""
         if not self._app:
             raise RuntimeError("Client must be used as async context manager")
             
@@ -65,7 +56,7 @@ class FirecrawlClient:
             print(f"🔍 Mapping site: {url}")
             response = await self._app.map_url(
                 url=url,
-                limit=30000,
+                limit=30000,  # This cannot be greater than 30000
                 include_subdomains=include_subdomains
             )
             
@@ -94,7 +85,7 @@ class FirecrawlClient:
         except Exception as e:
             raise Exception(f"Firecrawl map SDK call failed: {str(e)}")
     
-    async def crawl_urls(self, urls: List[str], max_depth: int = 2, limit: int = 1) -> List[str]:
+    async def crawl_urls(self, urls: List[str], max_depth: int = 1, limit: int = 20) -> List[str]:
         """
         Raw SDK call to Firecrawl crawl_urls endpoint.
         
@@ -141,75 +132,57 @@ class FirecrawlClient:
         Returns:
             List of discovered URLs
         """
-        max_retries = 3
-        base_delay = 10  # Base delay for rate limit errors
-        
-        for attempt in range(max_retries):
-            try:
-                # Use synchronous crawl_url which waits for completion and returns full response
-                print(f"🔍 Starting crawl for {url}...")
-                crawl_response = await self._app.crawl_url(
-                    url=url,
-                    max_depth=max_depth,
-                    limit=limit,
-                    allow_backward_links = True,
-                    scrape_options = ScrapeOptions(
-                        formats = [ 'links' ],
-                        onlyMainContent = True,
-                        parsePDF = False,
-                        maxAge = 14400000
-                    )
+        # Remove the old retry logic - let the rate limiter handle retries
+        try:
+            # Use synchronous crawl_url which waits for completion and returns full response
+            print(f"🔍 Starting crawl for {url}...")
+            crawl_response = await self._app.crawl_url(
+                url=url,
+                max_depth=max_depth,
+                limit=limit,
+                allow_backward_links = True,
+                scrape_options = ScrapeOptions(
+                    formats = [ 'links' ],
+                    onlyMainContent = True,
+                    parsePDF = False,
+                    maxAge = 14400000
                 )
-                
-                print(f"🔍 Crawl response type: {type(crawl_response)}")
-                print(f"🔍 Crawl response: {crawl_response}")
-                
-                # According to docs, synchronous crawl_url should return completed results directly
-                # Check if we have data with URLs
-                if hasattr(crawl_response, 'data') and crawl_response.data:
-                    print(f"🔍 Found data with {len(crawl_response.data)} items")
-                    # Extract URLs from the crawled documents
-                    urls = []
-                    for i, doc in enumerate(crawl_response.data):
-                        print(f"🔍 Processing document {i}: {doc}")
-                        
-                        # Extract URLs from the links field (this is what we actually want)
-                        if hasattr(doc, 'links') and doc.links:
-                            # Add all valid links from the document
-                            for link in doc.links:
-                                if isinstance(link, str) and link.strip() and link.startswith('http'):
-                                    urls.append(link)
-                                    print(f"🔍 Added link: {link}")
-                        else:
-                            print(f"🔍 Document has no links field: {type(doc)}")
-                            if hasattr(doc, '__dict__'):
-                                print(f"🔍 Document attributes: {dir(doc)}")
+            )
+            
+            print(f"🔍 Crawl response type: {type(crawl_response)}")
+            print(f"🔍 Crawl response: {crawl_response}")
+            
+            # According to docs, synchronous crawl_url should return completed results directly
+            # Check if we have data with URLs
+            if hasattr(crawl_response, 'data') and crawl_response.data:
+                print(f"🔍 Found data with {len(crawl_response.data)} items")
+                # Extract URLs from the crawled documents
+                urls = []
+                for i, doc in enumerate(crawl_response.data):
+                    print(f"🔍 Processing document {i}: {doc}")
                     
-                    print(f"🔍 Total URLs extracted: {len(urls)}")
-                    return urls
-                else:
-                    print(f"🔍 No data found in crawl response")
-                    return []
-                    
-            except Exception as e:
-                error_str = str(e)
-                
-                # Check if it's a rate limit error
-                if "429" in error_str or "rate limit" in error_str.lower():
-                    if attempt < max_retries - 1:
-                        delay = base_delay * (2 ** attempt)  # Exponential backoff
-                        print(f"🔍 Rate limit hit for {url}, retrying in {delay} seconds (attempt {attempt + 1}/{max_retries})")
-                        await asyncio.sleep(delay)
-                        continue
+                    # Extract URLs from the links field (this is what we actually want)
+                    if hasattr(doc, 'links') and doc.links:
+                        # Add all valid links from the document
+                        for link in doc.links:
+                            if isinstance(link, str) and link.strip() and link.startswith('http'):
+                                urls.append(link)
+                                print(f"🔍 Added link: {link}")
                     else:
-                        print(f"🔍 Rate limit error for {url} after {max_retries} attempts, skipping")
-                        return []
-                else:
-                    # Non-rate-limit error, don't retry
-                    print(f"Error crawling {url}: {str(e)}")
-                    return []
-        
-        return []
+                        print(f"🔍 Document has no links field: {type(doc)}")
+                        if hasattr(doc, '__dict__'):
+                            print(f"🔍 Document attributes: {dir(doc)}")
+                
+                print(f"🔍 Total URLs extracted: {len(urls)}")
+                return urls
+            else:
+                print(f"🔍 No data found in crawl response")
+                return []
+                
+        except Exception as e:
+            # Let the rate limiter handle retries - just raise the exception
+            print(f"🔍 Error crawling {url}: {str(e)}")
+            raise e
     
     def _extract_urls_from_response(self, response) -> List[str]:
         """

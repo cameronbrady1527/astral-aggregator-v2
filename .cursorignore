@@ -10,7 +10,7 @@ wheels/
 .venv/
 
 # Large output files that slow down indexing
-output/
+# output/
 *.json
 *.csv
 *.xlsx

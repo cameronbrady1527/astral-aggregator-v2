@@ -68,22 +68,27 @@ class ConfigService:
     @property
     def firecrawl_min_delay(self) -> float:
         """Minimum delay between requests in seconds (for adaptive rate limiting)"""
-        return float(self.env_var("FIRECRAWL_MIN_DELAY", default="1.0"))
+        return float(self.env_var("FIRECRAWL_MIN_DELAY", default="0.5"))  # Reduced from 1.0
 
     @property
     def firecrawl_max_delay(self) -> float:
         """Maximum delay between requests in seconds (for adaptive rate limiting)"""
-        return float(self.env_var("FIRECRAWL_MAX_DELAY", default="10.0"))
+        return float(self.env_var("FIRECRAWL_MAX_DELAY", default="5.0"))  # Reduced from 10.0
 
     @property
     def firecrawl_batch_size(self) -> int:
         """Number of URLs to process in each batch (for adaptive rate limiting)"""
-        return int(self.env_var("FIRECRAWL_BATCH_SIZE", default="3"))
+        return int(self.env_var("FIRECRAWL_BATCH_SIZE", default="10"))  # Increased from 3
 
     @property
     def firecrawl_rate_limit_window(self) -> int:
         """Time window in seconds to track rate limit responses (for adaptive rate limiting)"""
         return int(self.env_var("FIRECRAWL_RATE_LIMIT_WINDOW", default="60"))
+
+    @property
+    def firecrawl_max_retries(self) -> int:
+        """Maximum number of retry attempts for failed URLs (default: 5 for maximum persistence)"""
+        return int(self.env_var("FIRECRAWL_MAX_RETRIES", default="5"))
 
     def load_sites_config(self) -> SitesConfig:
         """Loads the sites configuration from sites.yaml"""

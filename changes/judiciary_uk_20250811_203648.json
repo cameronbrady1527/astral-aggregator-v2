@@ -1,0 +1,682 @@
+{
+  "site_id": "judiciary_uk",
+  "timestamp": "20250811_203648",
+  "urls": [
+    {
+      "url": "https://www.judiciary.uk/subjects/commercial-court",
+      "status": "new"
+    },
+    {
+      "url": "https://www.judiciary.uk/subjects/high-court",
+      "status": "new"
+    },
+    {
+      "url": "https://www.judiciary.uk/subjects/tribunals",
+      "status": "new"
+    },
+    {
+      "url": "https://www.judiciary.uk/subjects/court-of-appeal-criminal-division",
+      "status": "new"
+    },
+    {
+      "url": "https://www.judiciary.uk/guidance-types/reviews",
+      "status": "new"
+    },
+    {
+      "url": "https://www.judiciary.uk/subjects/circuit-commercial-court",
+      "status": "new"
+    },
+    {
+      "url": "https://www.judiciary.uk/senior-judiciary/sir-geoffrey-vos",
+      "status": "new"
+    },
+    {
+      "url": "https://www.judiciary.uk/subjects/kings-bench-division",
+      "status": "new"
+    },
+    {
+      "url": "https://www.judiciary.uk/subjects/immigration-and-asylum-chamber-first-tier",
+      "status": "new"
+    },
+    {
+      "url": "https://www.judiciary.uk/judgment-types/judgment",
+      "status": "new"
+    },
+    {
+      "url": "https://www.judiciary.uk/subjects/coroners-court",
+      "status": "new"
+    },
+    {
+      "url": "https://www.judiciary.uk/subjects/lady-chief-justice",
+      "status": "new"
+    },
+    {
+      "url": "https://www.judiciary.uk/subjects/family-court",
+      "status": "new"
+    },
+    {
+      "url": "https://www.judiciary.uk/senior-judiciary/master-of-the-rolls",
+      "status": "new"
+    },
+    {
+      "url": "https://www.judiciary.uk/guidance-types/bench-book",
+      "status": "new"
+    },
+    {
+      "url": "https://www.judiciary.uk/subjects/family-division",
+      "status": "new"
+    },
+    {
+      "url": "https://www.judiciary.uk/subjects/committal-for-contempt-of-court",
+      "status": "new"
+    },
+    {
+      "url": "https://www.judiciary.uk/news-types/news",
+      "status": "new"
+    },
+    {
+      "url": "https://www.judiciary.uk/subjects/insolvency-and-companies-list",
+      "status": "new"
+    },
+    {
+      "url": "https://www.judiciary.uk/subjects/crown-court",
+      "status": "new"
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2024/12/2024-0684-Response-from-St-Mungos.pdf",
+      "status": "new"
+    },
+    {
+      "url": "https://www.judiciary.uk/senior-judiciary/lady-chief-justice",
+      "status": "new"
+    },
+    {
+      "url": "https://www.judiciary.uk/judgment-types/anonymity-order",
+      "status": "new"
+    },
+    {
+      "url": "https://www.judiciary.uk/subjects/master-of-the-rolls",
+      "status": "new"
+    },
+    {
+      "url": "https://www.judiciary.uk/guidance-types/reports",
+      "status": "new"
+    },
+    {
+      "url": "https://www.judiciary.uk/judgments/wikimedia-foundation-v-secretary-of-state-for-science-innovation-and-technology-2",
+      "status": "new"
+    },
+    {
+      "url": "https://www.judiciary.uk/subjects/sir-geoffrey-vos",
+      "status": "new"
+    },
+    {
+      "url": "https://www.judiciary.uk/guidance-types/guide",
+      "status": "new"
+    },
+    {
+      "url": "https://www.judiciary.uk/guidance-types/practice-guidance",
+      "status": "new"
+    },
+    {
+      "url": "https://www.judiciary.uk/judgment-types/committal-for-contempt-of-court",
+      "status": "new"
+    },
+    {
+      "url": "https://www.judiciary.uk/subjects/dame-victoria-sharp",
+      "status": "new"
+    },
+    {
+      "url": "https://www.judiciary.uk/subjects/senior-court-costs-office",
+      "status": "new"
+    },
+    {
+      "url": "https://caselaw.nationalarchives.gov.uk/",
+      "status": "new"
+    },
+    {
+      "url": "https://www.judiciary.uk/subjects/county-court",
+      "status": "new"
+    },
+    {
+      "url": "https://www.judiciary.uk/subjects/court-of-appeal-civil-division",
+      "status": "new"
+    },
+    {
+      "url": "https://www.judiciary.uk/guidance-types/biographies",
+      "status": "new"
+    },
+    {
+      "url": "https://www.judiciary.uk/subjects/technology-and-construction-court",
+      "status": "new"
+    },
+    {
+      "url": "https://www.youtube.com/channel/UCF3HqeLrCkZgARQfyqj1m-g",
+      "status": "new"
+    },
+    {
+      "url": "https://www.judiciary.uk/subjects/criminal",
+      "status": "new"
+    },
+    {
+      "url": "https://www.judiciary.uk/subjects/central-criminal-court-old-bailey",
+      "status": "new"
+    },
+    {
+      "url": "https://www.judiciary.uk/subjects/diversity-information",
+      "status": "new"
+    },
+    {
+      "url": "https://www.judiciary.uk/subjects/president-of-the-kings-bench-division",
+      "status": "new"
+    },
+    {
+      "url": "https://www.judiciary.uk/subjects/employment-tribunal",
+      "status": "new"
+    },
+    {
+      "url": "https://www.judiciary.uk/subjects/cross-jurisdictional",
+      "status": "new"
+    },
+    {
+      "url": "https://www.judiciary.uk/senior-judiciary/chancellor-of-the-high-court",
+      "status": "new"
+    },
+    {
+      "url": "https://www.judiciary.uk/judgment-types/sentencing-remarks",
+      "status": "new"
+    },
+    {
+      "url": "https://www.judiciary.uk/subjects/civil",
+      "status": "new"
+    },
+    {
+      "url": "https://www.judiciary.uk/subjects/chancery-division",
+      "status": "new"
+    },
+    {
+      "url": "https://www.judiciary.uk/subjects/chief-coroner",
+      "status": "new"
+    },
+    {
+      "url": "https://www.judiciary.uk/news-types/speeches",
+      "status": "new"
+    },
+    {
+      "url": "https://www.judiciary.uk/judgment-types/privacy-order",
+      "status": "new"
+    },
+    {
+      "url": "https://www.judiciary.uk/subjects/financial-remedies-court",
+      "status": "new"
+    },
+    {
+      "url": "https://www.judiciary.uk/high-court/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/appointments-and-retirements/resident-judge-of-the-first-tier-tribunal-immigration-and-asylum-chamber-retirement-phillips/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/subjects/chancery-division/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/senior-judiciary/master-of-the-rolls/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/guidance-types/practice-direction/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/guidance-and-resources/practice-note-from-mr-justice-andrew-baker-admiralty-assessors-remuneration/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/appointments-and-retirements/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/guidance-and-resources/commercial-court-annual-report-2018-19-2/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/subjects/circuit-commercial-court/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/news-and-updates/#main-content",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/news-types/news/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/fee-paid-judge-of-the-first-tier-tribunal-immigration-and-asylum-chamber-pre-application-seminar-2025/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/subjects/county-court/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/appointment-circuit-chamber-tribunals/western/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/guidance-types/practice-guidance/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/subjects/high-court/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/appointment-circuit-chamber-tribunals/south-eastern/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/court-of-appeal-home/the-court-of-appeal-civil-division-live-streaming-of-court-hearings/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/judgments/dxk-v-manchester-city-council-anonymity-order/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/?s=#main-content",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/family-justice-council/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/business-and-property-courts/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/mansion-house-speech-by-the-lady-chief-justice-2/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/appointment-roles/circuit-judge/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/speech-by-lord-justice-birss-expert-witnesses-vital-participants-in-civil-justice/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/coroners-courts/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/high-court-of-justice-summer-vacation-2025-notice/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/appointment-roles/chamber-president/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/judgments/r-v-roy-barclay/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/guidance-and-resources/commercial-court-annual-report-2020-21-published-2/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/subjects/diversity-information/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/guidance-and-resources/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/subjects/coroners-court/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/judgments/spx-v-secretary-of-state-for-the-home-department-anonymity-order/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/senior-judiciary/chancellor-of-the-high-court/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/subjects/admiralty-court/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/subjects/kings-bench-division/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/appointment-roles/senior-circuit-judge/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/subjects/immigration-and-asylum-chamber-upper/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/news-and-updates/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/blog/#main-content",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/appointments-and-retirements/appointment-of-the-chancellor-of-the-high-court-2/#main-content",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/senior-judiciary/sir-geoffrey-vos/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/subjects/insolvency-and-companies-list/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/judgment-types/judgment/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/subjects/lady-chief-justice/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/new-lead-coroner-for-diversity-and-inclusion/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/subjects/immigration-and-asylum-chamber-first-tier/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/appointment-circuit-chamber-tribunals/north-eastern/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/subjects/family-division/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/subjects/criminal/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/senior-judiciary/lady-chief-justice/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/news-types/speeches/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/subjects/crown-court/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/subjects/court-of-appeal-civil-division/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/appointment-types/appointment/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/subjects/master-of-the-rolls/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/non-legal-members-of-the-employment-tribunal-pre-application-seminar-2025/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/subjects/employment-tribunal/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/subjects/sir-geoffrey-vos/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/guidance-and-resources/electronic-track-data-in-collision-claims/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/subjects/administrative-court/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/appointments-and-retirements/appointment-of-the-designated-family-judge-for-wiltshire/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/appointments-and-retirements/chamber-president-of-the-first-tier-tribunal-social-entitlement-chamber-mcmahon/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/lady-chief-justice-visits-middlesbrough-school/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/magistrates-courts/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/judgment-types/sentencing-remarks/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/guidance-and-resources/commercial-court-annual-report-2021-2022-is-now-available/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/court-of-appeal-home/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/judgments/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/appointments-and-retirements/district-judge-appointment-hussain-2/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/#main-content",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/subjects/tribunals/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/appointments-and-retirements/senior-circuit-judge-designated-family-judge-appointment-bedford/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/related-offices-and-bodies/advisory-bodies/cjc/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/appointment-roles/designated-family-judge/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/judgments/jrp-v-manchester-city-council-anonymity-order/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/subjects/cross-jurisdictional/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/appointment-circuit-chamber-tribunals/magistrates-court/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/guidance-and-resources/guidance-on-nautical-assessors-fees-practice-note/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/appointments-and-retirements/circuit-bench-retirement-horton-2/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/judicial-diversity-statistics-2025/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/judgments/rdf-v-secretary-of-state-for-the-home-department-anonymity-order/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/appointments-and-retirements/deputy-national-digital-lead-for-magistrates/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/appointment-roles/district-judge/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/guidance-and-resources/chapter-20-the-article-2-inquest/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2025/04/250327-henshaw-j-talk-to-manchester-bpc-forum-on-commercial-injunctions.pdf",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/guidance-types/reports/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/tribunals/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/guidance-and-resources/commercial-court-annual-report-2022-2023-published/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/courts-and-tribunals/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/judgments/cx1-and-others-v-secretary-of-state-for-defence-and-another-open-judgment/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/subjects/commercial-court/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/subjects/senior-court-costs-office/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/appointments-and-retirements/#main-content",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/appointment-circuit-chamber-tribunals/social-entitlement-chamber-first-tier/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/appointment-circuit-chamber-tribunals/immigration-and-asylum-chamber-first-tier/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/guidance-and-resources/crown-court-information-2/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/guidance-and-resources/?s=&guidance_type=&jurisdiction=admiralty-court&post_type=guidance&after=&before=&order=relevance#main-content",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/speeches-by-the-master-of-the-rolls-and-lord-justice-birss-at-cprc-and-oprc-event/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/appointment-roles/resident-judge/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/appointments-and-retirements/district-bench-retirement-coulthard/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/subjects/technology-and-construction-court/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/subjects/civil/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/subjects/family-court/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/related-offices-and-bodies/advisory-bodies/family-justice-council/working-groups-3/hair-strand-testing-hst-working-group/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/appointment-types/retirement/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/appointments-and-retirements/senior-circuit-judge-retirement-sloan-kc-2/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/guidance-and-resources/working-group-members/#main-content",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/guidance-and-resources/cpr-pd-57ac-in-admiralty-claims-practice-note/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/master-of-the-rolls-appears-at-the-house-of-lords-constitution-committee/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/related-offices-and-bodies/advisory-bodies/family-justice-council/working-groups-3/trauma-informed-care-working-group/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/JCO/Documents/Judgments/constantin-median-v-ecclestone-ors.pdf",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/judgment-types/anonymity-order/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/judgments/helliwell-v-entwistle/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/appointments-and-retirements/senior-circuit-judge-retirement-sloan-kc/",
+      "status": "removed"
+    },
+    {
+      "url": "https://www.judiciary.uk/guidance-and-resources/practice-note-admiralty-assessors-remuneration-of-1-september-2019/",
+      "status": "removed"
+    }
+  ]
+}
