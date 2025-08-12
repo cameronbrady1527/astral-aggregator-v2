@@ -229,7 +229,7 @@ class UrlService:
                     print(f"🔍 Crawling URL: {url}")
                     
                     # Step 3.4.1a: Crawl single URL with Firecrawl
-                    discovered_urls = await client.crawl_single_url(url, max_depth=2, limit=2)
+                    discovered_urls = await client.crawl_single_url(url, max_depth=3, limit=5)  # Increased from 2,2 for better discovery
                     
                     if discovered_urls:
                         # Step 3.4.1b: Filter out any None or invalid URLs before creating UrlInfo objects
@@ -255,31 +255,62 @@ class UrlService:
             
             # Step 3.4: Process URLs with adaptive rate limiting
             batch_size = config_service.firecrawl_batch_size
+            max_retries = config_service.firecrawl_max_retries
+            print(f"🔍 Processing {len(top_urls)} URLs with batch size {batch_size} and retry logic (max {max_retries} retries)")
+            
             results = await process_with_rate_limiting(
                 top_urls, 
                 process_single_url, 
                 rate_limiter, 
-                batch_size
+                batch_size,
+                max_retries
             )
             
-            # Step 3.5: Collect all discovered URLs
+            # Step 3.5: Collect all discovered URLs (results array is now guaranteed to match input length)
+            print(f"🔍 Processing {len(results)} results from rate-limited processing")
             for i, result in enumerate(results):
-                print(f"🔍 Debug: Processing result {i}: {type(result)} - {result}")
                 if result and isinstance(result, list):
-                    print(f"🔍 Debug: Extending with list of {len(result)} items")
+                    print(f"🔍 Result {i}: Extending with list of {len(result)} items")
                     all_discovered_urls.extend(result)
                 elif result is not None:
                     # Single result case
-                    print(f"🔍 Debug: Appending single result: {type(result)}")
-                    all_discovered_urls.append(result)
+                    print(f"🔍 Result {i}: Single result of type {type(result)}")
+                    if isinstance(result, UrlInfo):
+                        all_discovered_urls.append(result)
+                    elif isinstance(result, dict) and "error" in result:
+                        print(f"⚠️  Result {i} had error: {result['error']}")
+                        # For error results, try to create a minimal UrlInfo if possible
+                        if "original_item" in result and hasattr(result["original_item"], "url"):
+                            try:
+                                fallback_url_info = create_url_info(result["original_item"], DetectionMethod.FIRECRAWL_CRAWL)
+                                all_discovered_urls.append(fallback_url_info)
+                                print(f"🔍 Created fallback UrlInfo for failed result {i}")
+                            except Exception as fallback_error:
+                                print(f"⚠️  Could not create fallback for result {i}: {fallback_error}")
+                        # Skip error results but log them
+                    else:
+                        print(f"🔍 Result {i}: Unexpected result type: {type(result)}")
+                        # Try to handle unexpected result types gracefully
+                        if hasattr(result, 'url'):
+                            try:
+                                fallback_url_info = create_url_info(result.url, DetectionMethod.FIRECRAWL_CRAWL)
+                                all_discovered_urls.append(fallback_url_info)
+                                print(f"🔍 Created fallback UrlInfo for unexpected result {i}")
+                            except Exception as fallback_error:
+                                print(f"⚠️  Could not create fallback for unexpected result {i}: {fallback_error}")
                 else:
-                    print(f"🔍 Debug: Skipping None result")
+                    print(f"⚠️  Result {i}: Still None after retries - this should not happen!")
+                    # Emergency fallback for any remaining None results
+                    try:
+                        emergency_fallback = create_url_info(top_urls[i], DetectionMethod.FIRECRAWL_CRAWL)
+                        all_discovered_urls.append(emergency_fallback)
+                        print(f"🔍 Created emergency fallback for None result {i}")
+                    except Exception as emergency_error:
+                        print(f"⚠️  Emergency fallback failed for result {i}: {emergency_error}")
             
-            # Step 3.6: Safety check - filter out any None values that might have slipped through
-            all_discovered_urls = [url for url in all_discovered_urls if url is not None]
-            
-            # Step 3.7: Safety check - ensure all items are UrlInfo objects
+            # Step 3.6: Safety check - ensure all items are UrlInfo objects
             all_discovered_urls = [url for url in all_discovered_urls if isinstance(url, UrlInfo)]
+            print(f"🔍 After safety check: {len(all_discovered_urls)} valid UrlInfo objects")
             
             # Step 3.8: Print rate limiter stats
             stats = rate_limiter.get_stats()
@@ -345,32 +376,84 @@ class OnboardingUrlService:
         return validated_urls
     
     async def _run_ai_analysis(self, urls: List[str], site_name: str) -> List[OutputURLsWithInfo]:
-        """Orchestrates 3 concurrent AI analyses."""
+        """Orchestrates 3 concurrent AI analyses with URL batching."""
         # Create request object
         request = UrlAnalysisRequest(urls=urls, site_name=site_name)
         
-        # Build prompt once
-        prompt = AIConfig.build_analysis_prompt(request)
+        # Determine batch size based on URL count to avoid token limits
+        # OpenAI GPT-5 has ~450k TPM limit, so we need to be conservative
+        # Each URL is roughly 50-100 characters, plus prompt overhead
+        if len(urls) > 1000:  # Only batch if we have more than 1000 URLs
+            batch_size = AIConfig.calculate_optimal_batch_size(len(urls))
+            expected_batches = (len(urls) + batch_size - 1) // batch_size  # Ceiling division
+            print(f"🤖 Large URL set detected ({len(urls)} URLs)")
+            print(f"🤖 Using optimal batch size of {batch_size} URLs")
+            print(f"🤖 Expected to create {expected_batches} batches")
+            
+            # Validate that the first batch won't exceed token limits
+            first_batch = urls[:batch_size]
+            if not AIConfig.validate_batch_size(first_batch, batch_size):
+                print(f"⚠️  Warning: Calculated batch size may exceed token limits")
+                print(f"⚠️  First batch would be ~{len(first_batch) * 75 // 4} estimated tokens")
+        else:
+            batch_size = len(urls)  # No batching needed for small sets
+            print(f"🤖 Small URL set ({len(urls)} URLs), no batching needed")
         
-        # Create 3 concurrent tasks
-        tasks = [
-            self._run_single_ai_analysis(request, prompt)
-            for _ in range(3)
-        ]
+        print(f"🤖 Processing {len(urls)} URLs in batches of {batch_size}")
         
-        # Execute concurrently
-        results = await asyncio.gather(*tasks, return_exceptions=True)
+        # Split URLs into batches
+        url_batches = [urls[i:i + batch_size] for i in range(0, len(urls), batch_size)]
+        print(f"🤖 Created {len(url_batches)} batches for AI analysis")
         
-        # Extract results
-        suggestions = []
-        for result in results:
-            if isinstance(result, Exception):
-                print(f"AI analysis failed: {str(result)}")
-                suggestions.append(OutputURLsWithInfo(urls=[], total_count=0, timestamp=datetime.now()))
+        # Process each batch with AI analysis
+        all_batch_results = []
+        successful_batches = 0
+        failed_batches = 0
+        
+        for batch_idx, url_batch in enumerate(url_batches):
+            print(f"🤖 Processing batch {batch_idx + 1}/{len(url_batches)} with {len(url_batch)} URLs")
+            
+            # Create batch request
+            batch_request = UrlAnalysisRequest(urls=url_batch, site_name=site_name)
+            
+            # Build prompt for this batch
+            prompt = AIConfig.build_analysis_prompt(batch_request)
+            
+            # Run 3 concurrent AI analyses on this batch
+            tasks = [
+                self._run_single_ai_analysis(batch_request, prompt)
+                for _ in range(3)
+            ]
+            
+            # Execute concurrently
+            batch_results = await asyncio.gather(*tasks, return_exceptions=True)
+            
+            # Extract results from this batch
+            batch_success = False
+            for result in batch_results:
+                if isinstance(result, Exception):
+                    print(f"🤖 AI analysis failed for batch {batch_idx + 1}: {str(result)}")
+                    failed_batches += 1
+                else:
+                    all_batch_results.append(result)
+                    batch_success = True
+            
+            if batch_success:
+                successful_batches += 1
+                print(f"🤖 Batch {batch_idx + 1} completed successfully")
             else:
-                suggestions.append(result)
+                print(f"🤖 Batch {batch_idx + 1} failed completely")
         
-        return suggestions
+        print(f"🤖 Completed AI analysis on {len(url_batches)} batches")
+        print(f"🤖 Successful batches: {successful_batches}, Failed batches: {failed_batches}")
+        print(f"🤖 Total suggestions collected: {len(all_batch_results)}")
+        
+        # If we have no successful results, create a minimal fallback
+        if not all_batch_results:
+            print("🤖 No successful AI analysis results, creating fallback")
+            all_batch_results.append(OutputURLsWithInfo(urls=[], total_count=0, timestamp=datetime.now()))
+        
+        return all_batch_results
     
     async def _run_single_ai_analysis(self, request: UrlAnalysisRequest, prompt: str) -> OutputURLsWithInfo:
         """Runs a single AI analysis."""
@@ -378,12 +461,29 @@ class OnboardingUrlService:
             return await client.analyze_urls(request, prompt)
     
     async def _run_ai_judge(self, suggestions: List[OutputURLsWithInfo], site_name: str) -> List[str]:
-        """Orchestrates AI judge process."""
-        # Extract URLs from suggestions
-        url_suggestions = [
-            [url_info.url for url_info in suggestion.urls]
-            for suggestion in suggestions
-        ]
+        """Orchestrates AI judge process with enhanced handling for batched results."""
+        # Extract URLs from suggestions, handling both successful and failed analyses
+        url_suggestions = []
+        for suggestion in suggestions:
+            if suggestion.urls and len(suggestion.urls) > 0:
+                # Extract URLs from successful suggestions
+                urls = [url_info.url for url_info in suggestion.urls if hasattr(url_info, 'url')]
+                if urls:
+                    url_suggestions.append(urls)
+            else:
+                print(f"👨‍⚖️ Skipping empty suggestion with {len(suggestion.urls) if suggestion.urls else 0} URLs")
+        
+        if not url_suggestions:
+            print("👨‍⚖️ No valid URL suggestions found for judging")
+            return []
+        
+        print(f"👨‍⚖️ Processing {len(url_suggestions)} valid URL suggestions for judging")
+        
+        # If we have too many suggestions (from batching), we need to aggregate them first
+        if len(url_suggestions) > 10:
+            print(f"👨‍⚖️ Large number of suggestions ({len(url_suggestions)}), aggregating before judging...")
+            url_suggestions = self._aggregate_url_suggestions(url_suggestions)
+            print(f"👨‍⚖️ Aggregated to {len(url_suggestions)} suggestion groups")
         
         # Create request object
         request = UrlJudgeRequest(
@@ -396,9 +496,47 @@ class OnboardingUrlService:
         prompt = AIConfig.build_judge_prompt(request)
         
         # Run AI judge
-        async with OpenAIClient() as client:
-            result = await client.judge_selection(request, prompt)
-            return result.selected_urls
+        try:
+            async with OpenAIClient() as client:
+                result = await client.judge_selection(request, prompt)
+                return result.selected_urls
+        except Exception as e:
+            print(f"👨‍⚖️ AI judge failed: {str(e)}")
+            # Fallback: return URLs from the first few successful suggestions
+            fallback_urls = []
+            for suggestion in suggestions[:3]:  # Take first 3 suggestions
+                if suggestion.urls and len(suggestion.urls) > 0:
+                    urls = [url_info.url for url_info in suggestion.urls if hasattr(url_info, 'url')]
+                    fallback_urls.extend(urls[:2])  # Take first 2 URLs from each
+                    if len(fallback_urls) >= 5:
+                        break
+            
+            print(f"👨‍⚖️ Using fallback selection: {fallback_urls[:5]}")
+            return fallback_urls[:5]
+    
+    def _aggregate_url_suggestions(self, url_suggestions: List[List[str]]) -> List[List[str]]:
+        """Aggregate multiple URL suggestions into manageable groups for judging."""
+        # Flatten all URLs and remove duplicates
+        all_urls = []
+        for suggestion in url_suggestions:
+            all_urls.extend(suggestion)
+        
+        # Remove duplicates while preserving order
+        unique_urls = []
+        seen = set()
+        for url in all_urls:
+            if url not in seen:
+                unique_urls.append(url)
+                seen.add(url)
+        
+        # Group into chunks of 10-15 URLs for manageable judging
+        chunk_size = 15
+        aggregated_suggestions = []
+        for i in range(0, len(unique_urls), chunk_size):
+            chunk = unique_urls[i:i + chunk_size]
+            aggregated_suggestions.append(chunk)
+        
+        return aggregated_suggestions
     
     async def _validate_unique_resolutions(self, top_urls: List[str], all_urls: List[str]) -> List[str]:
         """Ensure URLs don't resolve to the same page."""

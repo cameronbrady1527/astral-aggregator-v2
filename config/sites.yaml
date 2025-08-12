@@ -4,15 +4,15 @@ sites:
     last_processed: null
     name: Judiciary UK
     onboarded: true
-    onboarding_datetime: '2025-08-10T22:27:42.817060'
+    onboarding_datetime: '2025-08-11T22:49:49.472720'
     sitemap_url: https://www.judiciary.uk/sitemap_index.xml
     status: onboarded
     top_urls:
-    - https://www.judiciary.uk/news/
-    - https://www.judiciary.uk/press-releases/
-    - https://www.judiciary.uk/blog/
-    - https://www.judiciary.uk/council-updates/latest-news/
-    - https://www.judiciary.uk/announcements/
+    - https://www.judiciary.uk/news-and-updates
+    - https://www.judiciary.uk/judgments
+    - https://www.judiciary.uk/appointments-and-retirements
+    - https://www.judiciary.uk/guidance-and-resources
+    - https://www.judiciary.uk/judgments/tribunal-decisions
     url: https://www.judiciary.uk/
   waverley_gov:
     is_sitemap_index: false

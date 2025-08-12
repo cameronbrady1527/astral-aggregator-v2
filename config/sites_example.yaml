@@ -30,7 +30,7 @@ sites:
 
 
 
-
+# PAST BASELINE SITES
 
 sites:
   judiciary_uk:
@@ -63,3 +63,19 @@ sites:
     - https://www.waverley.gov.uk/services/greenspaces-leisure-and-things-to-do
     - https://www.waverley.gov.uk/services/business-and-licensing
     url: https://www.waverley.gov.uk/
+
+
+    - https://www.judiciary.uk/news-and-updates
+    - https://www.judiciary.uk/judgments
+    - https://www.judiciary.uk/appointments-and-retirements
+    - https://www.judiciary.uk/courts-and-tribunals/coroners-courts/reports-to-prevent-future-deaths
+    - https://www.judiciary.uk/guidance-and-resources
+
+
+
+
+    - https://www.judiciary.uk/judgments
+    - https://www.judiciary.uk/news-and-updates
+    - https://www.judiciary.uk/guidance-and-resources
+    - https://www.judiciary.uk/courts-and-tribunals/coroners-courts/reports-to-prevent-future-deaths
+    - https://www.judiciary.uk/judgments/tribunal-decisions
