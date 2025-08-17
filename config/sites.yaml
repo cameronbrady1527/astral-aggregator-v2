@@ -6,6 +6,11 @@ sites:
     name: Boston Police Department
     onboarded: true
     onboarding_datetime: '2025-08-17T11:37:37.041360'
+    pagination_concurrent_batches: 5
+    pagination_custom_patterns: []
+    pagination_enabled: false
+    pagination_max_pages: 200
+    pagination_rate_limit: 2.0
     sitemap_url: https://police.boston.gov/wp-sitemap.xml
     status: onboarded
     top_urls:
@@ -15,33 +20,27 @@ sites:
     - https://police.boston.gov/category/boston-24
     - https://police.boston.gov/category/investigation-update
     url: https://police.boston.gov
-    
-    # Pagination Configuration
-    pagination_enabled: false
-    pagination_max_pages: 200
-    pagination_rate_limit: 2.0
-    pagination_concurrent_batches: 5
-    pagination_custom_patterns: []
-    
   gov_uk:
     is_sitemap: false
     is_sitemap_index: false
     last_processed: null
     name: UK Government
-    onboarded: false
-    onboarding_datetime: null
-    sitemap_url: https://www.gov.uk/search/news-and-communications
-    status: onboarded
-    top_urls: []
-    url: https://www.gov.uk/search/news-and-communications
-    
-    # Pagination Configuration - This site has 136,000+ results!
-    pagination_enabled: true
-    pagination_max_pages: 1000
-    pagination_rate_limit: 1.5
+    onboarded: true
+    onboarding_datetime: '2025-08-17T13:43:28.498016'
     pagination_concurrent_batches: 10
     pagination_custom_patterns: []
-    
+    pagination_enabled: true
+    pagination_max_pages: 10000
+    pagination_rate_limit: 1.5
+    sitemap_url: https://www.gov.uk/search/news-and-communications
+    status: onboarded
+    top_urls:
+    - https://www.gov.uk/search/news-and-communications
+    - https://www.gov.uk/search/policy-papers-and-consultations
+    - https://www.gov.uk/search/guidance-and-regulation
+    - https://www.gov.uk/search/statistics
+    - https://www.gov.uk/search/transparency-and-freedom-of-information-releases
+    url: https://www.gov.uk/search/news-and-communications
   judiciary_uk:
     is_sitemap: true
     is_sitemap_index: true
@@ -49,6 +48,11 @@ sites:
     name: Judiciary UK
     onboarded: true
     onboarding_datetime: '2025-08-11T22:49:49.472720'
+    pagination_concurrent_batches: 5
+    pagination_custom_patterns: []
+    pagination_enabled: false
+    pagination_max_pages: 300
+    pagination_rate_limit: 2.0
     sitemap_url: https://www.judiciary.uk/sitemap_index.xml
     status: onboarded
     top_urls:
@@ -58,14 +62,6 @@ sites:
     - https://www.judiciary.uk/guidance-and-resources
     - https://www.judiciary.uk/judgments/tribunal-decisions
     url: https://www.judiciary.uk/
-    
-    # Pagination Configuration
-    pagination_enabled: false
-    pagination_max_pages: 300
-    pagination_rate_limit: 2.0
-    pagination_concurrent_batches: 5
-    pagination_custom_patterns: []
-    
   metro_police_uk:
     is_sitemap: false
     is_sitemap_index: false
@@ -73,6 +69,11 @@ sites:
     name: Metropolitan Police UK
     onboarded: true
     onboarding_datetime: '2025-08-17T11:27:44.289540'
+    pagination_concurrent_batches: 5
+    pagination_custom_patterns: []
+    pagination_enabled: false
+    pagination_max_pages: 150
+    pagination_rate_limit: 2.0
     sitemap_url: https://www.met.police.uk/
     status: onboarded
     top_urls:
@@ -82,14 +83,6 @@ sites:
     - https://www.met.police.uk/area/your-area
     - https://www.met.police.uk/area/your-area/met/westminster
     url: https://www.met.police.uk/
-    
-    # Pagination Configuration
-    pagination_enabled: false
-    pagination_max_pages: 150
-    pagination_rate_limit: 2.0
-    pagination_concurrent_batches: 5
-    pagination_custom_patterns: []
-    
   waverley_gov:
     is_sitemap: true
     is_sitemap_index: false
@@ -97,6 +90,11 @@ sites:
     name: Waverley Borough Council
     onboarded: true
     onboarding_datetime: '2025-08-12T18:13:54.493058'
+    pagination_concurrent_batches: 5
+    pagination_custom_patterns: []
+    pagination_enabled: false
+    pagination_max_pages: 100
+    pagination_rate_limit: 2.0
     sitemap_url: https://www.waverley.gov.uk/sitemap.xml
     status: onboarded
     top_urls:
@@ -106,10 +104,3 @@ sites:
     - https://www.waverley.gov.uk/services/planning-and-building/planning-strategies-and-policies/planning-policy-consultations
     - https://www.waverley.gov.uk/services/council-information/councillors-and-meetings
     url: https://www.waverley.gov.uk/
-    
-    # Pagination Configuration
-    pagination_enabled: false
-    pagination_max_pages: 100
-    pagination_rate_limit: 2.0
-    pagination_concurrent_batches: 5
-    pagination_custom_patterns: []

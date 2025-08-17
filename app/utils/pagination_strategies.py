@@ -6,7 +6,9 @@
 
 import time
 from typing import List, Dict, Any, Optional
-from urllib.parse import urlparse, parse_qs, urlencode, urlunparse
+from urllib.parse import urlparse, parse_qs, urlencode, urlunparse, urljoin
+
+from bs4 import BeautifulSoup
 
 from app.models.pagination_models import (
     PaginationType, 
@@ -309,9 +311,78 @@ class LinkBasedStrategy(BasePaginationStrategy):
     
     def _extract_navigation_links(self, page_content: str, current_url: str) -> List[str]:
         """Extract navigation links from page content."""
-        # This would use the same logic as PaginationDetector
-        # For now, return empty list
-        return []
+        soup = BeautifulSoup(page_content, 'html.parser')
+        navigation_links = []
+        
+        # Look for next/previous links with various selectors
+        next_selectors = [
+            'a[href*="next"]',
+            'a:contains("Next")',
+            'a:contains("next")',
+            'a[aria-label*="next"]',
+            'a[title*="next"]',
+            'a[rel="next"]',
+            'a.next',
+            'a.next-page',
+            'a[class*="next"]'
+        ]
+        
+        prev_selectors = [
+            'a[href*="previous"]',
+            'a:contains("Previous")',
+            'a:contains("previous")',
+            'a[aria-label*="previous"]',
+            'a[title*="previous"]',
+            'a[rel="prev"]',
+            'a.previous',
+            'a.prev-page',
+            'a[class*="prev"]'
+        ]
+        
+        # Find next link
+        for selector in next_selectors:
+            try:
+                next_link = soup.select_one(selector)
+                if next_link and next_link.get('href'):
+                    href = next_link['href']
+                    if href.startswith('http'):
+                        navigation_links.append(href)
+                    else:
+                        # Resolve relative URL
+                        navigation_links.append(urljoin(current_url, href))
+                    break
+            except Exception:
+                continue
+        
+        # Find previous link
+        for selector in prev_selectors:
+            try:
+                prev_link = soup.select_one(selector)
+                if prev_link and prev_link.get('href'):
+                    href = prev_link['href']
+                    if href.startswith('http'):
+                        navigation_links.append(href)
+                    else:
+                        # Resolve relative URL
+                        navigation_links.append(urljoin(current_url, href))
+                    break
+            except Exception:
+                continue
+        
+        # Also look for numbered page links (e.g., page 2, page 3)
+        page_links = soup.find_all('a', href=True)
+        for link in page_links:
+            href = link.get('href', '')
+            text = link.get_text().strip().lower()
+            
+            # Check if this looks like a page number link
+            if any(keyword in text for keyword in ['page', 'p.', 'p ']) and any(char.isdigit() for char in text):
+                if href.startswith('http'):
+                    navigation_links.append(href)
+                else:
+                    navigation_links.append(urljoin(current_url, href))
+        
+        return navigation_links
     
     def estimate_total_pages(self) -> int:
         """Cannot estimate without crawling."""
@@ -334,32 +405,51 @@ class IndicatorBasedStrategy(BasePaginationStrategy):
         # Use the total pages from pagination info
         total_pages = min(self.pagination_info.total_pages or 50, max_pages)
         
-        # Try to determine the pagination method
-        if self._has_url_parameters():
-            # Use parameter-based approach
-            strategy = ParameterBasedStrategy(self.base_url, self.pagination_info)
-            return strategy.generate_page_urls(total_pages)
-        else:
-            # Default to basic page numbering
-            page_urls = [self.base_url]
-            
-            # Update strategy parameters
-            self.parameters = {
-                'total_pages': total_pages,
-                'pagination_method': 'content_indicator',
-                'requires_url_generation': False
-            }
-            
-            generation_time = time.time() - start_time
-            
-            return PaginationStrategy(
-                strategy_type=PaginationType.INDICATOR_BASED,
-                base_url=self.base_url,
-                parameters=self.parameters,
-                page_urls=page_urls,
-                total_pages_generated=len(page_urls),
-                generation_time_seconds=generation_time
-            )
+        print(f"🔍 IndicatorBasedStrategy: Generating {total_pages} page URLs")
+        
+        # Generate all page URLs with ?page=X parameter
+        page_urls = []
+        
+        for page in range(1, total_pages + 1):
+            if page == 1:
+                # First page is the base URL
+                page_urls.append(self.base_url)
+            else:
+                # Add page parameter for all subsequent pages
+                page_url = self._add_page_parameter(self.base_url, page)
+                page_urls.append(page_url)
+        
+        print(f"🔍 IndicatorBasedStrategy: Generated {len(page_urls)} URLs (page 1 to {total_pages})")
+        
+        # Update strategy parameters
+        self.parameters = {
+            'total_pages': total_pages,
+            'pagination_method': 'content_indicator',
+            'requires_url_generation': True
+        }
+        
+        generation_time = time.time() - start_time
+        
+        return PaginationStrategy(
+            strategy_type=PaginationType.INDICATOR_BASED,
+            base_url=self.base_url,
+            parameters=self.parameters,
+            page_urls=page_urls,
+            total_pages_generated=len(page_urls),
+            generation_time_seconds=generation_time
+        )
+    
+    def _add_page_parameter(self, url: str, page: int) -> str:
+        """Add page parameter to URL."""
+        parsed = urlparse(url)
+        query_params = parse_qs(parsed.query)
+        
+        # Add page parameter
+        query_params['page'] = [str(page)]
+        
+        # Rebuild URL
+        new_query = urlencode(query_params, doseq=True)
+        return urlunparse((parsed.scheme, parsed.netloc, parsed.path, parsed.params, new_query, parsed.fragment))
     
     def _has_url_parameters(self) -> bool:
         """Check if the base URL has pagination parameters."""

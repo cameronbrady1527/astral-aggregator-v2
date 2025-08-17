@@ -222,7 +222,8 @@ uv run python scripts/run_demo.py --full
 - `GET /` - Health check
 - `GET /health` - Detailed health status
 - `GET /api/v1/sites` - List all configured sites
-- `POST /api/v1/trigger/{site_id}` - Process a specific site or all sites
+- `POST /api/v1/trigger/{site_id}` - Process a specific site or all sites using standard processing
+- `POST /api/v1/trigger/{site_id}/pagination` - Process a specific site or all sites using pagination-aware processing
 
 ### Usage Examples
 
@@ -230,11 +231,17 @@ uv run python scripts/run_demo.py --full
 # List all sites
 curl http://localhost:8000/api/v1/sites
 
-# Process a specific site
+# Process a specific site (standard processing)
 curl -X POST http://localhost:8000/api/v1/trigger/example_site
 
-# Process all sites
+# Process a specific site (with pagination support)
+curl -X POST http://localhost:8000/api/v1/trigger/example_site/pagination
+
+# Process all sites (standard processing)
 curl -X POST http://localhost:8000/api/v1/trigger/all
+
+# Process all sites (with pagination support)
+curl -X POST http://localhost:8000/api/v1/trigger/all/pagination
 ```
 
 ## Configuration

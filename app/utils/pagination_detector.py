@@ -68,6 +68,11 @@ class PaginationPatterns:
             r'(\d+)\s+items?',                       # "1000 items"
             r'(\d+)\s+articles?',                    # "1000 articles"
             r'(\d+)\s+posts?',                       # "1000 posts"
+        ],
+        'gov_uk_specific': [
+            r'Next page\s*:\s*(\d+)\s+of\s+(\d+)',  # "Next page : 2 of 6,801"
+            r'(\d+)\s+results sorted by',            # "136,019 results sorted by"
+            r'(\d+)\s+results',                      # "136,019 results"
         ]
     }
     
@@ -108,25 +113,25 @@ class PaginationDetector:
             pagination_info.pagination_patterns.extend(url_patterns)
             pagination_info.has_pagination = True
         
-        # Step 2: Detect content-based pagination
+        # Step 2: Detect content-based pagination (MUST come before navigation links)
         content_patterns = self._detect_content_patterns(page_content)
         if content_patterns:
             pagination_info.pagination_patterns.extend(content_patterns)
             pagination_info.has_pagination = True
         
-        # Step 3: Detect navigation links
+        # Step 3: Extract pagination numbers (MUST come before classification)
+        self._extract_pagination_numbers(pagination_info, page_content, url)
+        
+        # Step 4: Classify pagination type (MUST come before navigation links)
+        pagination_info.pagination_type = self._classify_pagination_type(pagination_info)
+        
+        # Step 5: Detect navigation links (MUST come after classification)
         nav_info = self._detect_navigation_links(page_content, url)
         if nav_info:
             pagination_info.has_next_prev_links = True
             pagination_info.next_url = nav_info.get('next_url')
             pagination_info.previous_url = nav_info.get('previous_url')
             pagination_info.has_pagination = True
-        
-        # Step 4: Classify pagination type
-        pagination_info.pagination_type = self._classify_pagination_type(pagination_info)
-        
-        # Step 5: Extract pagination numbers
-        self._extract_pagination_numbers(pagination_info, page_content, url)
         
         # Step 6: Calculate confidence score
         pagination_info.confidence_score = self._calculate_confidence(pagination_info)
@@ -166,6 +171,12 @@ class PaginationDetector:
             if matches:
                 detected_patterns.append(f"CONTENT_RESULT_COUNT: {pattern} (found {len(matches)} matches)")
         
+        # Check GOV.UK specific patterns
+        for pattern in self.patterns.CONTENT_PATTERNS['gov_uk_specific']:
+            matches = re.findall(pattern, page_content, re.IGNORECASE)
+            if matches:
+                detected_patterns.append(f"CONTENT_GOV_UK: {pattern} (found {len(matches)} matches)")
+        
         return detected_patterns
     
     def _detect_navigation_links(self, page_content: str, base_url: str) -> Optional[Dict[str, str]]:
@@ -179,7 +190,11 @@ class PaginationDetector:
             'a:contains("Next")',
             'a:contains("next")',
             'a[aria-label*="next"]',
-            'a[title*="next"]'
+            'a[title*="next"]',
+            'a[rel="next"]',
+            'a.next',
+            'a.next-page',
+            'a[class*="next"]'
         ]
         
         prev_selectors = [
@@ -187,7 +202,11 @@ class PaginationDetector:
             'a:contains("Previous")',
             'a:contains("previous")',
             'a[aria-label*="previous"]',
-            'a[title*="previous"]'
+            'a[title*="previous"]',
+            'a[rel="prev"]',
+            'a.previous',
+            'a.prev-page',
+            'a[class*="prev"]'
         ]
         
         # Find next link
@@ -204,15 +223,65 @@ class PaginationDetector:
                 nav_info['previous_url'] = self._resolve_relative_url(prev_link['href'], base_url)
                 break
         
+        # Fallback: Look for GOV.UK specific pagination format
+        if not nav_info.get('next_url'):
+            gov_uk_next = self._detect_gov_uk_pagination(page_content, base_url)
+            if gov_uk_next:
+                nav_info['next_url'] = gov_uk_next
+        
         return nav_info if nav_info else None
+    
+    def _detect_gov_uk_pagination(self, page_content: str, base_url: str) -> Optional[str]:
+        """Detect GOV.UK specific pagination format."""
+        # Look for "Next page : X of Y" pattern
+        next_page_pattern = r'Next page\s*:\s*(\d+)\s+of\s+(\d+)'
+        match = re.search(next_page_pattern, page_content, re.IGNORECASE)
+        
+        if match:
+            try:
+                current_page = int(match.group(1))
+                total_pages = int(match.group(2))
+                
+                # GOV.UK uses ?page=X format for pagination
+                if current_page < total_pages:
+                    # Construct next page URL
+                    parsed_url = urlparse(base_url)
+                    query_params = parse_qs(parsed_url.query)
+                    
+                    # Add or update page parameter
+                    query_params['page'] = [str(current_page + 1)]
+                    
+                    # Rebuild URL
+                    new_query = urlencode(query_params, doseq=True)
+                    next_url = urlunparse((
+                        parsed_url.scheme, 
+                        parsed_url.netloc, 
+                        parsed_url.path, 
+                        parsed_url.params, 
+                        new_query, 
+                        parsed_url.fragment
+                    ))
+                    
+                    return next_url
+                    
+            except (ValueError, IndexError):
+                pass
+        
+        return None
     
     def _classify_pagination_type(self, pagination_info: PaginationInfo) -> PaginationType:
         """Classify the type of pagination detected."""
         
-        if pagination_info.has_next_prev_links:
-            return PaginationType.LINK_BASED
+        # Check for content indicators with total pages (ABSOLUTE HIGHEST priority)
+        # This MUST come first to ensure GOV.UK is classified as INDICATOR_BASED
+        content_patterns = [p for p in pagination_info.pagination_patterns if 'CONTENT' in p]
+        if content_patterns and pagination_info.total_pages:
+            # If we have content patterns AND total pages, this is indicator-based
+            # GOV.UK shows "136,019 results" which is a clear content indicator
+            print(f"🔍 Classification: Content indicators with {pagination_info.total_pages} total pages detected - using INDICATOR_BASED strategy")
+            return PaginationType.INDICATOR_BASED
         
-        # Check for parameter-based patterns
+        # Check for parameter-based patterns (second priority)
         param_patterns = [p for p in pagination_info.pagination_patterns if 'URL_PARAM' in p]
         if param_patterns:
             if any('offset_based' in p for p in param_patterns):
@@ -220,8 +289,12 @@ class PaginationDetector:
             else:
                 return PaginationType.PARAMETER_BASED
         
-        # Check for content indicators
-        content_patterns = [p for p in pagination_info.pagination_patterns if 'CONTENT' in p]
+        # Check for navigation links (lowest priority)
+        if pagination_info.has_next_prev_links:
+            print(f"🔍 Classification: Navigation links detected - using LINK_BASED strategy")
+            return PaginationType.LINK_BASED
+        
+        # Check for content indicators without total pages (lowest priority)
         if content_patterns:
             return PaginationType.INDICATOR_BASED
         
@@ -291,6 +364,56 @@ class PaginationDetector:
                     pagination_info.total_pages = (total + pagination_info.items_per_page - 1) // pagination_info.items_per_page
                     
             except ValueError:
+                pass
+        
+        # Look for GOV.UK specific patterns
+        gov_uk_page_pattern = r'Next page\s*:\s*(\d+)\s+of\s+(\d+)'
+        gov_uk_page_match = re.search(gov_uk_page_pattern, page_content, re.IGNORECASE)
+        if gov_uk_page_match:
+            try:
+                pagination_info.current_page = int(gov_uk_page_match.group(1))
+                pagination_info.total_pages = int(gov_uk_page_match.group(2))
+            except ValueError:
+                pass
+        
+        # Also look for the more general "X of Y" pattern that GOV.UK uses
+        general_page_pattern = r'(\d+)\s+of\s+(\d+)'
+        general_page_match = re.search(general_page_pattern, page_content, re.IGNORECASE)
+        if general_page_match and pagination_info.total_pages is None:
+            try:
+                current_page = int(general_page_match.group(1))
+                total_pages = int(general_page_match.group(2))
+                # Only set if it looks like a reasonable pagination (current < total and total > 1)
+                if 1 <= current_page < total_pages and total_pages > 1:
+                    pagination_info.current_page = current_page
+                    pagination_info.total_pages = total_pages
+            except ValueError:
+                pass
+        
+        # Look for GOV.UK result count patterns
+        gov_uk_results_pattern = r'(\d{1,3}(?:,\d{3})*)\s+results'
+        gov_uk_results_match = re.search(gov_uk_results_pattern, page_content, re.IGNORECASE)
+        if gov_uk_results_match:
+            try:
+                # Remove commas and convert to int
+                total_results = int(gov_uk_results_match.group(1).replace(',', ''))
+                pagination_info.total_items = total_results
+                print(f"🔍 GOV.UK: Found {total_results} total results")
+                
+                # Set default items per page for GOV.UK (they typically show 20 results per page)
+                if pagination_info.items_per_page is None:
+                    pagination_info.items_per_page = 20
+                
+                # ALWAYS calculate total pages from total results when we have both
+                # This overrides any navigation-based total pages that might be incorrect
+                if pagination_info.items_per_page:
+                    calculated_total_pages = (total_results + pagination_info.items_per_page - 1) // pagination_info.items_per_page
+                    pagination_info.total_pages = calculated_total_pages
+                    print(f"🔍 GOV.UK: Calculated {calculated_total_pages} total pages from {total_results} results ÷ {pagination_info.items_per_page} per page")
+                    print(f"🔍 GOV.UK: This overrides any navigation-based total pages")
+                    
+            except ValueError as e:
+                print(f"⚠️ GOV.UK: Error parsing results: {e}")
                 pass
     
     def _calculate_confidence(self, pagination_info: PaginationInfo) -> float:

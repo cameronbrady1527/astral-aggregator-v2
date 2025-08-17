@@ -204,7 +204,8 @@ class UrlService:
         print(f"🔍 Final URL set contains {len(all_url_infos)} total URLs")
         if hasattr(discovery_result, 'pagination_info') and discovery_result.pagination_info:
             print(f"📄 Pagination detected: {discovery_result.pagination_info.pagination_type}")
-            print(f"📄 Total pages crawled: {discovery_result.pagination_info.total_pages}")
+            total_pages = discovery_result.pagination_info.total_pages
+            print(f"📄 Total pages crawled: {total_pages if total_pages is not None else 'Unknown'}")
         
         # Step 5: Safety check - ensure all items are UrlInfo objects
         all_url_infos = [url for url in all_url_infos if isinstance(url, UrlInfo)]
@@ -483,14 +484,15 @@ class UrlService:
                 print(f"🔍 Processing top URL {i}/{len(top_urls)}: {top_url}")
                 
                 # Check if this URL has pagination opportunities
-                pagination_result = await self._check_and_process_pagination_for_url(top_url, site_config)
+                pagination_result = await self._check_and_process_pagination(site_config, [create_url_info(top_url, DetectionMethod.TOP_URL_CRAWLING)])
                 
-                if pagination_result and pagination_result.article_urls:
+                if pagination_result and hasattr(pagination_result, 'article_urls') and pagination_result.article_urls:
                     # Convert article URLs to UrlInfo objects
                     for article_url in pagination_result.article_urls:
-                        url_info = create_url_info(
+                        url_info = UrlInfo(
                             url=article_url,
                             detection_methods=[DetectionMethod.TOP_URL_CRAWLING],
+                            detected_at=datetime.now(),
                             source_url=top_url
                         )
                         additional_urls.append(url_info)
@@ -500,9 +502,10 @@ class UrlService:
                     # Fall back to standard crawling if no pagination
                     urls_from_page = await self._crawl_single_page(top_url)
                     for url in urls_from_page:
-                        url_info = create_url_info(
+                        url_info = UrlInfo(
                             url=url,
                             detection_methods=[DetectionMethod.TOP_URL_CRAWLING],
+                            detected_at=datetime.now(),
                             source_url=top_url
                         )
                         additional_urls.append(url_info)
@@ -516,11 +519,21 @@ class UrlService:
         print(f"🔍 Total additional URLs found: {len(additional_urls)}")
         return additional_urls
     
-    async def _check_and_process_pagination_for_url(self, url: str, site_config: SiteConfig) -> Optional[CrawlResult]:
+    async def _check_and_process_pagination(self, site_config: SiteConfig, url_infos: List[UrlInfo]) -> Optional[CrawlResult]:
         """
-        Check if a specific URL has pagination opportunities and process them.
+        Check for pagination opportunities across all discovered URLs and process them.
+        
+        This method analyzes the discovered URLs to identify which ones might have
+        pagination and then processes them to extract additional content.
         """
         try:
+            # Check if pagination is enabled for this site
+            if not getattr(site_config, 'pagination_enabled', False):
+                print(f"📄 Pagination disabled for {site_config.name}, skipping pagination processing")
+                return None
+            
+            print(f"🔍 Checking for pagination opportunities across {len(url_infos)} discovered URLs...")
+            
             # Create pagination settings from site configuration
             pagination_settings = PaginationSettings(
                 max_pages=getattr(site_config, 'pagination_max_pages', 1000),
@@ -544,20 +557,58 @@ class UrlService:
                 async def crawl_function(url: str) -> str:
                     return await crawler.crawl_page(url)
                 
-                # Process the URL with pagination
-                result = await orchestrator.process_site_with_pagination(
-                    url,
-                    crawl_function,
-                    max_pages=pagination_settings.max_pages
-                )
+                # Process each URL that might have pagination
+                pagination_results = []
+                total_pages_crawled = 0
+                total_articles_found = 0
                 
-                if result.pagination_info and result.pagination_info.has_pagination:
-                    return result
+                for url_info in url_infos:
+                    if not hasattr(url_info, 'url'):
+                        continue
+                        
+                    url = url_info.url
+                    print(f"🔍 Checking {url} for pagination...")
+                    
+                    try:
+                        # Process the URL with pagination
+                        result = await orchestrator.process_site_with_pagination(
+                            url,
+                            crawl_function,
+                            max_pages=pagination_settings.max_pages
+                        )
+                        
+                        if result and result.pagination_info and result.pagination_info.has_pagination:
+                            print(f"✅ Pagination detected in {url}: {result.pagination_info.pagination_type}")
+                            total_pages = result.pagination_info.total_pages
+                            print(f"📄 Total pages: {total_pages if total_pages is not None else 'Unknown'}")
+                            print(f"📄 Total articles: {len(result.article_urls) if hasattr(result, 'article_urls') else 'Unknown'}")
+                            
+                            pagination_results.append(result)
+                            if total_pages is not None:
+                                total_pages_crawled += total_pages
+                            if hasattr(result, 'article_urls'):
+                                total_articles_found += len(result.article_urls)
+                        else:
+                            print(f"📄 No pagination detected in {url}")
+                            
+                    except Exception as e:
+                        print(f"⚠️  Error processing pagination for {url}: {str(e)}")
+                        continue
+                
+                if pagination_results:
+                    print(f"🎉 Pagination processing complete!")
+                    print(f"📄 Sites with pagination: {len(pagination_results)}")
+                    print(f"📄 Total pages crawled: {total_pages_crawled}")
+                    print(f"📄 Total articles found: {total_articles_found}")
+                    
+                    # Return the first result as a representative (you could merge them if needed)
+                    return pagination_results[0]
                 else:
+                    print(f"📄 No pagination opportunities found across {len(url_infos)} URLs")
                     return None
                     
         except Exception as e:
-            print(f"⚠️  Pagination processing failed for {url}: {str(e)}")
+            print(f"⚠️  Pagination processing failed: {str(e)}")
             return None
     
     async def _crawl_single_page(self, url: str) -> List[str]:
@@ -648,13 +699,27 @@ class UrlService:
             "input_sources": input_sources,
             "successful_sources": successful_sources,
             "pagination_processed": pagination_result is not None,
-            "pagination_info": pagination_result.pagination_info if pagination_result else None
         }
+        
+        # Add pagination info to metadata in a safe way
+        if pagination_result and hasattr(pagination_result, 'pagination_info') and pagination_result.pagination_info:
+            pagination_info = pagination_result.pagination_info
+            metadata.update({
+                "pagination_type": str(getattr(pagination_info, 'pagination_type', 'unknown')),
+                "total_pages": getattr(pagination_info, 'total_pages', 0) if getattr(pagination_info, 'total_pages') is not None else 0,
+                "has_pagination": getattr(pagination_info, 'has_pagination', False),
+                "confidence_score": getattr(pagination_info, 'confidence_score', 0.0),
+                "base_url": str(getattr(pagination_info, 'base_url', '')) if getattr(pagination_info, 'base_url') else '',
+                "next_url": str(getattr(pagination_info, 'next_url', '')) if getattr(pagination_info, 'next_url') else '',
+                "previous_url": str(getattr(pagination_info, 'previous_url', '')) if getattr(pagination_info, 'previous_url') else ''
+            })
         
         # Create a custom result object that includes pagination info
         result = UrlProcessingResult(
             urls=merged_urls,
+            total_count=len(merged_urls),
             processing_time_seconds=processing_time,
+            operation_type="discovery_with_pagination",
             metadata=metadata
         )
         
