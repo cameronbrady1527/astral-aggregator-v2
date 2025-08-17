@@ -1,0 +1,40 @@
+# # File Management Configuration
+# # This file defines policies for managing large files in the aggregator project
+
+# # File size thresholds (in MB)
+# size_thresholds:
+#   large_file: 50        # Files larger than this are considered "large"
+#   very_large_file: 100  # Files larger than this should be moved to external storage
+#   max_project_file: 200 # Maximum file size to keep in project
+
+# # External storage configuration
+# external_storage:
+#   directory: "../aggregator-data"  # Relative to project root
+#   create_placeholders: true        # Create placeholder files in project
+#   auto_move_large_files: false    # Automatically move files above threshold
+
+# # Cleanup policies
+# cleanup:
+#   auto_cleanup: false              # Automatically clean up old files
+#   keep_days: 7                     # Keep output directories for N days
+#   preserve_recent_runs: 3          # Always keep at least N most recent runs per site
+
+# # File patterns to monitor
+# file_patterns:
+#   - "**/full_url_set.json"        # Main URL collection files
+#   - "**/*_url_set.json"           # Any URL set files
+#   - "**/large_*.json"             # Large JSON files
+#   - "**/*.csv"                    # CSV files
+#   - "**/*.xlsx"                   # Excel files
+
+# # Compression settings
+# compression:
+#   auto_compress: false             # Automatically compress large files
+#   remove_after_compression: false  # Remove original after compression
+#   compression_format: "gzip"       # Compression format to use
+
+# # Performance monitoring
+# performance:
+#   monitor_file_sizes: true         # Monitor file sizes for performance impact
+#   alert_large_files: true          # Alert when files exceed thresholds
+#   log_file_operations: true        # Log file operations for debugging

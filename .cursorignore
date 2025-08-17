@@ -16,6 +16,16 @@ wheels/
 *.xlsx
 *.xls
 
+# More specific output patterns
+output/**/full_url_set.json
+output/**/large_*.json
+output/**/*_url_set.json
+
+# Size-based exclusions (files larger than 100MB)
+# Note: Cursor may not respect this, but worth trying
+**/full_url_set.json
+**/*_url_set.json
+
 # Python cache and temporary files
 .pytest_cache/
 .coverage
