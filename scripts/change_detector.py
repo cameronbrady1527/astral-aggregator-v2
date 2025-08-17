@@ -25,6 +25,26 @@ except ImportError:
 # Helpers
 # ==============================================================================
 
+def resolve_file_path(filepath: str) -> str:
+    """Resolve file path, handling external storage placeholders."""
+    path = Path(filepath)
+    
+    # Check if this is a placeholder file (moved to external storage)
+    if path.exists() and path.stat().st_size < 1000:  # Small file, might be placeholder
+        try:
+            with open(path, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+                if 'external_location' in data:
+                    external_path = data['external_location']
+                    if Path(external_path).exists():
+                        print(f"Using external file: {external_path}")
+                        return external_path
+        except (json.JSONDecodeError, KeyError):
+            pass
+    
+    return str(path)
+
+
 def extract_site_id_from_path(filepath: str) -> str:
     """Extract site ID from filepath (e.g., 'judiciary_uk' from 'output/judiciary_uk_20250811_191111/full_url_set.json')."""
     path_parts = Path(filepath).parts
@@ -75,13 +95,16 @@ def extract_timestamp_from_path(filepath: str) -> str:
 
 def load_url_collection(filepath: str) -> Dict[str, Any]:
     """Load URL collection from JSON file."""
+    # Resolve external file paths if needed
+    resolved_path = resolve_file_path(filepath)
+    
     try:
-        with open(filepath, 'r', encoding='utf-8') as f:
+        with open(resolved_path, 'r', encoding='utf-8') as f:
             return json.load(f)
     except FileNotFoundError:
-        raise FileNotFoundError(f"Input file not found: {filepath}")
+        raise FileNotFoundError(f"Input file not found: {resolved_path}")
     except json.JSONDecodeError as e:
-        raise ValueError(f"Invalid JSON in file {filepath}: {e}")
+        raise ValueError(f"Invalid JSON in file {resolved_path}: {e}")
 
 
 def get_urls_from_collection(data: Dict[str, Any]) -> Dict[str, List[str]]:
