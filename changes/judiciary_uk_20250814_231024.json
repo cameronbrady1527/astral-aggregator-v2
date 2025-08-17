@@ -1,0 +1,608 @@
+{
+  "site_id": "judiciary_uk",
+  "timestamp": "20250814_231024",
+  "urls": [
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2013/08/Vento-bands-presidential-guidance-April-2022-addendum.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2013/08/Vento-bands-presidential-guidance-5-September-2017.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2025/07/Practical-Guidance-for-Video-Hearings-Employment-Tribunals-Scotland-21-July-2025-1.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2015/03/Principles-Third-Revision-2021-1.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/announcements/commonwealth-commercial-courts-establishing-the-new-normal/sifocc-virtual-meeting-nov-2020",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/prevention-of-future-death-reports/stephen-thurm",
+      "status": "new",
+      "detection_methods": [
+        "sitemap",
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2024/11/PH-Agenda-for-Equality-Act-and-Public-Interest-Disclosure-claim-respondent-4.doc",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2020/06/FAQ-edition-date-1-June-2020.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2023/06/19B-Fixed-Costs-and-Deputy-Remuneration-in-the-Court-of-Protection-effective-from-1-April-2024.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2015/03/case-management-order-no-131-president-employment-tribunals-scotland-re-unison-2-20170818.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2015/03/Judicial-Complaint-Policy-v2-April-2018-002-1.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/prevention-of-future-death-reports/george-dicker",
+      "status": "new",
+      "detection_methods": [
+        "sitemap",
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2023/06/Vento-bands-seventh-presidential-guidance-April-2024-addendum.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2025/01/Agenda-Completion-Guidance-for-Equality-Act-claims-respondent.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/prevention-of-future-death-reports/kathleen-bamforth",
+      "status": "new",
+      "detection_methods": [
+        "sitemap",
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2015/03/Addendum-to-Presidential-Guidance-2021-1.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2024/11/PH-Agenda-for-Public-Interest-Disclosure-Claim-respondent-4.doc",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/prevention-of-future-death-reports/charlotte-noordam-prevention-of-future-deaths-report",
+      "status": "new",
+      "detection_methods": [
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/watch?t=37s&v=fsgmqBjZ6JM",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2024/10/PG-panel-composition--final--October-2024-2.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2025/04/Presidential-Practice-Direction--Presentation-of-Claims-Responses-and-Statutory-Appeals-PDF-16-April-2025.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2025/01/Agenda-Completion-Guidance-for-Public-interest-Disclosure-Claim-respondent-2.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2014/08/presidential-guidance-postponements-scotland.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/prevention-of-future-death-reports/edna-evans",
+      "status": "new",
+      "detection_methods": [
+        "sitemap",
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2015/03/Holiday-Pay-27-March-2015-_2_.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2023/03/Vento-bands-presidential-guidance-April-2023-addendum.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2022/09/20220803-Practice-Direction-ET-Scotland-Witness-Statements.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2020/03/2020_03_19_ET-Covid-19-Direction.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2020/03/2020_03_24_ET-Covid-19-Direction-Amendment.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2015/03/case-management-order-of-the-president-scotland-re-unison-20170809.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2013/08/presidential-guidance-pension-loss-20170810.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2014/08/employment-tribunals-scotland-practice-direction-2.doc",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2015/03/Judicial-Complaint-Policy-v2-April-2018-002.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2015/03/ET-road-map-31-March-2021.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/prevention-of-future-death-reports/steffan-bonnot",
+      "status": "new",
+      "detection_methods": [
+        "sitemap",
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/prevention-of-future-death-reports/robert-simpson-prevention-of-future-deaths-report",
+      "status": "new",
+      "detection_methods": [
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2025/01/Presidential-Guidance-Scotland-on-taking-oral-evidence-by-video-or-telephone-from-persons-located-abroad.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2015/03/presidential-practice-direction-rule-88-special-cases-scotland-20170615.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/prevention-of-future-death-reports/barbara-sturgess",
+      "status": "new",
+      "detection_methods": [
+        "sitemap",
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2015/03/11-June-20-SPT-ETS-PD-Fixing-and-Conduct-of-Remote-Hearings.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2023/11/PG-recording-and-transcription-final.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2013/08/Vento-bands-presidential-guidance-April-2021-addendum-1.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2015/03/presidential-guidance-statutory-appeals-20210616-003.docx",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2024/11/PH-agenda-for-Equality-Act-AND-Public-interest-disclosure-claim-claimant-5.doc",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/prevention-of-future-death-reports/resmije-ahmetaj-prevention-of-future-deaths-report",
+      "status": "new",
+      "detection_methods": [
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2013/08/PD-Electronic-Signatures-13.12.2021.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/prevention-of-future-death-reports/thomas-nicol",
+      "status": "new",
+      "detection_methods": [
+        "sitemap",
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2025/01/Agenda-Completion-Guidance-for-Public-Interest-Disclosure-Claim-claimant.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2013/08/vento-bands-presidential-guidance-first-addendum-230318.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2022/09/20220803-Presidential-Guidance-ET-Scotland-Witness-Statements.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2015/03/Basic-Guide-to-Compensation-for-Pension-Loss-2021.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2025/01/Agenda-Completion-Guidance-for-Equality-Act-and-Public-Interest-Disclosure-Claims-respondent.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2023/11/PD-recording-and-transcription-final.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2013/08/ET-road-map-31-March-2022-final.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2025/07/Presidential-Guidance-Open-Justice-in-Employment-Tribunal-Proceedings-in-Scotland.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2025/01/Agenda-Completion-Guidance-for-Equality-Act-Claim-claimant-.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2024/11/PH-Agenda-for-Equality-Act-claim-respondent-4.doc",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2013/08/Presidential-Guidance-Vento-Bands-Third-Addendum-27-March-2020-1.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2015/03/Accompanying-Note-explaining-changes-made-to-holiday-pay-direction-dated-11-December-2014-_2_.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2015/03/Third-Addendum-to-Presidential-Guidance-on-Pension-Loss-March-2021-sc.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2024/11/PH-Agenda-for-Equality-Act-claim-claimant-5.doc",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2024/11/PH-Agenda-for-Public-Interest-Disclosure-Claim-claimant-4-002.doc",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2020/06/Presidential-Guidance-ET-Covid19.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2015/03/Presidential-Guidance-Vento-Bands-Second-Addendum-25-March-2019.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2025/01/Agenda-Completion-Guidance-for-Equality-Act-and-Public-Interest-Disclosure-claims-claimant-2.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/prevention-of-future-death-reports/myla-deviren",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/prevention-of-future-death-reports/annette-krasinsky-lloyd",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/prevention-of-future-death-reports/harrison-hassall",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/prevention-of-future-death-reports/kieran-hubbard",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/prevention-of-future-death-reports/frederick-sutton",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/JCO/Documents/Guidance/A_Handbook_for_Litigants_in_Person.pdf",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2022/07/Municipio-de-Mariana-v-BHP-judgment-080722.pdf",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2019/10/Delve-and-Glynn-v-SSWP-CO-3174-2018-Final.pdf",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/prevention-of-future-death-reports/robert-wrinch",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/prevention-of-future-death-reports/liam-kenyon",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/prevention-of-future-death-reports/sheila-hynes",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/prevention-of-future-death-reports/bradley-brown",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/prevention-of-future-death-reports/99998-2",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/prevention-of-future-death-reports/matthew-storey",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/prevention-of-future-death-reports/clara-moniatis",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/prevention-of-future-death-reports/nguyen-quyen",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/prevention-of-future-death-reports/kevin-clarke",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2024/11/Various-claimants-v-Mercedes-Benz-Group-AG-and-others.pdf",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    }
+  ]
+}

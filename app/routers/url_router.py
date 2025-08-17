@@ -32,6 +32,7 @@ def list_sites():
             "name": site_info.name,
             "url": site_info.url,
             "sitemap_url": site_info.sitemap_url,
+            "is_sitemap": site_info.is_sitemap,
             "is_sitemap_index": site_info.is_sitemap_index
         }
         for site_id, site_info in sites.items()

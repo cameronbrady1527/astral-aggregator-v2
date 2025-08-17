@@ -15,6 +15,7 @@ class SiteConfig(BaseModel):
     url: str
     sitemap_url: str
     is_sitemap_index: bool = False
+    is_sitemap: bool = True  # New field: True if site has a sitemap, False if no sitemap
     onboarded: bool = False
     top_urls: List[str] = Field(default_factory=list)
     onboarding_datetime: Optional[datetime] = None
@@ -36,6 +37,7 @@ class SiteUpdate(BaseModel):
     url: Optional[str] = None
     sitemap_url: Optional[str] = None  # can be a sitemap index: if so, set below to True
     is_sitemap_index: Optional[bool] = None
+    is_sitemap: Optional[bool] = None  # New field: True if site has a sitemap, False if no sitemap
     onboarded: Optional[bool] = None
     top_urls: Optional[List[str]] = None
     onboarding_datetime: Optional[datetime] = None

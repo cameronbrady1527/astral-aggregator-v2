@@ -87,6 +87,8 @@ class UrlService:
         
         # Step 4: Reporting on final URL set size
         print(f"🔍 Final URL set contains {len(all_url_infos)} total URLs")
+        if not site_config.is_sitemap:
+            print(f"🔍 Note: Site {site_config.name} has no sitemap - URLs discovered via Firecrawl map and top URL crawling only")
         
         # Step 5: Safety check - ensure all items are UrlInfo objects
         all_url_infos = [url for url in all_url_infos if isinstance(url, UrlInfo)]
@@ -155,11 +157,23 @@ class UrlService:
         """Orchestrates concurrent URL discovery from sitemap and Firecrawl."""
         start_time = datetime.now()
         
-        # Step 1.1: Create tasks for concurrent execution
-        tasks = [
-            self._get_urls_from_sitemap(site_config),
-            self._get_urls_from_firecrawl_map(site_config)
-        ]
+        # Step 1.1: Create tasks for concurrent execution based on site configuration
+        tasks = []
+        task_descriptions = []
+        
+        # Always include Firecrawl map
+        tasks.append(self._get_urls_from_firecrawl_map(site_config))
+        task_descriptions.append("firecrawl_map")
+        
+        # Only include sitemap if the site has one
+        if site_config.is_sitemap:
+            tasks.append(self._get_urls_from_sitemap(site_config))
+            task_descriptions.append("sitemap")
+            input_sources = 2
+            print(f"🔍 Site {site_config.name} has sitemap - including sitemap processing")
+        else:
+            input_sources = 1
+            print(f"🔍 Site {site_config.name} has no sitemap - skipping sitemap processing, using only Firecrawl map")
         
         # Step 1.2: Execute concurrently
         results = await asyncio.gather(*tasks, return_exceptions=True)
@@ -169,7 +183,7 @@ class UrlService:
         successful_sources = 0
         for i, result in enumerate(results):
             if isinstance(result, Exception):
-                print(f"Error getting URLs from source {i}: {str(result)}")
+                print(f"Error getting URLs from {task_descriptions[i]}: {str(result)}")
                 url_lists.append([])
             else:
                 url_lists.append(result)
@@ -180,18 +194,22 @@ class UrlService:
         processing_time = (datetime.now() - start_time).total_seconds()
         
         # Step 1.5: Build and return UrlProcessingResult response object
+        metadata = {
+            "input_sources": input_sources,
+            "successful_sources": successful_sources,
+            "failed_sources": input_sources - successful_sources,
+            "firecrawl_map_urls": len(url_lists[0]) if len(url_lists) > 0 else 0,
+        }
+        
+        if site_config.is_sitemap:
+            metadata["sitemap_urls"] = len(url_lists[1]) if len(url_lists) > 1 else 0
+        
         return UrlProcessingResult(
             urls=merged_urls,
             total_count=len(merged_urls),
             processing_time_seconds=processing_time,
             operation_type="url_discovery",
-            metadata={
-                "input_sources": 2,
-                "successful_sources": successful_sources,
-                "failed_sources": 2 - successful_sources,
-                "sitemap_urls": len(url_lists[0]) if len(url_lists) > 0 else 0,
-                "firecrawl_map_urls": len(url_lists[1]) if len(url_lists) > 1 else 0
-            }
+            metadata=metadata
         )
     
     async def _get_urls_from_sitemap(self, site_config: SiteConfig) -> List[UrlInfo]:

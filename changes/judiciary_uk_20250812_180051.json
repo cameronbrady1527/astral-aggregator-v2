@@ -1,0 +1,637 @@
+{
+  "site_id": "judiciary_uk",
+  "timestamp": "20250812_180051",
+  "urls": [
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2024/11/Various-claimants-v-Mercedes-Benz-Group-AG-and-others.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/judgment-sitemap2.xml",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/judgments/committal-for-contempt-of-court-universal-leasing-v-lana-dayrit",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/judgment-sitemap8.xml",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2024/01/Elizabeth-Roberts-Prevention-of-future-deaths-report-2024-0006_Published.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/pfd-sitemap3.xml",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/judgment-sitemap.xml",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2019/10/Delve-and-Glynn-v-SSWP-CO-3174-2018-Final.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2016/10/mr-justice-leggatt-lecture-contractual-duties-of-faith.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/pfd-sitemap.xml",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/judgments/cdd-v-bath-and-north-east-somerset-council-anonymity-order",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://sifocc.org/2020/05/29/delivering-justice-during-the-covid-19-pandemic-and-the-future-use-of-technology",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/judgment-sitemap4.xml",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/page-sitemap.xml",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2025/06/Alame-and-others-v-Shell.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/judgment-sitemap5.xml",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2025/07/TOJ-Board-Key-Objectives.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/judgment-sitemap7.xml",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/judgment-sitemap3.xml",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/JCO/Documents/Guidance/A_Handbook_for_Litigants_in_Person.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/pfd-sitemap2.xml",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2022/07/pfd-guidance-mckenzie-friends.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/guidance-and-resources?after=&before=&guidance_type=&jurisdiction=admiralty-court&order=relevance&post_type=guidance&s=",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2016/05/international-visitors-guide-13.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2022/07/Municipio-de-Mariana-v-BHP-judgment-080722.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2023/11/Miller-and-Power-v-Turner-08.11.23.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2024/08/Judicial-Office-Business-Plan-2024-25.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/judgments/cdq-v-secretary-of-state-for-the-home-department-anonymity-order",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/judgments/bus-v-west-berkshire-council-anonymity-order",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2023/10/jo-business-plan-2023-24.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2025/05/James-Morgan-ARAG-UK.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/appointment-sitemap2.xml",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/post-sitemap.xml",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2024/12/2024-0684-Response-from-St-Mungos.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2025/07/TOJ-Board-Response-to-Public-Engagement-on-the-Key-Objectives.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/judgments/cny-v-derby-city-council-anonymity-order",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/appointment-sitemap3.xml",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2025/06/Judgment-Russian-Aircraft-Lessor-Policy-Claims-2025-EWHC-1430-Comm-2.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/judgments/the-hillingdon-hospitals-nhs-foundation-trust-v-yd-and-others",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/guidance-sitemap2.xml",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2023/06/14.457_JO_Kings_Bench_Division_Guide_2024_WEB.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/appointment-sitemap.xml",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2024/12/Diversity__Inclusion_Update_2024.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2024/07/2024-0349-Response-from-NICE.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2025/03/Vento-Bands-Presidential-Guidance-April-2025-addendum.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2022/07/Promontoria-v-Emanuel-and-others-judgment.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/judgments/nbm-v-the-home-office-anonymity-order",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/judgments/kjp-v-the-scout-association-anonymity-order",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://sifocc.org/2020/05/27/case-management-best-practice-working-presumptions-produced-by-first-sifocc-international-working-group",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2025/07/PrivatBank-v-Kolomoisky-Final-judgment-BL-2017-000665-30.07.2025.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2017/11/speech-lj-jackson-masons-lecture-hong-kong.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/subjects/court-of-protection",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2025/07/Judicial-Skills-and-Abilities-Framework.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2023/10/Nigeria-v-PID-judgment.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/judgment-sitemap6.xml",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judicialcareers.judiciary.uk/vacancies",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/JCO/Documents/Judgments/young-judgment.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/sitemap_index.xml",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/judgments/skv-and-skm-v-liverpool-womens-nhs-foundation-trust-anonymity-order",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/guidance-sitemap.xml",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2024/09/24.85_HMCTS_Administrative_Court_Guide_2024_WEB1.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/our-justice-system/court-structure",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/our-justice-system/how-the-judiciary-is-governed",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/family-justice-council",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/court-of-appeal-home/the-court-of-appeal-civil-division-live-streaming-of-court-hearings",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/subjects/immigration-and-asylum-chamber-upper",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/about-the-judiciary-of-england-and-wales/international",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/court-of-appeal-home",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/subjects/central-criminal-court-old-bailey",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/our-justice-system",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/our-justice-system/legal-year",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/about-the-judiciary-of-england-and-wales/judiciary-and-data-protection-privacy-notice",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/tribunals",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/our-justice-system/jud-acc-ind",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/about-the-judiciary-of-england-and-wales/who-are-the-judiciary",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/about-the-judiciary-of-england-and-wales/judges-career-paths",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/our-justice-system/constitutional-reform",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/magistrates-courts",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/business-and-property-courts",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/courts-and-tribunals",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/high-court",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/?page_id=55217",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/about-the-judiciary-of-england-and-wales/training-support",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/coroners-courts",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/our-justice-system/jurisdictions",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/about-the-judiciary-of-england-and-wales/history-of-the-judiciary-in-england-and-wales",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/subjects/administrative-court",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/our-justice-system/oaths",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    }
+  ]
+}

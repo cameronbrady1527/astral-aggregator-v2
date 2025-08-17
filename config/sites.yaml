@@ -1,6 +1,7 @@
 sites:
   judiciary_uk:
     is_sitemap_index: true
+    is_sitemap: true
     last_processed: null
     name: Judiciary UK
     onboarded: true
@@ -16,16 +17,28 @@ sites:
     url: https://www.judiciary.uk/
   waverley_gov:
     is_sitemap_index: false
+    is_sitemap: true
     last_processed: null
     name: Waverley Borough Council
     onboarded: true
-    onboarding_datetime: '2025-08-10T21:30:22.250584'
+    onboarding_datetime: '2025-08-12T18:13:54.493058'
     sitemap_url: https://www.waverley.gov.uk/sitemap.xml
     status: onboarded
     top_urls:
     - https://www.waverley.gov.uk/council-updates
-    - https://www.waverley.gov.uk/Council-updates
-    - https://www.waverley.gov.uk/Council-updates/Read-our-latest-news
-    - https://www.waverley.gov.uk/services/greenspaces-leisure-and-things-to-do
-    - https://www.waverley.gov.uk/services/business-and-licensing
+    - https://www.waverley.gov.uk/council-updates/read-our-latest-news
+    - https://www.waverley.gov.uk/council-updates/events
+    - https://www.waverley.gov.uk/services/planning-and-building/planning-strategies-and-policies/planning-policy-consultations
+    - https://www.waverley.gov.uk/services/council-information/councillors-and-meetings
     url: https://www.waverley.gov.uk/
+  metro_police_uk:
+    is_sitemap_index: false
+    is_sitemap: false
+    last_processed: null
+    name: Metropolitan Police UK
+    onboarded: false
+    onboarding_datetime: null
+    sitemap_url: https://www.met.police.uk/
+    status: not_onboarded
+    top_urls: []
+    url: https://www.met.police.uk/

@@ -1,0 +1,163 @@
+{
+  "site_id": "judiciary_uk",
+  "timestamp": "20250813_205450",
+  "urls": [
+    {
+      "url": "https://www.judiciary.uk/judgments/cdo-and-cdr-v-the-director-of-public-prosecutions-anonymity-order",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/judgments/dxd-v-north-cumbria-university-hospital-nhs-trust-anonymity-order",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/prevention-of-future-death-reports/gareth-jackson-prevention-of-future-deaths-report",
+      "status": "new",
+      "detection_methods": [
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/prevention-of-future-death-reports/tracey-ostler-prevention-of-future-deaths-report",
+      "status": "new",
+      "detection_methods": [
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/judgments/cpu-v-telford-wrekin-council-anonymity-order",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/prevention-of-future-death-reports/peter-kelly-prevention-of-future-deaths-report",
+      "status": "new",
+      "detection_methods": [
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/prevention-of-future-death-reports/jean-dye-prevention-of-future-deaths-report",
+      "status": "new",
+      "detection_methods": [
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/prevention-of-future-death-reports/marion-jones-prevention-of-future-deaths-report",
+      "status": "new",
+      "detection_methods": [
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/prevention-of-future-death-reports/chloe-barber-prevention-of-future-deaths-report",
+      "status": "new",
+      "detection_methods": [
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/prevention-of-future-death-reports/jessica-smithson-prevention-of-future-deaths-report",
+      "status": "new",
+      "detection_methods": [
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/announcements",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/prevention-of-future-death-reports/margaret-taylor-prevention-of-future-deaths-report",
+      "status": "new",
+      "detection_methods": [
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2020/11/Case-summary-Tatneft-v-Bogolyubov-and-others.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/prevention-of-future-death-reports/victor-hutchens-prevention-of-future-deaths-report",
+      "status": "new",
+      "detection_methods": [
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/prevention-of-future-death-reports/kenneth-edwards-prevention-of-future-deaths-report",
+      "status": "new",
+      "detection_methods": [
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2025/06/Alame-and-others-v-Shell.pdf",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2025/07/PrivatBank-v-Kolomoisky-Final-judgment-BL-2017-000665-30.07.2025.pdf",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/?s=",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2017/11/speech-lj-jackson-masons-lecture-hong-kong.pdf",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2016/10/mr-justice-leggatt-lecture-contractual-duties-of-faith.pdf",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/guidance-and-resources?after=&before=&guidance_type=&jurisdiction=admiralty-court&order=relevance&post_type=guidance&s=",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2024/01/Elizabeth-Roberts-Prevention-of-future-deaths-report-2024-0006_Published.pdf",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    }
+  ]
+}

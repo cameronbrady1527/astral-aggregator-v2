@@ -134,7 +134,9 @@ class ConfigService:
             config.sites[site_id] = SiteConfig(
                 name=updates.name or f"Site {site_id}",
                 url=updates.url or "https://waverley.gov.uk",
-                sitemap_url=updates.sitemap_url or "https://waverley.gov.uk/sitemap.xml"
+                sitemap_url=updates.sitemap_url or "https://waverley.gov.uk/sitemap.xml",
+                is_sitemap=updates.is_sitemap if updates.is_sitemap is not None else True,  # Default to True for backward compatibility
+                is_sitemap_index=updates.is_sitemap_index if updates.is_sitemap_index is not None else False
             )
 
         # update the site configuration

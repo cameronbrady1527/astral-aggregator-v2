@@ -1,0 +1,367 @@
+{
+  "site_id": "judiciary_uk",
+  "timestamp": "20250817_105128",
+  "urls": [
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2022/12/Appendix-2A-Guidance-on-eligibility-for-the-criminal-court.docx",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2022/07/Appendix-3B--Guidance-for-referees-following-an-application-for-appointment-as-a-magistrate.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/judgments/gua-v-cheshire-west-and-cheshire-council-anonymity-order",
+      "status": "new",
+      "detection_methods": [
+        "sitemap",
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2022/07/Appendix-1A-HMCTS-Parameters-for-Recruitment-Activity.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2023/08/Appendix-5B-Bench-Chairs-reference-for-transfer-to-another-local-justice-area.docx",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2022/07/Appendix-1C-Part-1-Reference-for-applicant-for-non-magistrate-member-appointment.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2019/05/Appendix-4C-Declaration-and-undertaking-form-1.doc",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2023/03/Appendix-1G-Declaration-Register.docx",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2022/07/Lord-Chancellors-Directions-to-Advisory-Committees-Part-2.docx",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/judgments/witness-iia126-v-chair-of-the-independent-inquiry-relating-to-afghanistan-anonymity-order",
+      "status": "new",
+      "detection_methods": [
+        "sitemap",
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2022/07/Appendix-1B-Part-1--Advisory-Committee-application-guidance.docx",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/judgments/cag-v-secretary-of-state-for-defence-anonymity-order",
+      "status": "new",
+      "detection_methods": [
+        "sitemap",
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2019/05/Appendix-5E-Application-to-Return-from-Supplemental-List-to-the-Active-List-1.doc",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/appointments-and-retirements/district-judge-appointment-catherine-hartley",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/appointment-roles/senior-president-of-tribunals",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2022/07/Appendix-5A--Application-transfer-to-another-local-justice-area.doc",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2016/02/re-guardian-news-and-media-Ltd.doc",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2023/01/Appendix-1F-Appointments-Confirmatory-Statement.docx",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2023/05/Lord-Chancellors-Directions-to-Advisory-Committees-Part-3-The-selection-process-for-magistrates.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/judgments/crf-v-secretary-of-state-for-the-defence-anonymity-order",
+      "status": "new",
+      "detection_methods": [
+        "sitemap",
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2022/07/Appendix-1B-Part-2--Advisory-Committee-application-form.docx",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2022/07/Appendix-1I--Template-of-advertising-Advisory-Committee-vacancies.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2023/07/Appendix-2B-Guidance-on-eligibility-for-the-family-court.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2022/07/Appendix-1H--Register-of-advisory-committee-members-interests.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/prevention-of-future-death-reports/quy-thi-pham-prevention-of-future-deaths-report",
+      "status": "new",
+      "detection_methods": [
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2024/05/Appendix-5C-Approval-or-refusal-of-transfer-requests-Bench-Chair-Decision-1-1.docx",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2023/10/Part-1-Lord-Chancellors-Directions-to-Advisory-Committees-October-2023.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2024/05/Lord-Chancellors-Directions-to-Advisory-Committees-Part-5-Matters-arising-after-appointment.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2022/07/Appendix-3A-Guidance-for-the-recruitment-of-Welsh-Language-essential-magistrates.docx",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/appointments-and-retirements/employment-judge-retirement-garnon",
+      "status": "new",
+      "detection_methods": [
+        "sitemap",
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/judgments/axa-v-city-of-bradford-metropolitan-district-council-anonymity-order",
+      "status": "new",
+      "detection_methods": [
+        "sitemap",
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/judgments/cas-v-secretary-of-state-for-the-home-department-anonymity-order",
+      "status": "new",
+      "detection_methods": [
+        "sitemap",
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2022/07/Appendix-6A--Reinstatement-application-form.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2019/05/Appendix-5D-Transfers-and-re-appointments-checklist-for-Bench-Chairs-002-1.doc",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2022/07/Appendix-1J--Handling-complaints-against-Advisory-Committee-members-Chairs-and-Secretaries.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2023/01/Appendix-1E-Assessment-Form.docx",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2025/01/2024-07-03-TEMPLATE-Diversity-Information-and-Conflicts-of-Interest-Form-Accessible-PDF.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2019/05/Appendix-1C-Part-2-Guidance-for-referees-1.docx",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2022/10/Lord-Chancellors-Directions-to-Advisory-Committees-Part-4-Submitting-recommendations-for-appointment.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2022/07/Lord-Chancellors-Directions-to-Advisory-Committees-Part-6.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/appointments-and-retirements/district-judge-appointment-shedden",
+      "status": "new",
+      "detection_methods": [
+        "sitemap",
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://sifocc.org/2020/05/27/case-management-best-practice-working-presumptions-produced-by-first-sifocc-international-working-group",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/appointments-and-retirements/circuit-bench-retirement-vosper-qc",
+      "status": "removed",
+      "detection_methods": [
+        "sitemap",
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://sifocc.org/2020/05/29/delivering-justice-during-the-covid-19-pandemic-and-the-future-use-of-technology",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.youtube.com/watch?t=37s&v=fsgmqBjZ6JM",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/announcements/commonwealth-commercial-courts-establishing-the-new-normal/sifocc-virtual-meeting-nov-2020",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/appointments-and-retirements/district-judge-appointment-cassidy",
+      "status": "removed",
+      "detection_methods": [
+        "sitemap",
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/wp-content/uploads/2022/07/Promontoria-v-Emanuel-and-others-judgment.pdf",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/appointments-and-retirements/senior-circuit-judge-retirement-sloan-kc-2",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.judiciary.uk/appointments-and-retirements/district-judge-appointment-uppal",
+      "status": "removed",
+      "detection_methods": [
+        "sitemap",
+        "firecrawl_map"
+      ]
+    }
+  ]
+}
