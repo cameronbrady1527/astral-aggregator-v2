@@ -13,7 +13,7 @@
 import asyncio
 from datetime import datetime
 from pathlib import Path
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Optional
 
 # Astral AI ----
 from app.models.url_models import (
@@ -28,6 +28,7 @@ from app.models.url_models import (
     UrlDeduplicationResult
 )
 from app.models.config_models import SiteConfig
+from app.models.pagination_models import PaginationSettings, CrawlResult
 from app.clients.firecrawl_client import FirecrawlClient
 from app.clients.openai_client import OpenAIClient
 from app.crawler.sitemap_crawler import SitemapCrawler
@@ -38,6 +39,8 @@ from app.utils.url_utils import (
     resolve_urls, 
 )
 from app.utils.json_writer import JsonWriter
+from app.utils.pagination_orchestrator import PaginationOrchestrator
+from app.utils.simple_crawler import AsyncHTTPCrawler
 from app.ai.config import AIConfig
 
 # ==============================================================================
@@ -152,6 +155,118 @@ class UrlService:
             "output_path": str(output_path),
             "onboarded": is_onboarded,
             "processing_time": datetime.now().isoformat()
+        }
+    
+    async def process_site_with_pagination(self, site_id: str) -> Dict[str, Any]:
+        """
+        Enhanced site processing with pagination support.
+        
+        This method extends the standard process_site method with intelligent
+        pagination detection and crawling for sites that have paginated content.
+        """
+        start_time = datetime.now()
+        
+        # Get site configuration
+        site_config = config_service.site(site_id)
+        if not site_config:
+            raise ValueError(f"Site {site_id} not found in configuration")
+        
+        print(f"🚀 Starting enhanced processing with pagination for site: {site_config.name}")
+        
+        # Check if pagination is enabled for this site
+        if not getattr(site_config, 'pagination_enabled', True):
+            print(f"📄 Pagination disabled for {site_config.name}, using standard processing")
+            return await self.process_site(site_id)
+        
+        # Step 1: Get URLs from multiple sources (including pagination)
+        discovery_result = await self._get_urls_from_multiple_sources_with_pagination(site_config)
+        
+        # Step 2: Check if site needs onboarding
+        is_onboarded = config_service.is_site_onboarded(site_id)
+        
+        if not is_onboarded:
+            # Step 3a: Run onboarding process with pagination awareness
+            onboarding_service = OnboardingUrlService()
+            top_urls = await onboarding_service.onboard_site_with_pagination(site_id, discovery_result.urls, site_config)
+            
+            # Step 3b: Get additional URLs from top URLs (with pagination)
+            additional_urls = await self._get_additional_urls_from_top_urls_with_pagination(top_urls, site_config)
+            print(f"🔍 Merging {len(discovery_result.urls)} existing URLs with {len(additional_urls)} additional URLs...")
+            all_url_infos = discovery_result.urls + additional_urls
+        else:
+            # Step 3: Get additional URLs from existing top URLs (with pagination)
+            top_urls = site_config.top_urls or []
+            additional_urls = await self._get_additional_urls_from_top_urls_with_pagination(top_urls, site_config)
+            print(f"🔍 Merging {len(discovery_result.urls)} existing URLs with {len(additional_urls)} additional URLs...")
+            all_url_infos = discovery_result.urls + additional_urls
+        
+        # Step 4: Reporting on final URL set size
+        print(f"🔍 Final URL set contains {len(all_url_infos)} total URLs")
+        if hasattr(discovery_result, 'pagination_info') and discovery_result.pagination_info:
+            print(f"📄 Pagination detected: {discovery_result.pagination_info.pagination_type}")
+            print(f"📄 Total pages crawled: {discovery_result.pagination_info.total_pages}")
+        
+        # Step 5: Safety check - ensure all items are UrlInfo objects
+        all_url_infos = [url for url in all_url_infos if isinstance(url, UrlInfo)]
+        print(f"🔍 After safety check: {len(all_url_infos)} valid UrlInfo objects")
+        
+        # Step 6: Show breakdown by detection method
+        method_counts = {}
+        for url_info in all_url_infos:
+            if hasattr(url_info, 'detection_methods'):
+                for method in url_info.detection_methods:
+                    method_counts[method.value] = method_counts.get(method.value, 0) + 1
+            else:
+                print(f"🔍 Warning: url_info {url_info} does not have detection_methods attribute")
+        
+        print("🔍 URL breakdown by detection method:")
+        for method, count in method_counts.items():
+            print(f"  - {method}: {count} URLs")
+        
+        # Step 7: Create URL set with proper structure
+        url_set = UrlSet(
+            site_id=site_id,
+            timestamp=datetime.now(),
+            urls=all_url_infos,
+            total_count=len(all_url_infos)
+        )
+        
+        # Step 8: Save results using JsonWriter
+        output_path = await self._save_url_set(url_set)
+        
+        # Step 9: Create processing summary
+        processing_time = (datetime.now() - start_time).total_seconds()
+        
+        # Step 10: Collect all detection methods safely
+        detection_methods_used = []
+        for url_info in all_url_infos:
+            if hasattr(url_info, 'detection_methods'):
+                for method in url_info.detection_methods:
+                    detection_methods_used.append(method.value)
+        
+        # Step 11: Build processing summary
+        summary = ProcessingSummary(
+            status="completed",
+            urls_found=len(all_url_infos),
+            urls_processed=len(all_url_infos),
+            processing_time_seconds=processing_time,
+            detection_methods_used=list(set(detection_methods_used))
+        )
+        
+        # Step 12: Save the final processing summary with correct timing
+        self.json_writer.write_processing_summary(site_id, summary)
+        
+        return {
+            "site_id": site_id,
+            "site_name": site_config.name,
+            "url_set": url_set.model_dump(),
+            "processing_summary": summary.model_dump(),
+            "discovery_result": discovery_result.model_dump(),
+            "output_path": str(output_path),
+            "onboarded": is_onboarded,
+            "processing_time": datetime.now().isoformat(),
+            "pagination_enabled": True,
+            "pagination_info": discovery_result.pagination_info.model_dump() if hasattr(discovery_result, 'pagination_info') and discovery_result.pagination_info else None
         }
     
     async def _get_urls_from_multiple_sources(self, site_config: SiteConfig) -> UrlProcessingResult:
@@ -349,12 +464,204 @@ class UrlService:
         print("🔍 No additional URLs discovered from top URLs")
         return []
     
+    async def _get_additional_urls_from_top_urls_with_pagination(self, top_urls: List[str], site_config: SiteConfig) -> List[UrlInfo]:
+        """
+        Enhanced method to get additional URLs from top URLs with pagination support.
+        
+        This method extends the standard crawling with intelligent pagination
+        detection for individual top URLs that might have paginated content.
+        """
+        if not top_urls:
+            return []
+        
+        print(f"🔍 Crawling {len(top_urls)} top URLs for additional content (with pagination support)...")
+        
+        additional_urls = []
+        
+        for i, top_url in enumerate(top_urls, 1):
+            try:
+                print(f"🔍 Processing top URL {i}/{len(top_urls)}: {top_url}")
+                
+                # Check if this URL has pagination opportunities
+                pagination_result = await self._check_and_process_pagination_for_url(top_url, site_config)
+                
+                if pagination_result and pagination_result.article_urls:
+                    # Convert article URLs to UrlInfo objects
+                    for article_url in pagination_result.article_urls:
+                        url_info = create_url_info(
+                            url=article_url,
+                            detection_methods=[DetectionMethod.TOP_URL_CRAWLING],
+                            source_url=top_url
+                        )
+                        additional_urls.append(url_info)
+                    
+                    print(f"✅ Found {len(pagination_result.article_urls)} additional URLs from {top_url}")
+                else:
+                    # Fall back to standard crawling if no pagination
+                    urls_from_page = await self._crawl_single_page(top_url)
+                    for url in urls_from_page:
+                        url_info = create_url_info(
+                            url=url,
+                            detection_methods=[DetectionMethod.TOP_URL_CRAWLING],
+                            source_url=top_url
+                        )
+                        additional_urls.append(url_info)
+                    
+                    print(f"✅ Found {len(urls_from_page)} URLs from {top_url} (standard crawling)")
+                
+            except Exception as e:
+                print(f"⚠️  Error processing {top_url}: {str(e)}")
+                continue
+        
+        print(f"🔍 Total additional URLs found: {len(additional_urls)}")
+        return additional_urls
+    
+    async def _check_and_process_pagination_for_url(self, url: str, site_config: SiteConfig) -> Optional[CrawlResult]:
+        """
+        Check if a specific URL has pagination opportunities and process them.
+        """
+        try:
+            # Create pagination settings from site configuration
+            pagination_settings = PaginationSettings(
+                max_pages=getattr(site_config, 'pagination_max_pages', 1000),
+                rate_limit_delay=getattr(site_config, 'pagination_rate_limit', 2.0),
+                concurrent_batches=getattr(site_config, 'pagination_concurrent_batches', 10),
+                timeout_seconds=30,
+                max_retries=3
+            )
+            
+            # Create pagination orchestrator
+            orchestrator = PaginationOrchestrator(pagination_settings)
+            
+            # Create async crawler
+            async with AsyncHTTPCrawler(
+                timeout=30,
+                max_retries=3,
+                delay_between_requests=pagination_settings.rate_limit_delay
+            ) as crawler:
+                
+                # Create crawl function
+                async def crawl_function(url: str) -> str:
+                    return await crawler.crawl_page(url)
+                
+                # Process the URL with pagination
+                result = await orchestrator.process_site_with_pagination(
+                    url,
+                    crawl_function,
+                    max_pages=pagination_settings.max_pages
+                )
+                
+                if result.pagination_info and result.pagination_info.has_pagination:
+                    return result
+                else:
+                    return None
+                    
+        except Exception as e:
+            print(f"⚠️  Pagination processing failed for {url}: {str(e)}")
+            return None
+    
+    async def _crawl_single_page(self, url: str) -> List[str]:
+        """
+        Crawl a single page to extract URLs (fallback method when pagination is not detected).
+        """
+        try:
+            async with AsyncHTTPCrawler(
+                timeout=30,
+                max_retries=3,
+                delay_between_requests=1.0
+            ) as crawler:
+                
+                content = await crawler.crawl_page(url)
+                if not content:
+                    print(f"⚠️  Failed to fetch content from {url}")
+                    return []
+                
+                # Extract URLs from the page content
+                from app.utils.content_extractor import ContentExtractor
+                extractor = ContentExtractor()
+                article_urls = extractor.extract_article_urls(content, url)
+                
+                print(f"✅ Extracted {len(article_urls)} URLs from {url}")
+                return article_urls
+                
+        except Exception as e:
+            print(f"⚠️  Error crawling {url}: {str(e)}")
+            return []
+    
     async def _save_url_set(self, url_set: UrlSet) -> Path:
         """Save URL set to timestamped directory."""
         # Save URL set using JsonWriter
         output_path = self.json_writer.write_url_set(url_set.site_id, url_set.urls)
         
         return output_path.parent
+
+    async def _get_urls_from_multiple_sources_with_pagination(self, site_config: SiteConfig) -> UrlProcessingResult:
+        """
+        Enhanced URL discovery with pagination support.
+        
+        This method extends the standard discovery with intelligent pagination
+        detection and crawling for sites that have paginated content.
+        """
+        start_time = datetime.now()
+        
+        # Step 1.1: Create tasks for concurrent execution based on site configuration
+        tasks = []
+        task_descriptions = []
+        
+        # Always include Firecrawl map
+        tasks.append(self._get_urls_from_firecrawl_map(site_config))
+        task_descriptions.append("firecrawl_map")
+        
+        # Only include sitemap if the site has one
+        if site_config.is_sitemap:
+            tasks.append(self._get_urls_from_sitemap(site_config))
+            task_descriptions.append("sitemap")
+            input_sources = 2
+            print(f"🔍 Site {site_config.name} has sitemap - including sitemap processing")
+        else:
+            input_sources = 1
+            print(f"🔍 Site {site_config.name} has no sitemap - skipping sitemap processing, using only Firecrawl map")
+        
+        # Step 1.2: Execute concurrently
+        results = await asyncio.gather(*tasks, return_exceptions=True)
+        
+        # Step 1.3: Handle exceptions and merge results
+        url_lists = []
+        successful_sources = 0
+        for i, result in enumerate(results):
+            if isinstance(result, Exception):
+                print(f"Error getting URLs from {task_descriptions[i]}: {str(result)}")
+                url_lists.append([])
+            else:
+                url_lists.append(result)
+                successful_sources += 1
+        
+        # Step 1.4: Merge all URL lists using the proper merging function
+        merged_urls = merge_url_lists(url_lists)
+        processing_time = (datetime.now() - start_time).total_seconds()
+        
+        # Step 1.5: Check for pagination opportunities
+        pagination_result = await self._check_and_process_pagination(site_config, merged_urls)
+        
+        # Step 1.6: Build and return UrlProcessingResult response object
+        metadata = {
+            "input_sources": input_sources,
+            "successful_sources": successful_sources,
+            "pagination_processed": pagination_result is not None,
+            "pagination_info": pagination_result.pagination_info if pagination_result else None
+        }
+        
+        # Create a custom result object that includes pagination info
+        result = UrlProcessingResult(
+            urls=merged_urls,
+            processing_time_seconds=processing_time,
+            metadata=metadata
+        )
+        
+        # Add pagination info as an attribute
+        result.pagination_info = pagination_result.pagination_info if pagination_result else None
+        
+        return result
 
 class OnboardingUrlService:
     """Service for handling site onboarding process."""
@@ -375,6 +682,31 @@ class OnboardingUrlService:
         # Step 1: Run AI analysis with deduplication logic
         print(f"🤖 Running AI analysis on {len(urls)} URLs...")
         top_urls = await self._run_ai_analysis_with_deduplication(urls, site_name)
+        print(f"🤖 AI analysis complete. Got {len(top_urls)} unique URLs: {top_urls}")
+        
+        # Step 2: Save onboarding results using existing config_service
+        print(f"💾 Saving onboarding results...")
+        await self._save_onboarding_results(site_id, top_urls, len(urls))
+        
+        print(f"✅ Onboarding process complete for {site_id}")
+        return top_urls
+    
+    async def onboard_site_with_pagination(self, site_id: str, url_infos: List[UrlInfo], site_config: SiteConfig) -> List[str]:
+        """
+        Enhanced onboarding process for a site with pagination support.
+        
+        This method extends the standard onboarding process to handle pagination
+        when onboarding URLs for a site that has paginated content.
+        """
+        print(f"🚀 Starting enhanced onboarding with pagination for {site_id} ({site_config.name})...")
+        
+        # Extract URLs for AI analysis
+        urls = [url_info.url for url_info in url_infos]
+        print(f"🔍 Extracted {len(urls)} URLs for AI analysis")
+        
+        # Step 1: Run AI analysis with deduplication logic (with pagination awareness)
+        print(f"🤖 Running AI analysis on {len(urls)} URLs (with pagination awareness)...")
+        top_urls = await self._run_ai_analysis_with_deduplication_with_pagination(urls, site_config)
         print(f"🤖 AI analysis complete. Got {len(top_urls)} unique URLs: {top_urls}")
         
         # Step 2: Save onboarding results using existing config_service
@@ -405,7 +737,7 @@ class OnboardingUrlService:
                 else:
                     print(f"🔍 No obvious duplicates found in {len(urls)} URLs")
             
-            # Step 2: Run AI analysis
+            # Step 2: Run AI analysis with batching and retry logic
             ai_suggestions = await self._run_ai_analysis(urls, site_name)
             print(f"🤖 AI analysis complete. Got {len(ai_suggestions)} suggestions")
             
@@ -445,35 +777,6 @@ class OnboardingUrlService:
         
         # This should never be reached, but just in case
         return []
-    
-    async def _check_resolved_url_uniqueness(self, urls: List[str]) -> 'UrlDeduplicationResult':
-        """Check if URLs resolve to unique pages."""
-        if not urls:
-            from app.models.url_models import UrlDeduplicationResult
-            return UrlDeduplicationResult(
-                original_urls=[],
-                unique_urls=[],
-                duplicates_removed=[],
-                duplicate_groups=[],
-                total_original=0,
-                total_unique=0,
-                total_duplicates=0,
-                processing_time_seconds=0
-            )
-        
-        # Resolve the URLs
-        resolution_mapping = await resolve_urls(urls)
-        
-        # Extract resolved URLs
-        resolved_mapping = {
-            original: result.resolved_url 
-            for original, result in resolution_mapping.mappings.items()
-            if result.resolution_success
-        }
-        
-        # Find duplicates using the existing utility
-        from app.utils.url_utils import find_duplicate_resolutions
-        return find_duplicate_resolutions(resolved_mapping)
     
     async def _run_ai_analysis(self, urls: List[str], site_name: str) -> List[OutputURLsWithInfo]:
         """Orchestrates 3 concurrent AI analyses with URL batching."""
@@ -638,7 +941,99 @@ class OnboardingUrlService:
         
         return aggregated_suggestions
     
-
+    async def _run_ai_analysis_with_deduplication_with_pagination(self, urls: List[str], site_config: SiteConfig) -> List[str]:
+        """
+        Enhanced AI analysis with automatic deduplication and retry logic,
+        with pagination awareness.
+        """
+        max_attempts = 3
+        attempt = 1
+        
+        while attempt <= max_attempts:
+            print(f"🤖 AI Analysis Attempt {attempt}/{max_attempts}")
+            
+            # Step 1: Pre-filter obvious duplicates using aggressive normalization
+            if attempt == 1:
+                print(f"🔍 Pre-filtering URLs for obvious duplicates...")
+                from app.utils.url_utils import pre_filter_duplicate_urls
+                original_count = len(urls)
+                urls = pre_filter_duplicate_urls(urls)
+                filtered_count = len(urls)
+                
+                if filtered_count < original_count:
+                    print(f"🔍 Pre-filtered from {original_count} to {filtered_count} URLs")
+                else:
+                    print(f"🔍 No obvious duplicates found in {len(urls)} URLs")
+            
+            # Step 2: Run AI analysis
+            ai_suggestions = await self._run_ai_analysis(urls, site_config.name)
+            print(f"🤖 AI analysis complete. Got {len(ai_suggestions)} suggestions")
+            
+            # Step 3: Run AI judge to select best 5
+            print(f"👨‍⚖️ Running AI judge to select best 5 URLs...")
+            top_urls = await self._run_ai_judge(ai_suggestions, site_config.name)
+            print(f"👨‍⚖️ AI judge selected {len(top_urls)} URLs: {top_urls}")
+            
+            # Step 4: Check for resolved URL duplicates
+            print(f"🔍 Checking for resolved URL duplicates...")
+            dedup_result = await self._check_resolved_url_uniqueness(top_urls)
+            
+            if dedup_result.total_duplicates == 0:
+                print(f"✅ No duplicates found. Final URLs: {top_urls}")
+                return top_urls
+            
+            print(f"⚠️  Found {dedup_result.total_duplicates} duplicates:")
+            for group in dedup_result.duplicate_groups:
+                print(f"  - Group: {group}")
+            
+            # Step 5: If duplicates found, remove them and retry with remaining URLs
+            if attempt < max_attempts:
+                print(f"🔄 Retrying with duplicate URLs removed...")
+                # Remove all URLs that have duplicates, keep only unique ones
+                unique_urls = dedup_result.unique_urls
+                print(f"🔄 Keeping {len(unique_urls)} unique URLs: {unique_urls}")
+                
+                # Update the URL list to exclude the ones that had duplicates
+                # This ensures the AI doesn't suggest the same problematic URLs again
+                urls = [url for url in urls if url not in top_urls or url in unique_urls]
+                print(f"🔄 Updated URL pool for retry: {len(urls)} URLs")
+                
+                attempt += 1
+            else:
+                print(f"⚠️  Max attempts reached. Using unique URLs only: {dedup_result.unique_urls}")
+                return dedup_result.unique_urls
+        
+        # This should never be reached, but just in case
+        return []
+    
+    async def _check_resolved_url_uniqueness(self, urls: List[str]) -> 'UrlDeduplicationResult':
+        """Check if URLs resolve to unique pages."""
+        if not urls:
+            from app.models.url_models import UrlDeduplicationResult
+            return UrlDeduplicationResult(
+                original_urls=[],
+                unique_urls=[],
+                duplicates_removed=[],
+                duplicate_groups=[],
+                total_original=0,
+                total_unique=0,
+                total_duplicates=0,
+                processing_time_seconds=0
+            )
+        
+        # Resolve the URLs
+        resolution_mapping = await resolve_urls(urls)
+        
+        # Extract resolved URLs
+        resolved_mapping = {
+            original: result.resolved_url 
+            for original, result in resolution_mapping.mappings.items()
+            if result.resolution_success
+        }
+        
+        # Find duplicates using the existing utility
+        from app.utils.url_utils import find_duplicate_resolutions
+        return find_duplicate_resolutions(resolved_mapping)
     
     async def _save_onboarding_results(self, site_id: str, top_urls: List[str], total_analyzed: int):
         """Save onboarding results using existing config_service."""

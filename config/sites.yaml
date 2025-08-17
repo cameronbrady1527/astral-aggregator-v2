@@ -15,6 +15,14 @@ sites:
     - https://police.boston.gov/category/boston-24
     - https://police.boston.gov/category/investigation-update
     url: https://police.boston.gov
+    
+    # Pagination Configuration
+    pagination_enabled: false
+    pagination_max_pages: 200
+    pagination_rate_limit: 2.0
+    pagination_concurrent_batches: 5
+    pagination_custom_patterns: []
+    
   gov_uk:
     is_sitemap: false
     is_sitemap_index: false
@@ -26,6 +34,14 @@ sites:
     status: onboarded
     top_urls: []
     url: https://www.gov.uk/search/news-and-communications
+    
+    # Pagination Configuration - This site has 136,000+ results!
+    pagination_enabled: true
+    pagination_max_pages: 1000
+    pagination_rate_limit: 1.5
+    pagination_concurrent_batches: 10
+    pagination_custom_patterns: []
+    
   judiciary_uk:
     is_sitemap: true
     is_sitemap_index: true
@@ -42,6 +58,14 @@ sites:
     - https://www.judiciary.uk/guidance-and-resources
     - https://www.judiciary.uk/judgments/tribunal-decisions
     url: https://www.judiciary.uk/
+    
+    # Pagination Configuration
+    pagination_enabled: false
+    pagination_max_pages: 300
+    pagination_rate_limit: 2.0
+    pagination_concurrent_batches: 5
+    pagination_custom_patterns: []
+    
   metro_police_uk:
     is_sitemap: false
     is_sitemap_index: false
@@ -58,6 +82,14 @@ sites:
     - https://www.met.police.uk/area/your-area
     - https://www.met.police.uk/area/your-area/met/westminster
     url: https://www.met.police.uk/
+    
+    # Pagination Configuration
+    pagination_enabled: false
+    pagination_max_pages: 150
+    pagination_rate_limit: 2.0
+    pagination_concurrent_batches: 5
+    pagination_custom_patterns: []
+    
   waverley_gov:
     is_sitemap: true
     is_sitemap_index: false
@@ -74,3 +106,10 @@ sites:
     - https://www.waverley.gov.uk/services/planning-and-building/planning-strategies-and-policies/planning-policy-consultations
     - https://www.waverley.gov.uk/services/council-information/councillors-and-meetings
     url: https://www.waverley.gov.uk/
+    
+    # Pagination Configuration
+    pagination_enabled: false
+    pagination_max_pages: 100
+    pagination_rate_limit: 2.0
+    pagination_concurrent_batches: 5
+    pagination_custom_patterns: []

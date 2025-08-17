@@ -1,7 +1,7 @@
 # ==============================================================================
 # sites_example.yaml — Example Configuration for Change Detection System
 # ==============================================================================
-# Purpose: Aid the user in setting up config/sites.yaml
+# Purpose: Aid the user in setting up config/sites.yaml with pagination support
 # ==============================================================================
 
 sites:
@@ -15,6 +15,13 @@ sites:
     onboarding_datetime: null
     status: not_onboarded
     last_processed: null
+    
+    # Pagination Configuration
+    pagination_enabled: true
+    pagination_max_pages: 500
+    pagination_rate_limit: 2.0
+    pagination_concurrent_batches: 5
+    pagination_custom_patterns: []
 
   waverley_gov:
     name: 'Waverley Borough Council'
@@ -25,57 +32,68 @@ sites:
     top_urls: []
     onboarding_datetime: null
     status: not_onboarded
-    last_processed: null    
-
-
-
-
-# PAST BASELINE SITES
-
-sites:
-  judiciary_uk:
-    is_sitemap_index: true
     last_processed: null
-    name: Judiciary UK
-    onboarded: true
-    onboarding_datetime: '2025-08-09T16:19:28.508037'
-    sitemap_url: https://www.judiciary.uk/sitemap_index.xml
-    status: onboarded
-    top_urls:
-    - https://www.judiciary.uk/news/
-    - https://www.judiciary.uk/judgments/
-    - https://www.judiciary.uk/press-releases/
-    - https://www.judiciary.uk/consultations/
-    - https://www.judiciary.uk/about-the-judiciary/
-    url: https://www.judiciary.uk/
-  waverley_gov:
+    
+    # Pagination Configuration
+    pagination_enabled: true
+    pagination_max_pages: 300
+    pagination_rate_limit: 1.5
+    pagination_concurrent_batches: 8
+    pagination_custom_patterns: []
+
+  gov_uk_news:
+    name: 'GOV.UK News & Communications'
+    url: 'https://www.gov.uk/search/news-and-communications'
+    sitemap_url: 'https://www.gov.uk/sitemap.xml'
     is_sitemap_index: false
+    onboarded: false
+    top_urls: []
+    onboarding_datetime: null
+    status: not_onboarded
     last_processed: null
-    name: Waverley Borough Council
-    onboarded: true
-    onboarding_datetime: '2025-08-10T21:30:22.250584'
-    sitemap_url: https://www.waverley.gov.uk/sitemap.xml
-    status: onboarded
-    top_urls:
-    - https://www.waverley.gov.uk/council-updates
-    - https://www.waverley.gov.uk/Council-updates
-    - https://www.waverley.gov.uk/Council-updates/Read-our-latest-news
-    - https://www.waverley.gov.uk/services/greenspaces-leisure-and-things-to-do
-    - https://www.waverley.gov.uk/services/business-and-licensing
-    url: https://www.waverley.gov.uk/
+    
+    # Pagination Configuration - Optimized for large sites
+    pagination_enabled: true
+    pagination_max_pages: 2000  # High limit for large sites
+    pagination_rate_limit: 1.0  # Faster rate for efficiency
+    pagination_concurrent_batches: 15  # Higher concurrency
+    pagination_custom_patterns:
+      - 'start='
+      - 'page='
+      - 'offset='
 
+  example_news_site:
+    name: 'Example News Site'
+    url: 'https://example-news.com/news'
+    sitemap_url: 'https://example-news.com/sitemap.xml'
+    is_sitemap_index: false
+    onboarded: false
+    top_urls: []
+    onboarding_datetime: null
+    status: not_onboarded
+    last_processed: null
+    
+    # Pagination Configuration - Conservative settings
+    pagination_enabled: true
+    pagination_max_pages: 100
+    pagination_rate_limit: 3.0  # Slower rate to be respectful
+    pagination_concurrent_batches: 3  # Lower concurrency
+    pagination_custom_patterns: []
 
-    - https://www.judiciary.uk/news-and-updates
-    - https://www.judiciary.uk/judgments
-    - https://www.judiciary.uk/appointments-and-retirements
-    - https://www.judiciary.uk/courts-and-tribunals/coroners-courts/reports-to-prevent-future-deaths
-    - https://www.judiciary.uk/guidance-and-resources
-
-
-
-
-    - https://www.judiciary.uk/judgments
-    - https://www.judiciary.uk/news-and-updates
-    - https://www.judiciary.uk/guidance-and-resources
-    - https://www.judiciary.uk/courts-and-tribunals/coroners-courts/reports-to-prevent-future-deaths
-    - https://www.judiciary.uk/judgments/tribunal-decisions
+# ==============================================================================
+# Pagination Configuration Reference
+# ==============================================================================
+# 
+# pagination_enabled: Enable/disable pagination detection and handling
+# pagination_max_pages: Maximum number of pages to crawl (prevents infinite loops)
+# pagination_rate_limit: Seconds between batch requests (be respectful to servers)
+# pagination_concurrent_batches: Number of pages to process simultaneously
+# pagination_custom_patterns: Site-specific pagination patterns to look for
+#
+# Recommended settings by site size:
+# - Small sites (<100 pages): max_pages=100, rate_limit=2.0, concurrent=5
+# - Medium sites (100-1000 pages): max_pages=500, rate_limit=1.5, concurrent=8
+# - Large sites (1000+ pages): max_pages=2000, rate_limit=1.0, concurrent=15
+#
+# Always respect robots.txt and server rate limits!
+# ==============================================================================
