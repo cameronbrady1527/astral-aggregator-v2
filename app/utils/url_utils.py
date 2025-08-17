@@ -41,9 +41,12 @@ __all__ = [
     'UrlUtils',
     'resolve_urls',
     'find_duplicate_resolutions',
+    'find_potential_duplicates_before_resolution',
+    'pre_filter_duplicate_urls',
     'create_unique_url_set',
     'filter_resolved_duplicates',
     'normalize_url',
+    'normalize_url_aggressive',
     'validate_url',
     'is_same_page',
     'merge_url_lists',
@@ -86,23 +89,40 @@ def find_duplicate_resolutions(url_mapping: Dict[str, str]) -> UrlDeduplicationR
     """
     start_time = time.time()
     
+    if not url_mapping:
+        return UrlDeduplicationResult(
+            original_urls=[],
+            unique_urls=[],
+            duplicates_removed=[],
+            duplicate_groups=[],
+            total_original=0,
+            total_unique=0,
+            total_duplicates=0,
+            processing_time_seconds=0
+        )
+    
+    # Group URLs by their resolved destination
     resolved_to_originals: Dict[str, List[str]] = {}
-
+    
     for original, resolved in url_mapping.items():
         if resolved in resolved_to_originals:
             resolved_to_originals[resolved].append(original)
         else:
             resolved_to_originals[resolved] = [original]
-
-    # find URLs that resolve to the same page (keep first)
+    
+    # Find URLs that resolve to the same page
     duplicates = set()
     duplicate_groups = []
+    
     for resolved, originals in resolved_to_originals.items():
         if len(originals) > 1:
-            duplicates.update(originals[1:])
-            duplicate_groups.append(originals)
+            # Sort originals to ensure consistent ordering (first one kept, rest are duplicates)
+            sorted_originals = sorted(originals)
+            # Keep the first URL, mark the rest as duplicates
+            duplicates.update(sorted_originals[1:])
+            duplicate_groups.append(sorted_originals)
     
-    # create unique URLs list (remove duplicates)
+    # Create unique URLs list (remove duplicates, keep first occurrence)
     unique_urls = [url for url in url_mapping.keys() if url not in duplicates]
     
     processing_time = time.time() - start_time
@@ -215,7 +235,6 @@ def normalize_url(url: str) -> str:
     if query_parts:
         sorted_query = sorted(query_parts.items())
         query = urlencode(sorted_query, doseq=True)
-
     else:
         query = ""
 
@@ -223,6 +242,118 @@ def normalize_url(url: str) -> str:
     normalized = urlunparse((scheme, netloc, path, parsed.params, query, ""))
 
     return normalized
+
+def normalize_url_aggressive(url: str) -> str:
+    """
+    More aggressive URL normalization to identify potential duplicates.
+    This removes common variations that often lead to the same page.
+    
+    Args:
+        url: URL to normalize aggressively
+        
+    Returns:
+        Aggressively normalized URL
+    """
+    if not url:
+        return url
+    
+    # First apply standard normalization
+    normalized = normalize_url(url)
+    
+    # Remove common query parameters that don't affect content
+    common_params_to_remove = [
+        'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content',
+        'ref', 'source', 'fbclid', 'gclid', 'msclkid', 'mc_cid', 'mc_eid',
+        'page', 'p', 'start', 'offset', 'limit', 'sort', 'order', 'filter',
+        'view', 'display', 'format', 'type', 'category', 'tag', 'search',
+        'q', 'query', 'keyword', 'term', 'lang', 'language', 'locale',
+        'country', 'region', 'currency', 'timezone', 'theme', 'skin',
+        'version', 'v', 'cache', 'nocache', 'timestamp', 't', 'date'
+    ]
+    
+    # Remove these parameters from the normalized URL
+    normalized = remove_query_parameters(normalized, common_params_to_remove)
+    
+    # Remove common fragments that don't affect content
+    if '#' in normalized:
+        normalized = normalized.split('#')[0]
+    
+    # Remove trailing index patterns that often lead to the same page
+    index_patterns = ['/index', '/index.html', '/index.php', '/index.asp', '/index.aspx']
+    for pattern in index_patterns:
+        if normalized.endswith(pattern):
+            normalized = normalized[:-len(pattern)]
+            if not normalized.endswith('/'):
+                normalized += '/'
+            break
+    
+    # Remove trailing .html, .htm, .php, .asp, .aspx extensions
+    extensions = ['.html', '.htm', '.php', '.asp', '.aspx', '.jsp', '.jspx']
+    for ext in extensions:
+        if normalized.endswith(ext):
+            normalized = normalized[:-len(ext)]
+            break
+    
+    return normalized
+
+def find_potential_duplicates_before_resolution(urls: List[str]) -> Dict[str, List[str]]:
+    """
+    Find potential duplicates before HTTP resolution using aggressive normalization.
+    This helps identify obvious duplicates early in the process.
+    
+    Args:
+        urls: List of URLs to check for potential duplicates
+        
+    Returns:
+        Dictionary mapping normalized URLs to lists of original URLs
+    """
+    normalized_groups = {}
+    
+    for url in urls:
+        normalized = normalize_url_aggressive(url)
+        if normalized in normalized_groups:
+            normalized_groups[normalized].append(url)
+        else:
+            normalized_groups[normalized] = [url]
+    
+    # Return only groups with multiple URLs (potential duplicates)
+    return {norm: urls for norm, urls in normalized_groups.items() if len(urls) > 1}
+
+def pre_filter_duplicate_urls(urls: List[str]) -> List[str]:
+    """
+    Pre-filter URLs to remove obvious duplicates before processing.
+    This helps reduce the workload on AI analysis and HTTP resolution.
+    
+    Args:
+        urls: List of URLs to filter
+        
+    Returns:
+        Filtered list with obvious duplicates removed
+    """
+    if not urls:
+        return []
+    
+    # Find potential duplicates
+    potential_duplicates = find_potential_duplicates_before_resolution(urls)
+    
+    if not potential_duplicates:
+        return urls
+    
+    # Remove obvious duplicates, keeping only the first occurrence
+    filtered_urls = []
+    seen_normalized = set()
+    
+    for url in urls:
+        # Get the normalized version of this URL
+        norm_url = normalize_url_aggressive(url)
+        
+        if norm_url not in seen_normalized:
+            filtered_urls.append(url)
+            seen_normalized.add(norm_url)
+        else:
+            print(f"🔍 Pre-filtered duplicate: {url} -> {norm_url}")
+    
+    return filtered_urls
 
 def validate_url(url: str) -> bool:
     """

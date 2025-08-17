@@ -1,7 +1,34 @@
 sites:
-  judiciary_uk:
-    is_sitemap_index: true
+  boston_police_gov:
     is_sitemap: true
+    is_sitemap_index: true
+    last_processed: null
+    name: Boston Police Department
+    onboarded: true
+    onboarding_datetime: '2025-08-17T11:37:37.041360'
+    sitemap_url: https://police.boston.gov/wp-sitemap.xml
+    status: onboarded
+    top_urls:
+    - https://police.boston.gov/category/news-releases
+    - https://police.boston.gov/category/bpd-community-alert
+    - https://police.boston.gov/category/missing-persons
+    - https://police.boston.gov/category/boston-24
+    - https://police.boston.gov/category/investigation-update
+    url: https://police.boston.gov
+  gov_uk:
+    is_sitemap: false
+    is_sitemap_index: false
+    last_processed: null
+    name: UK Government
+    onboarded: false
+    onboarding_datetime: null
+    sitemap_url: https://www.gov.uk/search/news-and-communications
+    status: onboarded
+    top_urls: []
+    url: https://www.gov.uk/search/news-and-communications
+  judiciary_uk:
+    is_sitemap: true
+    is_sitemap_index: true
     last_processed: null
     name: Judiciary UK
     onboarded: true
@@ -15,9 +42,25 @@ sites:
     - https://www.judiciary.uk/guidance-and-resources
     - https://www.judiciary.uk/judgments/tribunal-decisions
     url: https://www.judiciary.uk/
-  waverley_gov:
+  metro_police_uk:
+    is_sitemap: false
     is_sitemap_index: false
+    last_processed: null
+    name: Metropolitan Police UK
+    onboarded: true
+    onboarding_datetime: '2025-08-17T11:27:44.289540'
+    sitemap_url: https://www.met.police.uk/
+    status: onboarded
+    top_urls:
+    - https://www.met.police.uk/news
+    - https://news.met.police.uk/latest_news
+    - https://news.met.police.uk/latest_media
+    - https://www.met.police.uk/area/your-area
+    - https://www.met.police.uk/area/your-area/met/westminster
+    url: https://www.met.police.uk/
+  waverley_gov:
     is_sitemap: true
+    is_sitemap_index: false
     last_processed: null
     name: Waverley Borough Council
     onboarded: true
@@ -31,14 +74,3 @@ sites:
     - https://www.waverley.gov.uk/services/planning-and-building/planning-strategies-and-policies/planning-policy-consultations
     - https://www.waverley.gov.uk/services/council-information/councillors-and-meetings
     url: https://www.waverley.gov.uk/
-  metro_police_uk:
-    is_sitemap_index: false
-    is_sitemap: false
-    last_processed: null
-    name: Metropolitan Police UK
-    onboarded: false
-    onboarding_datetime: null
-    sitemap_url: https://www.met.police.uk/
-    status: not_onboarded
-    top_urls: []
-    url: https://www.met.police.uk/

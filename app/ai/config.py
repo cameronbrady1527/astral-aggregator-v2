@@ -75,6 +75,12 @@ class AIConfig:
         - NOT individual article pages or static content pages
         - NOT pages like "About Us", "Contact", "Privacy Policy", "Terms of Service"
         
+        CRITICAL: Ensure URL diversity and avoid suggesting URLs that might resolve to the same page:
+        - Avoid URLs that are likely to redirect to the same destination
+        - Avoid URLs with only minor differences (like trailing slashes, query parameters, or fragments)
+        - Avoid URLs that might be aliases for the same content
+        - Choose URLs that represent distinct content sections or categories
+        
         Good examples:
         - /news/ (news section homepage)
         - /blog/ (blog index page)
@@ -92,12 +98,15 @@ class AIConfig:
         - /about-us (static page)
         - /contact (static page)
         - /privacy-policy (static page)
+        - /news/ and /news (duplicate with/without trailing slash)
+        - /blog/ and /blog/?page=1 (same page with query parameter)
         
         Look for:
         - Pages that aggregate multiple pieces of content
         - URLs with dynamic content indicators (latest, recent, updates, news)
         - Both main sections AND valuable subsections that serve as content discovery points
         - Pages that would be bookmarked by users wanting to check for new content
+        - DISTINCT content categories that don't overlap
         
         URLs to analyze ({len(request.urls)} total):
         {request.urls}
@@ -105,10 +114,10 @@ class AIConfig:
         Return a JSON object with this exact structure:
         {{
             "urls": ["url1", "url2", "url3", "url4", "url5"],
-            "reasoning": "Brief explanation of selection criteria"
+            "reasoning": "Brief explanation of selection criteria and why these URLs are distinct"
         }}
         
-        Return exactly 5 URLs that are content discovery hubs, not individual articles.
+        Return exactly 5 URLs that are content discovery hubs, not individual articles, and ensure they represent distinct content sections.
         """
     
     @classmethod
@@ -133,12 +142,21 @@ class AIConfig:
         - Is NOT an individual article page
         - Would be useful for users wanting to check for new content regularly
         
+        CRITICAL: Ensure URL diversity and avoid selecting URLs that might resolve to the same page:
+        - Avoid URLs that are likely to redirect to the same destination
+        - Avoid URLs with only minor differences (like trailing slashes, query parameters, or fragments)
+        - Avoid URLs that might be aliases for the same content
+        - Choose URLs that represent distinct content sections or categories
+        - If you see URLs like /news/ and /news, only select one of them
+        - If you see URLs like /blog/ and /blog/?page=1, only select one of them
+        
         When evaluating URLs, prioritize:
         1. **Content density**: Pages that link to many articles
         2. **Update frequency**: Pages that are likely updated regularly
         3. **User discoverability**: How easily users can find new content
         4. **Content aggregation**: Pages that serve as content showcases
         5. **Hierarchical value**: Both main sections and valuable subsections
+        6. **URL diversity**: Ensure selected URLs represent distinct content areas
         
         Suggestions:
         {suggestions_text}
@@ -147,8 +165,8 @@ class AIConfig:
         {{
             "urls": ["url1", "url2", "url3", "url4", "url5"],
             "rejected_urls": ["rejected1", "rejected2"],
-            "reasoning": "Explanation of why these URLs are the best content discovery hubs"
+            "reasoning": "Explanation of why these URLs are the best content discovery hubs and how they represent distinct content areas"
         }}
         
-        Return exactly {request.selection_count} URLs that are content discovery hubs, not individual articles.
+        Return exactly {request.selection_count} URLs that are content discovery hubs, not individual articles, and ensure they represent distinct content sections.
         """

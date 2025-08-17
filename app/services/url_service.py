@@ -24,7 +24,8 @@ from app.models.url_models import (
     ProcessingSummary,
     OutputURLsWithInfo,
     UrlAnalysisRequest,
-    UrlJudgeRequest
+    UrlJudgeRequest,
+    UrlDeduplicationResult
 )
 from app.models.config_models import SiteConfig
 from app.clients.firecrawl_client import FirecrawlClient
@@ -371,27 +372,108 @@ class OnboardingUrlService:
         urls = [url_info.url for url_info in url_infos]
         print(f"🔍 Extracted {len(urls)} URLs for AI analysis")
         
-        # Step 1: Run 3 concurrent AI analyses
+        # Step 1: Run AI analysis with deduplication logic
         print(f"🤖 Running AI analysis on {len(urls)} URLs...")
-        ai_suggestions = await self._run_ai_analysis(urls, site_name)
-        print(f"🤖 AI analysis complete. Got {len(ai_suggestions)} suggestions")
+        top_urls = await self._run_ai_analysis_with_deduplication(urls, site_name)
+        print(f"🤖 AI analysis complete. Got {len(top_urls)} unique URLs: {top_urls}")
         
-        # Step 2: Run AI judge to select best 5
-        print(f"👨‍⚖️ Running AI judge to select best 5 URLs...")
-        top_urls = await self._run_ai_judge(ai_suggestions, site_name)
-        print(f"👨‍⚖️ AI judge selected {len(top_urls)} URLs: {top_urls}")
-        
-        # Step 3: Validate unique resolutions
-        print(f"🔍 Validating URLs...")
-        validated_urls = await self._validate_unique_resolutions(top_urls, urls)
-        print(f"🔍 Validation complete. Final URLs: {validated_urls}")
-        
-        # Step 4: Save onboarding results using existing config_service
+        # Step 2: Save onboarding results using existing config_service
         print(f"💾 Saving onboarding results...")
-        await self._save_onboarding_results(site_id, validated_urls, len(urls))
+        await self._save_onboarding_results(site_id, top_urls, len(urls))
         
         print(f"✅ Onboarding process complete for {site_id}")
-        return validated_urls
+        return top_urls
+    
+    async def _run_ai_analysis_with_deduplication(self, urls: List[str], site_name: str) -> List[str]:
+        """Run AI analysis with automatic deduplication and retry logic."""
+        max_attempts = 3
+        attempt = 1
+        
+        while attempt <= max_attempts:
+            print(f"🤖 AI Analysis Attempt {attempt}/{max_attempts}")
+            
+            # Step 1: Pre-filter obvious duplicates using aggressive normalization
+            if attempt == 1:
+                print(f"🔍 Pre-filtering URLs for obvious duplicates...")
+                from app.utils.url_utils import pre_filter_duplicate_urls
+                original_count = len(urls)
+                urls = pre_filter_duplicate_urls(urls)
+                filtered_count = len(urls)
+                
+                if filtered_count < original_count:
+                    print(f"🔍 Pre-filtered from {original_count} to {filtered_count} URLs")
+                else:
+                    print(f"🔍 No obvious duplicates found in {len(urls)} URLs")
+            
+            # Step 2: Run AI analysis
+            ai_suggestions = await self._run_ai_analysis(urls, site_name)
+            print(f"🤖 AI analysis complete. Got {len(ai_suggestions)} suggestions")
+            
+            # Step 3: Run AI judge to select best 5
+            print(f"👨‍⚖️ Running AI judge to select best 5 URLs...")
+            top_urls = await self._run_ai_judge(ai_suggestions, site_name)
+            print(f"👨‍⚖️ AI judge selected {len(top_urls)} URLs: {top_urls}")
+            
+            # Step 4: Check for resolved URL duplicates
+            print(f"🔍 Checking for resolved URL duplicates...")
+            dedup_result = await self._check_resolved_url_uniqueness(top_urls)
+            
+            if dedup_result.total_duplicates == 0:
+                print(f"✅ No duplicates found. Final URLs: {top_urls}")
+                return top_urls
+            
+            print(f"⚠️  Found {dedup_result.total_duplicates} duplicates:")
+            for group in dedup_result.duplicate_groups:
+                print(f"  - Group: {group}")
+            
+            # Step 5: If duplicates found, remove them and retry with remaining URLs
+            if attempt < max_attempts:
+                print(f"🔄 Retrying with duplicate URLs removed...")
+                # Remove all URLs that have duplicates, keep only unique ones
+                unique_urls = dedup_result.unique_urls
+                print(f"🔄 Keeping {len(unique_urls)} unique URLs: {unique_urls}")
+                
+                # Update the URL list to exclude the ones that had duplicates
+                # This ensures the AI doesn't suggest the same problematic URLs again
+                urls = [url for url in urls if url not in top_urls or url in unique_urls]
+                print(f"🔄 Updated URL pool for retry: {len(urls)} URLs")
+                
+                attempt += 1
+            else:
+                print(f"⚠️  Max attempts reached. Using unique URLs only: {dedup_result.unique_urls}")
+                return dedup_result.unique_urls
+        
+        # This should never be reached, but just in case
+        return []
+    
+    async def _check_resolved_url_uniqueness(self, urls: List[str]) -> 'UrlDeduplicationResult':
+        """Check if URLs resolve to unique pages."""
+        if not urls:
+            from app.models.url_models import UrlDeduplicationResult
+            return UrlDeduplicationResult(
+                original_urls=[],
+                unique_urls=[],
+                duplicates_removed=[],
+                duplicate_groups=[],
+                total_original=0,
+                total_unique=0,
+                total_duplicates=0,
+                processing_time_seconds=0
+            )
+        
+        # Resolve the URLs
+        resolution_mapping = await resolve_urls(urls)
+        
+        # Extract resolved URLs
+        resolved_mapping = {
+            original: result.resolved_url 
+            for original, result in resolution_mapping.mappings.items()
+            if result.resolution_success
+        }
+        
+        # Find duplicates using the existing utility
+        from app.utils.url_utils import find_duplicate_resolutions
+        return find_duplicate_resolutions(resolved_mapping)
     
     async def _run_ai_analysis(self, urls: List[str], site_name: str) -> List[OutputURLsWithInfo]:
         """Orchestrates 3 concurrent AI analyses with URL batching."""
@@ -556,43 +638,7 @@ class OnboardingUrlService:
         
         return aggregated_suggestions
     
-    async def _validate_unique_resolutions(self, top_urls: List[str], all_urls: List[str]) -> List[str]:
-        """Ensure URLs don't resolve to the same page."""
-        # Resolve the top URLs
-        resolution_mapping = await resolve_urls(top_urls)
-        
-        # Extract resolved URLs
-        resolved_mapping = {
-            original: result.resolved_url 
-            for original, result in resolution_mapping.mappings.items()
-            if result.resolution_success
-        }
-        
-        # Find duplicates
-        from app.utils.url_utils import find_duplicate_resolutions
-        dedup_result = find_duplicate_resolutions(resolved_mapping)
-        
-        if dedup_result.total_duplicates == 0:
-            return top_urls
-        
-        # Remove duplicates and find replacements
-        unique_urls = dedup_result.unique_urls
-        remaining_urls = [url for url in all_urls if url not in top_urls]
-        
-        # Try to find replacements for duplicates
-        while len(unique_urls) < 5 and remaining_urls:
-            # Take next URL from remaining
-            replacement_url = remaining_urls.pop(0)
-            
-            # Resolve it
-            replacement_resolution = await resolve_urls([replacement_url])
-            replacement_resolved = replacement_resolution.mappings[replacement_url].resolved_url
-            
-            # Check if it's unique
-            if replacement_resolved not in [resolved_mapping[url] for url in unique_urls]:
-                unique_urls.append(replacement_url)
-        
-        return unique_urls[:5]  # Ensure we don't exceed 5
+
     
     async def _save_onboarding_results(self, site_id: str, top_urls: List[str], total_analyzed: int):
         """Save onboarding results using existing config_service."""
