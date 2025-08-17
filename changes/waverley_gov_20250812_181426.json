@@ -1,0 +1,307 @@
+{
+  "site_id": "waverley_gov",
+  "timestamp": "20250812_181426",
+  "urls": [
+    {
+      "url": "https://www.waverley.gov.uk/Council-updates/Read-our-latest-news/national-hoarding-awareness-week-1",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/Council-updates/Read-our-latest-news/PgrID/1683/PageID/10",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/council-updates/read-our-latest-news/council-tax-energy-rebate-update",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/Council-updates/Read-our-latest-news/waverley-borough-council-launches-new-cil-discretionary-review-process-for-homeowners",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/pay",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/Council-updates/Read-our-latest-news/PgrID/1683/PageID/1",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/council-information/about-waverley-borough-council/corporate-strategy-2020-25",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/Council-updates/Read-our-latest-news/help-shape-farnhams-future",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/Council-updates/Read-our-latest-news/PgrID/1683/PageID/9",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/Council-updates/Read-our-latest-news/PgrID/1683/PageID/7",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/Council-updates/Read-our-latest-news/two-surrey-boroughs-say-three-unitary-model-is-best-for-surreys-future",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/Council-updates/Read-our-latest-news/PgrID/1683/PageID/5",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/benefits-and-community-support/health-and-wellbeing/support-for-carers",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/Council-updates/Read-our-latest-news/PgrID/1683/PageID/8",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/Council-updates/Read-our-latest-news/tis-the-season-for-recycling",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.ofcom.org.uk/phones-and-broadband/coverage-and-speeds/3g-switch-off",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/Council-updates/Read-our-latest-news/restoration-of-brightwell-house",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/council-updates/read-our-latest-news/mayors-labour-of-love-for-charity",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/council-updates/events/view-upcoming-events/pageid/addneweventreview/eventid/43",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/Council-updates/Read-our-latest-news/latest-business-support-barometer-published",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/Council-updates/Read-our-latest-news/PgrID/1683/PageID/4",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/Council-updates/Read-our-latest-news/PgrID/1683/PageID/2",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/Council-updates/Read-our-latest-news/category/council-news",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/Council-updates/Read-our-latest-news/PgrID/1683/PageID/3",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/Council-updates/Read-our-latest-news/read-our-2025-26-delivery-plan-for-a-thriving-inclusive-community-to-live-work-and-do-business",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/Council-updates/Read-our-latest-news/thirteenth160waverley-design-awards-winners-announced",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/Council-updates/Read-our-latest-news/PgrID/1683/PageID/54",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/parks-leisure-and-things-to-do/film-waverley?msclkid=8a1a9f6ccd4811ecb39555ff4dd8eaf5",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/Council-updates/Read-our-latest-news/PgrID/1683/PageID/6",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/Council-updates/Read-our-latest-news/waverleys-202223-budget-approved-by-councillors",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/Council-updates/Read-our-latest-news/princess-royal-opens-new-affordable-homes",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/council-updates/read-our-latest-news/pgrid/1683/pageid/103",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/Council-updates/Read-our-latest-news/waverley-to-have-new-ward-boundaries",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/coombebury%20cottage/core%20documents/cd4/cd4-2%20appellant%20soc_redacted.pdf?ver=Zq90PTkVL1Aj8cJeIa60Iw%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/Council-updates/Read-our-latest-news/parking-fine-scam",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/council-updates/read-our-latest-news/whale-to-wash-up-in-waverley",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/environmental-concerns/sustainability-and-conservation/commonplace-sustainability-hub-have-your-say",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/planning-and-building/appeals-at-inquiry/land-at-waverley-lane-farnham",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/Council-updates/Read-our-latest-news/announcement-on-ian-doyles-departure",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/council-updates/read-our-latest-news/covid-cases-rise-steeply-in-waverley",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/Information/Cookie-Policy",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/Council-updates/Read-our-latest-news/bramley-petrol-contamination-updates-and-advice",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/Council-updates/Read-our-latest-news/waverley-borough-council-stands-with-ukraine",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    }
+  ]
+}

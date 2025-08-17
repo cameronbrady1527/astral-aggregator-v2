@@ -1,0 +1,769 @@
+{
+  "site_id": "waverley_gov",
+  "timestamp": "20250817_105430",
+  "urls": [
+    {
+      "url": "https://www.waverley.gov.uk/clcnewbuild",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/Council-updates/Read-our-latest-news/parking-fine-scam",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/planning-and-building/view-and-comment-on-planning-applications/search-planning-applications/sitemap.xml",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/planning-and-building/heritage-trees-and-design",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/benefits-and-community-support/community-support",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/planning-and-building/view-and-comment-on-planning-applications/search-planning-applications",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/greenspaces-leisure-and-things-to-do/farnham-memorial-hall",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/parking/car-parks/farnham-car-parks/brightwells-car-park",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/Council-updates/Read-our-latest-news/mayors-spring-charity-variety-concert",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/housing/private-sector-housing/asbestos-in-the-home",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/housing/council-tenants/managing-your-tenancy/lodgers-and-subtenants",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/planning-and-building/heritage-trees-and-design/design",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/benefits-and-community-support/cost-of-living/warm-welcome-venues",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/council-tax/council-tax-discounts-and-exemptions/care-leavers-discount",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/housing/private-sector-housing/grants-for-private-housing",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/council-information/engage-with-your-council/past-projects-and-consultations",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/Council-updates/Read-our-latest-news/free-family-fun-this-easter",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/housing/private-sector-housing/grants-for-private-housing/disabled-facilities-grant",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/council-tax/council-tax-discounts-and-exemptions/homes-for-ukraine",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/planning-and-building/planning-strategies-and-policies/housing-supply-and-delivery",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/Council-updates/Read-our-latest-news/hrh-the-duke-of-edinburgh",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/parking/car-parks/farnham-car-parks/central-car-park-farnham",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/council-information/about-waverley-borough-council/insurance-claims-against-the-council",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/planning-and-building/heritage-trees-and-design/conservation-areas",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/greenspaces-leisure-and-things-to-do/borough-hall-godalming",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/bins-and-recycling/rubbish-and-recycling-collections/bulky-waste-collections",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/planning-and-building/local-land-charges/assets-of-community-value",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/parking/car-parks/enforcement-process-for-penalty-charge-notices-pcns",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/planning-and-building/planning-strategies-and-policies/local-plan",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/housing/council-tenants/landlord-services-annual-report-2021-22",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/benefits-and-community-support/crime-and-safety/preventing-terrorism",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/council-information/councillors-and-meetings/your-councillors-and-elected-representatives",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/Council-updates/Read-our-latest-news/flying-the-flag-for-ukraine",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/housing/council-tenants/housing-rent/problems-paying-your-council-rent",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/planning-and-building/addresses-and-street-naming-and-numbering/contact-us",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/planning-and-building/planning-strategies-and-policies/thames-basin-heath-spa",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/council-updates/read-our-latest-news/waverleys-summer-of-sport",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/housing/private-sector-housing/grants-for-private-housing/relocation-grant",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/council-information/registering-to-vote-and-elections/bid-ballots",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/business-and-licensing/waverley-training-services/work-based-learning-and-qualifications",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/bins-and-recycling/recycle/what-happens-to-your-recycling",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/housing/housing-development-affordable-homes/new-affordable-homes-in-waverley",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/parking/car-parks/cranleigh-car-parks/snoxhall-fields-car-park",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/pay-report-apply/report-it/report-fraud-and-corruption",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/planning-and-building/view-and-comment-on-planning-applications",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/planning-and-building/building-control/dangerous-structures-and-demolitions",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/benefits-and-community-support/armed-forces-community-covenant",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/council-updates/events/view-upcoming-events/pageid/addneweventreview/eventid/43",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/News/Read-our-latest-news",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/benefits-and-community-support/crime-and-safety/hate-crime",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/council-information/councillors-and-meetings/council-and-committee-meetings",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/benefits-and-community-support/cost-of-living/community-donations",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/Council-updates/Read-our-latest-news/census-is-coming-in-2021",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/Council-updates/Read-our-latest-news/fantastic-feedback-for-broadwater-park",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/business-and-licensing/waverley-training-services/study-programme-currently-closed",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/council-updates/read-our-latest-news/new-charges-at-frensham-great-pond",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/council-information/about-waverley-borough-council/-financial-information",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/housing/private-sector-housing/landlords/landlord-information-tenant-finder-scheme",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/planning-and-building/strategic-and-waverley-owned-developments/broadwater-park-development",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/planning-and-building/planning-strategies-and-policies/neighbourhood-planning",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/council-information/registering-to-vote-and-elections/election-staff",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/Council-updates/Read-our-latest-news/stay-safe-this-bonfire-night",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/council-tax/help-if-youre-struggling/council-tax-discretionary-relief",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/planning-and-building/appeals-at-inquiry/farnham-park-cemetery",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/council-information/councillors-and-meetings/councillors-and-decision-making",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/housing/council-tenants/home-emergencies-repairs-maintenance-and-safety/home-safety",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/Council-updates/Read-our-latest-news/restoration-of-brightwell-house",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/environmental-concerns/sustainability-and-conservation/climate-change-strategy-and-action-plan",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/business-and-licensing/food-safety/food-safety-in-catering-courses",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/Council-updates/Read-our-latest-news/loungers-comes-to-godalming-town-centre",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/council-information/freedom-of-information-foi-and-data-protection",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/planning-and-building/planning-strategies-and-policies/planning-policy-consultations",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/planning-and-building/appeals-at-inquiry/old-park-lane-farnham",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/benefits-and-community-support/cost-of-living/home-and-energy-costs",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/greenspaces-leisure-and-things-to-do/greenspaces-in-waverley/contact-greenspaces",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/Council-updates/Read-our-latest-news/tis-the-season-for-recycling",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/housing/private-sector-housing/advice-and-protection-for-private-tenants",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/Council-updates/Read-our-latest-news/waverley-borough-council-supports-asb-week",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/council-updates/read-our-latest-news/pgrid/1683/pageid/10",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/housing/private-sector-housing/grants-for-private-housing/handyperson-service",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/planning-and-building/building-control/book-an-inspection-for-building-control",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/environmental-concerns/street-cleaning-and-fly-tipping/report-an-abandoned-vehicle",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/Council-updates/Read-our-latest-news/thirteenth160waverley-design-awards-winners-announced",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/Council-updates/Read-our-latest-news/reporting-a-missed-bin",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/Council-updates/Read-our-latest-news/help-shape-farnhams-future",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/housing/housing-development-affordable-homes/affordable-housing-contacts-for-developers",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/council-information/about-waverley-borough-council/assets",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/business-and-licensing/licences-and-registrations/street-trading",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/housing/private-sector-housing/landlords/advice-for-landlords-and-agents",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/parking/street-parking/enforcing-parking-restrictions-on-roads",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/benefits-and-community-support/apply-to-close-a-road",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/council-updates/read-our-latest-news/blooming-marvellous-support-from-ermine-construction",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/environmental-concerns/pollution-control/air-quality/air-quality-management-areas-aqmas",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/planning-and-building/building-control/building-control-team-contacts-and-information",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/council-updates/read-our-latest-news/mayors-labour-of-love-for-charity",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/greenspaces-leisure-and-things-to-do/greenspaces-in-waverley",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/benefits-and-community-support/crime-and-safety/stop-cold-calling-information",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/bins-and-recycling/rubbish-and-recycling-collections/check-bin-collection-day",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/greenspaces-leisure-and-things-to-do/borough-hall-godalming/cinema",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/business-and-licensing/food-safety/register-a-food-business",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/environmental-concerns/pollution-control/air-quality/air-pollution-alerts",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/business-and-licensing/business-rates",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/planning-and-building/building-control/building-control-services",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/housing/council-tenants/managing-your-tenancy/types-of-tenancy",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/bins-and-recycling/rubbish-and-recycling-collections/missed-bin-collections",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/benefits-and-community-support/benefits/how-to-claim-housing-benefit",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/business-and-licensing/licences-and-registrations/public-health-permits-and-licences",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/business-and-licensing/business-rates/manage-your-business-rates-online",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    }
+  ]
+}

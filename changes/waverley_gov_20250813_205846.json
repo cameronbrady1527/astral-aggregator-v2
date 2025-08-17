@@ -1,0 +1,3107 @@
+{
+  "site_id": "waverley_gov",
+  "timestamp": "20250813_205846",
+  "urls": [
+    {
+      "url": "https://www.waverley.gov.uk/council-updates/events/sitemap.xml",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid6.3.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/core_docs/cd1d.8-location-plan-2502st-os-002-plot-3.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.11%20(redacted).pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.5.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.35%20(redacted).pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/id/id9.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid11.2.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.27%20(redacted).pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/id/id13.1%20-%20appeal%20a%20-%20draft%20suggested%20conditions.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/farnham%20park%20cemetery/id/id1/2101-poe-revisedpage18.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.21%20(redacted).pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/id/id8.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid6.5%20public%20responses%20q-y%20(redacted).pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid12.4.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.4.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/core_docs/cd12-bramley-parish-council-evidence.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/id/id7.3.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/council-information/councillors-and-meetings/sitemap.xml",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/old-park-lane/core-docs/cd1.40%20(redacted).pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid12.10%20part%201%20(redacted).pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.13.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.2.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/id/id7.6.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/id/id5.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/id/id4.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/News/Read-our-latest-news",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/id/id2.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.12%20(redacted).pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/planning-strategies-and-policies/local-plan/wbc%20level%201%20sfra%20report-appendix%20a%20and%20figures%201-2.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid8.5.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid12.5%20(redacted).pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/housing/blocks-of-flats/newsletter-community-estates-development-2025.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/id/id3.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid11.1%20(redacted).pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid8.1.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/id/id1.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/id/id7.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.8.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid12.8.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.24.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/planning-strategies-and-policies/local-plan/flood_risk_and_sequential_test_report.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/core_docs/cd11%201010%203313865%20need%20roundtable.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.14.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.18.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/planning-strategies-and-policies/local-plan/local%20plan%20part%202%20examination/appendix%203%20waverley%20local%20plan%20part%202%20-%20site%20allocations%20and%20dm%20policies%20(mods%20tracked%20change).pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid12.9.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/core_docs/cd12-supplementary-evidence-gtaa.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/id/id16%20-%20wa_2022_02144%20thatched%20house%20farm%20-%20application%20documents.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/housing/repairs-policy-2025.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid12.7.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/Information/Cookie-Policy",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.19.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/core_docs/cd12-supplementary-evidence-planning.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.23%20(redacted).pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid8.2.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid6.4.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid12.10%20part%202%20(redacted).pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/farnham%20park%20cemetery/id/id1/2101-summarypoe-revisedpage5.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.29.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid6.3%20public%20responses%20e-i%20(redacted).pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid9.2%20public%20responses%20c-d%20(redacted).pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.10.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.3.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid12.6.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.9.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/site%20notice/site%20notice%203313865%203314447%203322400%203323108%20-%20june%202025%20inquiry%20final%202.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.20%20(redacted).pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid8.3.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.16.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.32.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/id/id6.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/id/id7.2.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/old-park-lane/core-docs/cd8.6.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/council-information/freedom-of-information-and-data/waverley_fraud_statistics_to_end_march_2020%20(1).xlsx",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/id/id7.4.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid6.1.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.17.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid6.6.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.33.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/old-park-lane/core-docs/cd8.3%20(redacted).pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.7.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid12.3.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.26.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/id/id12%20-%20suggested%20route%20for%20site%20visit%20with%20photo%20locations.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.28%20(redacted).pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.34%20(redacted).pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.31.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.6.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/id/id7.1.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid6.5.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/council-updates/read-our-latest-news/what%20is%20anti-social%20behaviour",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid9.4%20public%20responses%20h-i%20(redacted).pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/core_documents_schedule/250514%20core%20documents%20list%20v19.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/farnham%20park%20cemetery/id/id1/2101-summarypoe-revisedpage10.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/id/id13.4%20-%20appeal%20d%20-%20draft%20suggested%20conditions.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/housing/landlord-services-performance-exceptions-report-may-2025.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/old-park-lane/appeal-decision/appeal%20decision%20-%203353124.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/id/id13.2%20-%20appeal%20b%20-%20draft%20suggested%20conditions.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/id/id0.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/site%20notice/notification%20letter%20-%20dated%2013%20may%202025.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/core_documents_schedule/250514%20new%20inquiry%20core%20documents%20list%20v19.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.25.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/farnham%20park%20cemetery/id/id1/2101-poe-revisedpage33.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.1%20(redacted).pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/benefits-and-support/voluntary-sector/market%20position%20document%202025%202028%20(pdf).pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/id/id7.5.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/id/id13.3%20-%20appeal%20c%20-%20draft%20suggested%20conditions.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/core_documents/cd6/cc4.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/parks-leisure-and-things-to-do/film-waverley",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_crawl"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid8.4.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/id/id15%20-%20wa_1994_0128%20lydia%20park%20-%20committee%20report.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/id/id14%20-%20statement%20of%20cllr%20sarah%20sullivan%20(hascombe%20parish%20council).pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid6.2.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/core_documents/cd8/8.1%20nppf_december_2024.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.30.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/core_docs/cd1c.6-location%20plan-2502s%20-os-003-plot-4.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.15.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/timetable/1010%203313865%20timetable%20v4%2025%2006%2008.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/id/id7.7.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.22.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/planning-strategies-and-policies/local-plan/local%20plan%20part%201%20examination/sfra%20level%201%202015.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/housing/landlord-services-performance-scorecard-may-2025.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/core_docs/cd12-supplementary-evidence-landscaping.pdf",
+      "status": "new",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=3bBj6k5ivqE%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=y2RH-SVLWz8%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.32.pdf?ver=GJSSLsDjHHTOlVbNhmK41A%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/core_docs/cd1d.8-location-plan-2502st-os-002-plot-3.pdf?ver=HlGnz_k-xlwL6_fo7F6rHg%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/housing/blocks-of-flats/newsletter-community-estates-development-2025.pdf?ver=jKhRohC-xv6MP45nxILaaw%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=Ur99U8TEew4%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=_J0ySXrCh68%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/council-updates/read-our-latest-news/what%20is%20anti-social%20behaviour?+%7C+Waverley+Borough+Council=",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=6NyIrn922ls%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=RLPzb5sVm2E%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=C45qOAAg3u4%3D&portalid=0&timestamp=1706892771374",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=DRj0zMqJ0x0%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=DdowUb2Upm0%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.7.pdf?ver=fnX1M0uCExUBkCoatPyBEg%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=VcBP5yS_fQ4%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.8.pdf?ver=rtUHzy8NWYGRLdApznR4fQ%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/id/id7.2.pdf?ver=ldPRy5vxRMOO_nnX19GM1A%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=A4UWypixiVU%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=hqJFZTA4XNc%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=G96g_K94urg%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/old-park-lane/core-docs/cd1.40%20(redacted).pdf?ver=CcYJuvFvgK5HuomvlCVfdg%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=SKV3FkrZzyw%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=72Ylzuk3-lE%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.9.pdf?ver=AgAeqJLVzUdkTHKD21v6MQ%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.3.pdf?ver=nnkOUbTxR6WwzO_7XGx1gQ%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=OB2eavE_mN4%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid8.5.pdf?ver=_UXt-wLl-Lg6RnQiQwjNCw%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/core_documents/cd6/cc4.pdf?timestamp=1701701976906&ver=381CZdtj_x9ctYJwqJuNMA%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=eVbvI--9v2Y%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=ZEIDMnQ0NTg%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid6.1.pdf?ver=ljInUPdnTCGFie7VmqbeSQ%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=SkaPDktdDJY%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=VeFyGofzC-0%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=DDHXqFAn6ZY%3D&portalid=0&timestamp=1713469828948",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.31.pdf?ver=Rt3SXIMtxDO4zA3-Ag2B6g%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=LtF_0joTwVM%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=pNAgC3J7aso%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/planning-strategies-and-policies/local-plan/flood_risk_and_sequential_test_report.pdf?ver=adElyRXdECqBGuhg0sBzvw%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=Xf7MrRip244%3D&portalid=0&timestamp=1713469844520",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=t7a7_u_ybXw%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=e3n14J6lchk%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/id/id7.1.pdf?ver=M6SzH8kNxOJJStTouwp6sw%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=zysF8nRGdQ4%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid12.10%20part%202%20(redacted).pdf?ver=PUf6AD9yIFRS5iMpy188ug%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=mJWYafSnBXY%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/id/id13.1%20-%20appeal%20a%20-%20draft%20suggested%20conditions.pdf?ver=MEnL9PR2_9zQf1mpLv46MA%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=akMMBjibrzE%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.6.pdf?ver=c1sV61IDucfsIUN4SYDD9A%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid6.4.pdf?ver=3WGpKEUuLY6WfNM3HGyAiA%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/id/id0.pdf?ver=Yg0aVMZ07cM1i1xA09HN7A%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid11.1%20(redacted).pdf?ver=MY-uM3CVgtEDU0-Yyoe-7g%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid12.10%20part%201%20(redacted).pdf?ver=gMj-jKo4bTP5WONnwU72xA%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=pOqR4OSbJG4%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=0WgDgsHHL_o%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=SW83mTwzuhQ%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=dEAb6009GuU%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=mr8gcTzs6Bw%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=kCLS7Z4rlyk%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=PLh-sSkJWnI%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.34%20(redacted).pdf?ver=9zk-V6K8NTgPowTL49555g%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.12%20(redacted).pdf?ver=m4NdkwU3yXsrRy4UHHbUpA%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=35pWu8AvCdc%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=YBSQsgAdJiE%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/id/id12%20-%20suggested%20route%20for%20site%20visit%20with%20photo%20locations.pdf?ver=DM5u-KSQWVnYGjvQgnm5oQ%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=nCR2ACy8ySE%3D&portalid=0&timestamp=1722436603493",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=hdm1jKK0MrI%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/farnham%20park%20cemetery/id/id1/2101-poe-revisedpage33.pdf?ver=vIukrJ8vKzpuOnnZVnckaA%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=Mpcnf_r36F0%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=BOFrSCzdGIc%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=IGYTwyMBeHU%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.5.pdf?ver=nnkOUbTxR6WwzO_7XGx1gQ%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=voBPCQqFEco%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=aBiyI3KKmG4%3D&portalid=0&timestamp=1722437656089",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/id/id7.6.pdf?ver=Xv-oBfkwnJAG-jIDfMZqAA%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=qDUPn1_uYZg%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=tPIPfobnWxA%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=FuZLyGd2dFE%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/id/id7.7.pdf?ver=YkG15Ri_u2QtLk2mSw2RtA%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/id/id1.pdf?ver=CB-wcX92HgGhGuDq1t45Ig%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.20%20(redacted).pdf?ver=EasraQvlbif0WlwOIse2OA%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/core_documents_schedule/250514%20new%20inquiry%20core%20documents%20list%20v19.pdf?ver=AzZj2qDasRUxfiwcX_Ap_w%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=yXc8iYcY5eM%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=c0w6sNzVGMA%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/planning-strategies-and-policies/local-plan/local%20plan%20part%202%20examination/appendix%203%20waverley%20local%20plan%20part%202%20-%20site%20allocations%20and%20dm%20policies%20(mods%20tracked%20change).pdf?ver=870CP3TEg55faEWpytfPVg%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=S52O6yHojjw%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=a5H89YnU4DA%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=vqTuaGRxA1Y%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/housing/landlord-services-performance-exceptions-report-may-2025.pdf?ver=VKUWNmpSa2F9Oz9uKlud1A%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=tjaQeR-Fqv0%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=K1hPM2TxoCo%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=Uv63F-79yPQ%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=aVgthPbif8s%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid8.1.pdf?ver=LIIlEaRO0vsErrK86B7Q9g%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=bZskjn_uQHk%3D&portalid=0&timestamp=1713469862851",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/id/id5.pdf?ver=emY_nHdRTGSycjqIFNvxdA%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=Ay3AZl2a5L4%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=_xbDc5RqCHE%3D&portalid=0&timestamp=1722438854915",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=mZ_lpvR2JjE%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=zURRhrpXKRg%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid6.3%20public%20responses%20e-i%20(redacted).pdf?ver=Mcqz0n0bihBK85PY4brt_w%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=mnwfVD9H2ec%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.18.pdf?ver=gaCqHlRyI4CZfYVpINJjXw%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=kBHCRLif6bc%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=fbFOwT4asyA%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=ikya8i6Og9o%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=ubH3dI77d90%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/site%20notice/site%20notice%203313865%203314447%203322400%203323108%20-%20june%202025%20inquiry%20final%202.pdf?ver=0v-q-jSkNyzNgzhQPeKlrw%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.22.pdf?ver=OmR1XzybrOhxlaqB8gcvsg%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=O60Pv__xAnM%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=TASZ2ewPkrE%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.10.pdf?ver=AgAeqJLVzUdkTHKD21v6MQ%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=p2YnFYsxwgY%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=kv80LIi1YwI%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=nFYb07lTdec%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/id/id13.2%20-%20appeal%20b%20-%20draft%20suggested%20conditions.pdf?ver=MEnL9PR2_9zQf1mpLv46MA%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=lu1wLaL_tRc%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid12.8.pdf?ver=eJlc4a8wgNfMvnEC8SC-7Q%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/core_documents/cd8/8.1%20nppf_december_2024.pdf?ver=6UR2T5W341KKRfiWyFkZiQ%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=tbQqZp7atAM%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=K6ANUnBUr1E%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=yd8a8ExxrE8%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.15.pdf?ver=_KJQPEqmXSw_vC1Q8fXN_w%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.24.pdf?ver=KDhxWXM_iAuL-xLTRAOIcQ%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=EWlr0OgOqfA%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/id/id7.4.pdf?ver=q76juQyoMtGvlWDzX8ZoyA%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=XpJA4HuXAhI%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=7uDLWuOttcs%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.25.pdf?ver=EqhA8SsU5s11WuYA2-Ju5w%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/core_docs/cd12-supplementary-evidence-landscaping.pdf?ver=kykfFlneA0ZoYqRLdRgqXQ%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.29.pdf?ver=I6AFIeI7qFLYIpTUq2W2sg%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid8.4.pdf?ver=oq_OaMRo5eJmcvKl_1TkDg%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=NBRph8uSuzs%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=QOP_8lS8O48%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/core_documents_schedule/250514%20core%20documents%20list%20v19.pdf?ver=JbTYpj7XGltas80emVqQmA%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/old-park-lane/core-docs/cd8.6.pdf?ver=mW7DWcDPtZKTTa3jE1fCeA%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=nR7M0Ii3PYo%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.21%20(redacted).pdf?ver=v2w7WKtthB7hWyLf1rnJfA%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=Ybx9y9W6tew%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=v9ukGkJdY5k%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/housing/repairs-policy-2025.pdf?ver=Qs9y1aB3lJa7DjzmVkKy6w%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid12.6.pdf?ver=M9pV1gpRBaqsUKq3goD3Dg%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=Kbr5ozcOUYg%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.19.pdf?ver=QVgNSMFJMkul_k6ugKgSEA%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.1%20(redacted).pdf?ver=bHsYdmtluKuuRpiHapkpMw%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.23%20(redacted).pdf?ver=r0haHpBplS1AO8s8vLVnMg%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=jamsvn6g3Vk%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=9L6ieynyBJQ%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/id/id16%20-%20wa_2022_02144%20thatched%20house%20farm%20-%20application%20documents.pdf?ver=oRAAub56TUjsCqR8en58kg%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.13.pdf?ver=d92UDzWC-vRwLePDaUIS3A%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=XU_2reBxxRI%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=L-pi4aZtbs8%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/farnham%20park%20cemetery/id/id1/2101-summarypoe-revisedpage5.pdf?ver=Grclbm5dWtsLGCR1XAOUjA%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid6.6.pdf?ver=mgSKb4rkL1jAY1rK5A2BgA%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=gZxvUSSewxA%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=QgxKrts-EGM%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=m7aUd3SRJNM%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/id/id7.3.pdf?ver=qX8JLMdRTG-aY2WI-iXgAA%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=qbOtxuQZobo%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=Suw6KHML7sM%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=xsuIt_NVg6E%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=iov3arNrAtE%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.14.pdf?ver=Jz3aShMOqe10TyDXyllqNQ%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=38ot5wwPkNI%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=zE8q69AHucg%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=mg0quVneNzU%3D&portalid=0&timestamp=1722433186094",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=MqYxXI_pZek%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/old-park-lane/core-docs/cd8.3%20(redacted).pdf?ver=7t6RnE6bsP2aoxPUc8b9Ug%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=5BQFMC-LPhU%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=saziDMjQS60%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/farnham%20park%20cemetery/id/id1/2101-summarypoe-revisedpage10.pdf?ver=W_WZ7-GsTaFqRhuIuOImJg%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.33.pdf?ver=abZvvvO9dR6SJtrDOaGnxw%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=0tL7iIfmXxo%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=xo7OVc8RX9U%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=2tHHZGkERW4%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/id/id2.pdf?ver=1dT-RTE6ZdKtvkyYWeeVpw%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/site%20notice/notification%20letter%20-%20dated%2013%20may%202025.pdf?ver=UPRnhHFydbmu-WOkxrO2Hw%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=e0LdoS4h2XA%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=HgQUEDCSVKM%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/farnham%20park%20cemetery/id/id1/2101-poe-revisedpage18.pdf?ver=o36PvYoxW9ZagJZxZ4Plqw%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.35%20(redacted).pdf?ver=IWIOPO9mT4__ojCcpmgkyg%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=R2wZuWVYVvo%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid6.5.pdf?ver=RCaMoDcSHCqrQtJ8m2gaaA%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=_-6S-XNguWg%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid6.3.pdf?ver=Hf_Taf9rLv876rwRj_OuWQ%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=il4Hr2YUSZQ%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=OcOLrGLbY44%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/id/id13.3%20-%20appeal%20c%20-%20draft%20suggested%20conditions.pdf?ver=MEnL9PR2_9zQf1mpLv46MA%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/old-park-lane/appeal-decision/appeal%20decision%20-%203353124.pdf?ver=VIKLd4jedUpU_RHgHbxTCQ%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=HH38JOVOv7U%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=vLI3VqLEE0E%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=-c43s8iuTDY%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=qde_P_8Yrv4%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/planning-strategies-and-policies/local-plan/local%20plan%20part%201%20examination/sfra%20level%201%202015.pdf?ver=xU6ACWKLqgQS1DvO-g8TFg%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=I9Y68qAYceA%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=H7OCqBXbFAQ%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid12.9.pdf?ver=2S7xYQ7Qed6c7OyRGHOGxw%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.26.pdf?ver=HSRfTD7E5tky78hoabLFIg%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/core_docs/cd1c.6-location%20plan-2502s%20-os-003-plot-4.pdf?ver=Apf2hlofxq7Lj-5ECG4GaA%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid12.3.pdf?ver=LIIlEaRO0vsErrK86B7Q9g%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=TWW4pA9Bhyw%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/benefits-and-support/voluntary-sector/market%20position%20document%202025%202028%20(pdf).pdf?ver=vhLg_-dm-XIyzZdSUmr3Ow%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=9K-qL12-3Q8%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=zwexbQQDhD4%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=cihxjQwlWsU%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=I4GO-ZZSO8w%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=Q4NOOAncV9M%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/timetable/1010%203313865%20timetable%20v4%2025%2006%2008.pdf?ver=NTA22shsRBaO4-qwhjx2NQ%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=POU5w6OLDZg%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=zVeiYcEY1ao%3D&portalid=0&timestamp=1713469847813",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=PNgEHCQjD_s%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/id/id6.pdf?ver=4GH04JHa3thWX3Nr-kBetA%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=nF6iUUv6T8c%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=trfb3UP0tNo%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid9.2%20public%20responses%20c-d%20(redacted).pdf?ver=I8LY79XnHqMOA1yHcdkxow%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=i_5eIRasd38%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=vYam_Mil_7A%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.11%20(redacted).pdf?ver=GJg3U7lX4LvWGTanngIpwQ%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/core_docs/cd11%201010%203313865%20need%20roundtable.pdf?ver=Az0Uie_0C4hC1HtASAKRAg%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.27%20(redacted).pdf?ver=TuACVdNsqXBdQZdPih2GiA%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid12.7.pdf?ver=jvYz2hBwT2Q-fzwNUmlotQ%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=vIBv0zxcIE8%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=KeN4NwvI7BA%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=AQ4W5sKzdPk%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=wT4NgfOaI4U%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=sVCnXbyjaHc%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=cZ0ZSzap_CM%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=4j6cdas1EQM%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/id/id4.pdf?ver=YSkContauy34oTAc1VyGTg%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=A14mGrqJ2aM%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=sk6FyUDG56U%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid6.5%20public%20responses%20q-y%20(redacted).pdf?ver=CZGQTORUkjLBMffceenEVQ%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=3P-TcLBfCZ8%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=fyDwLJ0muqo%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=kPa0AvhSHv8%3D&portalid=0&timestamp=1657994400927",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid12.5%20(redacted).pdf?ver=1oMkH-Lh2wfCDP9_l9qJrQ%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=nMz6C8PQVA4%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=vGlpGIZIAck%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=pMFigL_0vwE%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=1o0dn8dfZgI%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=Gk6_jEeiuD8%3D&portalid=0&timestamp=1687521489870",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/id/id13.4%20-%20appeal%20d%20-%20draft%20suggested%20conditions.pdf?ver=MEnL9PR2_9zQf1mpLv46MA%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=5x86D1hKfkk%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=80xUSNKkLXQ%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=qYEiFyC335M%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=-ZS_doV6aQ4%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=pWxQRsw_ZtY%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=P9qr29UxlZw%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=MHw9V_W600U%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=ag03RXPgDIU%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=U41AvNLFm_8%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=361Oi4tdBv0%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=esLrd3wrkuc%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=CTbVzLYT-9Y%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=5ZkBzkXrbx0%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=KCc7Suwa9dE%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=GvB26S50TbA%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/id/id8.pdf?ver=RdTwalRyUPN09MyTeaxiHA%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=iU61aQhU3Gw%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/core_docs/cd12-supplementary-evidence-planning.pdf?ver=bv3J4n5QqeE-9BtI9AKhrA%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/housing/landlord-services-performance-scorecard-may-2025.pdf?ver=S7MZ3V1RryT3_JEcnyo7rA%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=C2yIUqLTJak%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/planning-strategies-and-policies/local-plan/wbc%20level%201%20sfra%20report-appendix%20a%20and%20figures%201-2.pdf?ver=o_qbW3wg84MwsLz9OcS6ng%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/id/id9.pdf?ver=_JCcZo5PoiGEo0JdT5iBig%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=LIjO__onz18%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/core_docs/cd12-supplementary-evidence-gtaa.pdf?ver=ivafMGv7JdLpSEjFnvSuHA%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=laX725FS3Jk%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=-xAmlsutEKQ%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.28%20(redacted).pdf?ver=Twj8ZXZUqFcwhkjCdYrefw%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=f_mwx_xka2o%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=SUWP8hsWOWI%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid12.4.pdf?ver=gb0vwKPoA-FuSG_FRSGU0w%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/core_docs/cd12-bramley-parish-council-evidence.pdf?ver=GGvBgjSybeq6bsa_XLclYw%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/id/id7.5.pdf?ver=Atowjnos7Z5ns7jPgtIqtg%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=qsoHhz-P0es%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=9Z-UokFww5A%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=Aqh8wP5ABQY%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=dWL4WBAkuMg%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=dX95eD0D3JU%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=0Ec6-wGGDoQ%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/services/parks-leisure-and-things-to-do/film-waverley?msclkid=8a1a9f6ccd4811ecb39555ff4dd8eaf5",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=dJWc9msYtwI%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=qCp1Ub7FiTs%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=cRrHfqXOfQQ%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid9.4%20public%20responses%20h-i%20(redacted).pdf?ver=OTnTHQ4aSmesKiX1ij_Jog%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=uWakCTo_P3g%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=A2wKXnK0y8c%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=5v4A5bir9vg%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=OuSS69QZJsQ%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.16.pdf?ver=W0qhQWXk9nwAExDiAaCt0A%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.17.pdf?ver=NdZ3Zni7f7PPjdimd28BgQ%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=75K04F81xnw%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/id/id14%20-%20statement%20of%20cllr%20sarah%20sullivan%20(hascombe%20parish%20council).pdf?ver=IH10Jqdh2MUEZ2UX19tl5Q%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=l5Vfte7HR7Y%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=bssPl1jc3MI%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=lkcyXTl8i1A%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=UxY_J47d-O4%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/id/id15%20-%20wa_1994_0128%20lydia%20park%20-%20committee%20report.pdf?ver=mVl-j0VxdnNsUXWjkEPSog%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/council-information/freedom-of-information-and-data/waverley_fraud_statistics_to_end_march_2020%20(1).xlsx?ver=WXnaX_hAsddOURe5Jr-QPg%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=D3l8Ywrhah0%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=0Thexu7vGqk%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=n95ZGRpCZ8Y%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/id/id3.pdf?ver=agT290w_JU5SWG_iPpbmNg%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=coXApcooRuE%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=rz_Mg0vCVaI%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.4.pdf?ver=c1sV61IDucfsIUN4SYDD9A%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=aQ7tYdRI26k%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=kRF4Ahsthwo%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid6.2.pdf?ver=ddo6CJvezYkAc-Nl9zSDDw%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid11.2.pdf?ver=AGZV3_T4OmXiU_4iRF2bFw%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=Srz4BGL8nbc%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.2.pdf?ver=JrOWgSF-g2GFXMPJjXzN4g%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/land_north_of_lydia_park/id/id7.pdf?ver=Dlg2ySnxrzkZG4MPceWGeg%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=qvydQ3rh5ZM%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid8.3.pdf?ver=eBGkz6zzTNlbt50HjuT9qA%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid8.2.pdf?ver=iAaQVqmI0op1dQXEUjc-bw%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/linkclick.aspx?fileticket=KeyLZleWIZo%3D&portalid=0",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    },
+    {
+      "url": "https://www.waverley.gov.uk/portals/0/documents/services/planning-and-building/appeal%20inquiries/midhurst_scotland_park/nid-core-documents/nid13.30.pdf?ver=8x6TV2jIruEdmSqR62Rbqw%3D%3D",
+      "status": "removed",
+      "detection_methods": [
+        "firecrawl_map"
+      ]
+    }
+  ]
+}

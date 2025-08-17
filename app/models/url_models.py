@@ -1,4 +1,4 @@
-from typing import List, Optional, Dict, Union
+from typing import List, Optional, Dict, Union, Any
 from pydantic import BaseModel, Field
 from enum import Enum
 from datetime import datetime
@@ -8,12 +8,18 @@ class DetectionMethod(str, Enum):
     SITEMAP = "sitemap"
     FIRECRAWL_MAP = "firecrawl_map"
     FIRECRAWL_CRAWL = "firecrawl_crawl"
+    TOP_URL_CRAWLING = "top_url_crawling"
+    PAGINATION_CRAWLING = "pagination_crawling"
+    PAGINATION_DISCOVERY = "pagination_discovery"
 
 class UrlInfo(BaseModel):
     """Metadata for full traceability through URL processing"""
     url: str
     detection_methods: List[DetectionMethod]
     detected_at: datetime
+    source_url: Optional[str] = None  # URL where this URL was discovered
+    pagination_page: Optional[int] = None  # Page number if discovered via pagination
+    pagination_type: Optional[str] = None  # Type of pagination used
 
     class Config:
         json_encoders = {
@@ -78,13 +84,29 @@ class UrlProcessingResult(BaseModel):
     timestamp: datetime = Field(default_factory=datetime.now)
     operation_type: str  # "deduplication", "normalization", "filtering", etc.
     metadata: Dict[str, Union[str, int, float, bool, List[str]]] = Field(default_factory=dict)  # Operation-specific data
+    pagination_info: Optional[Any] = None  # Pagination information if applicable
 
     class Config:
         json_encoders = {
             datetime: lambda v: v.isoformat() if v else None
         }
 
+class PaginationProcessingResult(BaseModel):
+    """Result of pagination processing operations"""
+    urls: List[UrlInfo]
+    total_count: int
+    processing_time_seconds: float
+    timestamp: datetime = Field(default_factory=datetime.now)
+    pagination_info: Optional[Any] = None
+    pages_crawled: int = 0
+    articles_discovered: int = 0
+    pagination_type: Optional[str] = None
+    confidence_score: Optional[float] = None
 
+    class Config:
+        json_encoders = {
+            datetime: lambda v: v.isoformat() if v else None
+        }
 
 class OnboardingResult(BaseModel):
     """Result set from onboarding"""
@@ -92,6 +114,8 @@ class OnboardingResult(BaseModel):
     top_urls: List[str]
     onboarding_time: datetime
     total_urls_analyzed: int
+    pagination_enabled: bool = False
+    pagination_info: Optional[Any] = None
 
     class Config:
         json_encoders = {

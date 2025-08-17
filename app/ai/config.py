@@ -26,15 +26,46 @@ class AIConfig:
     
     # Model configurations
     MODELS = {
-        "url_analysis": "gpt-4o-mini",
-        "url_judge": "gpt-4o-mini"
+        "url_analysis": "gpt-5",
+        "url_judge": "gpt-5"
     }
+    
+    # Batching configuration to avoid token limits
+    MAX_URLS_PER_BATCH = 5000  # Increased from 500 to be more practical
+    MAX_TOKENS_PER_REQUEST = 400000  # Stay well under 450k limit
+    
+    @classmethod
+    def calculate_optimal_batch_size(cls, url_count: int) -> int:
+        """Calculate optimal batch size based on URL count to avoid token limits."""
+        if url_count <= 1000:
+            return url_count  # No batching needed for small sets
+        
+        # For very large sets, use more practical batching strategies
+        if url_count > 10000:
+            # Split into thirds for very large sets
+            return url_count // 3
+        elif url_count > 5000:
+            # Split into halves for large sets
+            return url_count // 2
+        else:
+            # For medium sets, use a reasonable batch size
+            return min(3000, url_count)
+    
+    @classmethod
+    def validate_batch_size(cls, urls: list, batch_size: int) -> bool:
+        """Validate that a batch size won't exceed token limits."""
+        # Rough estimation: each URL is ~75 chars, prompt overhead is ~2000 chars
+        estimated_chars = len(urls) * 75 + 2000
+        estimated_tokens = estimated_chars // 4  # 4 chars ≈ 1 token
+        
+        # Check if we're within safe limits
+        return estimated_tokens <= cls.MAX_TOKENS_PER_REQUEST
     
     @classmethod
     def build_analysis_prompt(cls, request: UrlAnalysisRequest) -> str:
         """Build the analysis prompt for URL evaluation."""
         return f"""
-        Analyze the following URLs from {request.site_name} and identify the 5 URLs that are most likely to serve as content discovery hubs for new articles and pages.
+        Analyze the following URLs from {request.site_name} and identify the 5 URLs FROM THE GIVEN URLS that are most likely to serve as content discovery hubs for new articles and pages.
         
         You want URLs that are:
         - Content section pages (like /news/, /blog/, /press-releases/, /judgments/, /articles/)
@@ -44,6 +75,12 @@ class AIConfig:
         - NOT individual article pages or static content pages
         - NOT pages like "About Us", "Contact", "Privacy Policy", "Terms of Service"
         
+        CRITICAL: Ensure URL diversity and avoid suggesting URLs that might resolve to the same page:
+        - Avoid URLs that are likely to redirect to the same destination
+        - Avoid URLs with only minor differences (like trailing slashes, query parameters, or fragments)
+        - Avoid URLs that might be aliases for the same content
+        - Choose URLs that represent distinct content sections or categories
+        
         Good examples:
         - /news/ (news section homepage)
         - /blog/ (blog index page)
@@ -52,7 +89,6 @@ class AIConfig:
         - /publications/ (publications index)
         - /reports/ (reports archive)
         - /latest-news/ (recent news aggregator)
-        - /council-updates/latest-news/ (subsection news aggregator)
         - /announcements/ (announcement hub)
         - /whats-new/ (new content showcase)
         
@@ -62,22 +98,26 @@ class AIConfig:
         - /about-us (static page)
         - /contact (static page)
         - /privacy-policy (static page)
+        - /news/ and /news (duplicate with/without trailing slash)
+        - /blog/ and /blog/?page=1 (same page with query parameter)
         
         Look for:
         - Pages that aggregate multiple pieces of content
         - URLs with dynamic content indicators (latest, recent, updates, news)
         - Both main sections AND valuable subsections that serve as content discovery points
         - Pages that would be bookmarked by users wanting to check for new content
+        - DISTINCT content categories that don't overlap
         
-        URLs to analyze: {request.urls}
+        URLs to analyze ({len(request.urls)} total):
+        {request.urls}
         
         Return a JSON object with this exact structure:
         {{
             "urls": ["url1", "url2", "url3", "url4", "url5"],
-            "reasoning": "Explanation of why these URLs were selected as content discovery hubs"
+            "reasoning": "Brief explanation of selection criteria and why these URLs are distinct"
         }}
         
-        Return exactly 5 URLs that are content discovery hubs, not individual articles.
+        Return exactly 5 URLs that are content discovery hubs, not individual articles, and ensure they represent distinct content sections.
         """
     
     @classmethod
@@ -97,10 +137,18 @@ class AIConfig:
         - Contains links to multiple articles or content pieces
         - Gets updated when new content is published
         - Serves as an entry point to discover new content
-        - May be a subsection that aggregates content (like /council-updates/latest-news/)
+        - May be a subsection that aggregates content
         - Has dynamic content indicators in the URL or purpose
         - Is NOT an individual article page
         - Would be useful for users wanting to check for new content regularly
+        
+        CRITICAL: Ensure URL diversity and avoid selecting URLs that might resolve to the same page:
+        - Avoid URLs that are likely to redirect to the same destination
+        - Avoid URLs with only minor differences (like trailing slashes, query parameters, or fragments)
+        - Avoid URLs that might be aliases for the same content
+        - Choose URLs that represent distinct content sections or categories
+        - If you see URLs like /news/ and /news, only select one of them
+        - If you see URLs like /blog/ and /blog/?page=1, only select one of them
         
         When evaluating URLs, prioritize:
         1. **Content density**: Pages that link to many articles
@@ -108,6 +156,7 @@ class AIConfig:
         3. **User discoverability**: How easily users can find new content
         4. **Content aggregation**: Pages that serve as content showcases
         5. **Hierarchical value**: Both main sections and valuable subsections
+        6. **URL diversity**: Ensure selected URLs represent distinct content areas
         
         Suggestions:
         {suggestions_text}
@@ -116,8 +165,8 @@ class AIConfig:
         {{
             "urls": ["url1", "url2", "url3", "url4", "url5"],
             "rejected_urls": ["rejected1", "rejected2"],
-            "reasoning": "Explanation of why these URLs are the best content discovery hubs"
+            "reasoning": "Explanation of why these URLs are the best content discovery hubs and how they represent distinct content areas"
         }}
         
-        Return exactly {request.selection_count} URLs that are content discovery hubs, not individual articles.
+        Return exactly {request.selection_count} URLs that are content discovery hubs, not individual articles, and ensure they represent distinct content sections.
         """
